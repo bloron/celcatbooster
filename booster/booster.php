@@ -1,5 +1,16 @@
 <?php
 
+function autoChargement($class){
+	require "../include/" . $class . ".class.php";
+}
+
+spl_autoload_register("autoChargement");
+
+$booster = new CelcatBooster(CelcatBooster::PLANNING_EI3);
+
+
+
+
 header('Content-type: text/xml');
 $sourceXML = my_file_get_contents("nead.univ-angers.fr", "/celcat/istia/g2096.xml");
 define("EN_MODE_TEST", false);
@@ -75,4 +86,3 @@ function CelcatAfficheContenuFiltre($fluxXML, $filtres, $anglais_groupe){
 	$resultat .= "</timetable>";
 	return $resultat;
 }
-?>
