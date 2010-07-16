@@ -16,6 +16,22 @@ class Booster {
 		$this->groupeEspagnol = $groupeEspagnol;
 	}
 	
+	public function setGroupesGeneraux($groupes){
+		$this->groupesGeneraux = $groupes;
+	}
+	
+	public function setGroupeAnglais($groupe){
+		$this->groupeAnglais = $groupe;
+	}
+	
+	public function setGroupeAllemand($groupe){
+		$this->groupeAllemand = $groupe;
+	}
+	
+	public function setGroupeEspagnol($groupe){
+		$this->groupeEspagnol = $groupe;
+	}
+	
 	public function emploiDuTemps($fluxXML, $filtres, $anglais_groupe){
 		$racine = simplexml_load_string($fluxXML);
 		$resultat = '<?xml version="1.0" encoding="utf-8"?>' ."\n". '<?xml-stylesheet type="text/xsl" href="ttss.xsl"?>' ."\n". "<timetable>";
@@ -55,7 +71,7 @@ class Booster {
 		return $this->getFichierDistant($this->serveur, $this->cheminFichierDistant);
 	}
 	
-	private function getFichierDistant($serveur, $chemin){
+	public static function getFichierDistant($serveur, $chemin){
 		$contenuFichier = "";
 		$socket = fsockopen($serveur, 80);
 		if($socket !== false){
