@@ -14,7 +14,7 @@ class Fabrique {
 			case self::PLANNING_EI3_MAN : $booster = new BoosterEI3_MAN("nead.univ-angers.fr", "/celcat/istia/g2096.xml"); break;
 			case self::PLANNING_EI3 : 	$booster = new BoosterEI3("nead.univ-angers.fr", "/celcat/istia/g2096.xml"); break;
 			case self::PLANNING_EI4 : 	$booster = new BoosterEI4("nead.univ-angers.fr", "/celcat/istia/g15807.xml"); break;
-			default : echo "Type inconnu !"; break;
+			default : break;
 		}
 		return $booster;
 	}

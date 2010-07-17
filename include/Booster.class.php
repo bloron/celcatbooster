@@ -11,7 +11,11 @@ abstract class Booster {
 	
 	public function __construct($serveur, $cheminFichierDistant){
 		$this->serveur = $serveur;
-		$this->cheminFichierDistant = $cheminFichierDistant;		
+		$this->cheminFichierDistant = $cheminFichierDistant;
+		$this->setGroupesGeneraux(array());
+		$this->setGroupeAnglais(array());
+		$this->setGroupeAllemand(array());
+		$this->setGroupeEspagnol(array());	
 	}
 	
 	public function setGroupesGeneraux($groupes){
@@ -56,11 +60,19 @@ abstract class Booster {
 	}
 	
 	protected function concerneMesGroupesGeneraux(SimpleXMLElement $cours){
-		if(!isset($cours->resources->group))
+		if($this->aucunFiltreGeneralDefini() OR $this->coursSansGroupes($cours))
 			return true;
 		if($this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group))
 			return true;
 		return false;
+	}
+	
+	protected function aucunFiltreGeneralDefini(){
+		return count($this->groupesGeneraux) == 0;
+	}
+	
+	protected function coursSansGroupes(SimpleXMLElement $cours){
+		return !isset($cours->resources->group);
 	}
 	
 	private function concerneMesGroupesDeLangue(SimpleXMLElement $cours){
@@ -69,36 +81,33 @@ abstract class Booster {
 	
 	protected function concerneMonGroupeAnglais(SimpleXMLElement $cours){
 		// Règle par défaut : on affiche tous les cours d'anglais
-		if(strpos(strtolower($cours->resources->module->item[0]), "anglais") !== false){
-			return true;
-		}
-		return false;
+		return $this->estUnCoursAnglais($cours);
 	}
 	
 	protected function concerneMonGroupeAllemand(SimpleXMLElement $cours){
 		// Règle par défaut : on affiche tous les cours d'allemand
-		if(strpos(strtolower($cours->resources->module->item[0]), "allemand") !== false){
-			return true;
-		}
-		return false;
+		return $this->estUnCoursAllemand($cours);
 	}
 	
 	protected function concerneMonGroupeEspagnol(SimpleXMLElement $cours){
 		// Règle par défaut : on affiche tous les cours d'espagnol
-		if(strpos(strtolower($cours->resources->module->item[0]), "espagnol") !== false){
-			return true;
-		}
-		return false;
+		return $this->estUnCoursEspagnol($cours);
 	}
 	
 	protected function estUnCoursDeLangue(SimpleXMLElement $cours){
-		if(strpos(strtolower($cours->resources->module->item[0]), "anglais") !== false)
-			return true;
-		if(strpos(strtolower($cours->resources->module->item[0]), "allemand") !== false)
-			return true;
-		if(strpos(strtolower($cours->resources->module->item[0]), "espagnol") !== false)
-			return true;
-		return false;
+		return ($this->estUnCoursAnglais($cours) OR $this->estUnCoursAllemand($cours) OR $this->estUnCoursEspagnol($cours));
+	}
+	
+	protected function estUnCoursAnglais(SimpleXMLElement $cours){
+		return (strpos(strtolower($cours->resources->module->item[0]), "anglais") !== false);
+	}
+	
+	protected function estUnCoursAllemand(SimpleXMLElement $cours){
+		return (strpos(strtolower($cours->resources->module->item[0]), "allemand") !== false);
+	}
+	
+	protected function estUnCoursEspagnol(SimpleXMLElement $cours){
+		return (strpos(strtolower($cours->resources->module->item[0]), "espagnol") !== false);
 	}
 	
 	protected function groupesCorrespondent($mesGroupes, SimpleXMLElement $lesGroupesDuCours){
