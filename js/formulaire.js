@@ -188,7 +188,7 @@ window.addEvent('domready', function(){
 			'text': 'Espagnol G'+i
 		}));
 	}
-	var groupesAllemand = ['EI3/s6/Allemand Avancé', 'EI3/s6/Allemand  Débutant', 'EI3/s5/ALLEMAND- GA'];
+	var groupesAllemand = ['EI3/s6/Allemand Avancï¿½', 'EI3/s6/Allemand  Dï¿½butant', 'EI3/s5/ALLEMAND- GA'];
 	groupesAllemand.each(function(groupe){
 		$('lv2').adopt(new Element('option', {
 			'value': groupe,
