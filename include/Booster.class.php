@@ -1,6 +1,6 @@
 <?php
 
-abstract class Booster {
+class Booster {
 	
 	private $serveur;
 	private $cheminFichierDistant;
@@ -56,7 +56,10 @@ abstract class Booster {
 	}
 	
 	private function meConcerne(SimpleXMLElement $cours){
-		return ($this->concerneMesGroupesGeneraux($cours) OR $this->concerneMesGroupesDeLangue($cours));
+		if($this->estUnCoursDeLangue($cours))
+			return $this->concerneMesGroupesDeLangue($cours);
+		else
+			return $this->concerneMesGroupesGeneraux($cours);
 	}
 	
 	protected function concerneMesGroupesGeneraux(SimpleXMLElement $cours){
@@ -71,6 +74,18 @@ abstract class Booster {
 		return count($this->groupesGeneraux) == 0;
 	}
 	
+	protected function pasDeGroupeAnglais(){
+		return $this->groupeAnglais == "";
+	}
+	
+	protected function pasDeGroupeAllemand(){
+		return $this->groupeAllemand == "";
+	}
+	
+	protected function pasDeGroupeEspagnol(){
+		return $this->groupeEspagnol == "";
+	}
+	
 	protected function coursSansGroupes(SimpleXMLElement $cours){
 		return !isset($cours->resources->group);
 	}
@@ -80,18 +95,33 @@ abstract class Booster {
 	}
 	
 	protected function concerneMonGroupeAnglais(SimpleXMLElement $cours){
-		// Règle par défaut : on affiche tous les cours d'anglais
-		return $this->estUnCoursAnglais($cours);
+		if($this->estUnCoursAnglais($cours)){
+			if($this->pasDeGroupeAnglais())
+				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group);
+			else
+				return $this->groupesCorrespondent($this->groupeAnglais, $cours->resources->group);
+		}
+		return false;
 	}
 	
 	protected function concerneMonGroupeAllemand(SimpleXMLElement $cours){
-		// Règle par défaut : on affiche tous les cours d'allemand
-		return $this->estUnCoursAllemand($cours);
+		if($this->estUnCoursAllemand($cours)){
+			if($this->pasDeGroupeAllemand())
+				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group);
+			else
+				return $this->groupesCorrespondent($this->groupeAllemand, $cours->resources->group);
+		}
+		return false;
 	}
 	
 	protected function concerneMonGroupeEspagnol(SimpleXMLElement $cours){
-		// Règle par défaut : on affiche tous les cours d'espagnol
-		return $this->estUnCoursEspagnol($cours);
+		if($this->estUnCoursEspagnol($cours)){
+			if($this->pasDeGroupeEspagnol())
+				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group);
+			else
+				return $this->groupesCorrespondent($this->groupeEspagnol, $cours->resources->group);
+		}
+		return false;
 	}
 	
 	protected function estUnCoursDeLangue(SimpleXMLElement $cours){

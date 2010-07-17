@@ -4,31 +4,57 @@ include("../config.php");
 
 $booster = Fabrique::cree($_GET[EMPLOI_DU_TEMPS]);
 
-if($booster != null){
-	header('Content-type: text/xml');
-	afficheEmploiDuTemps($booster);
-}
-else
-	echo "Erreur : l'emploi du temps demandé est inconnu.";
+if($booster == null)
+	die("Erreur : l'emploi du temps demandé est inconnu.");
+header('Content-type: text/xml');
+afficheEmploiDuTemps($booster);
 
 //-------------------------------------------------------------------
 
 function afficheEmploiDuTemps(Booster $booster){
 	
 	if(EN_MODE_TEST){
-		// TESTS		
 		
-		$booster = Fabrique::cree(Fabrique::PLANNING_EI4);
-		$booster->setGroupesGeneraux(array("EI4", "EI4/AGI/G1", "EI4/AGI/TPA"));
-		$booster->setGroupeAnglais(""); // Pas de groupe spécifique
-		$booster->setGroupeAllemand(""); // Je ne fais pas allemand
-		$booster->setGroupeEspagnol("EI4/GE2"); // Je fais de l'espagnol
-		
-//		$booster = Fabrique::cree(Fabrique::PLANNING_EI4);
-//		$booster->setGroupesGeneraux(array("EI4", "EI4/AGI/G1", "EI4/AGI/TPA"));
-//		$booster->setGroupeAnglais(""); // Pas de groupe spécifique
-//		$booster->setGroupeAllemand(""); // Je ne fais pas allemand
-//		$booster->setGroupeEspagnol("EI4/GE2"); // Je fais de l'espagnol
+		// TESTS
+		$booster = Fabrique::cree(PROMOTION_TEST);
+		switch(PROMOTION_TEST){
+			case Fabrique::PLANNING_EI1 :
+				$booster->setGroupesGeneraux(array("EI1", "EI1/TD G1", "EI1/TP G1"));
+				$booster->setGroupeAnglais("EI1/Anglais G2");
+				$booster->setGroupeAllemand("EI1/Allemand Avancé");
+				$booster->setGroupeEspagnol("");
+				break;
+				
+			case Fabrique::PLANNING_EI2 :
+				$booster->setGroupesGeneraux(array("EI2", "EI2/G1", "EI2/TP1"));
+				$booster->setGroupeAnglais("EI2/Anglais G3");
+				$booster->setGroupeAllemand("EI2/Allemand débutant");
+				$booster->setGroupeEspagnol("");
+				break;
+				
+			case Fabrique::PLANNING_EI3 :
+				$booster->setGroupesGeneraux(array("EI3", "EI3/GM1", "EI3/G1"));
+				$booster->setGroupeAnglais("");
+				$booster->setGroupeAllemand("");
+				$booster->setGroupeEspagnol("EI3/GE1");
+				break;
+				
+			case Fabrique::PLANNING_EI4 :
+				$booster->setGroupesGeneraux(array("EI4", "EI4/AGI/G1", "EI4/AGI/TPA"));
+				$booster->setGroupeAnglais("");
+				$booster->setGroupeAllemand("");
+				$booster->setGroupeEspagnol("EI4/GE2");
+				break;
+				
+			case Fabrique::PLANNING_EI5 :
+				$booster->setGroupesGeneraux(array("EI5", "EI5 AGI", "EI5 AGI TD G1", "EI5 AGI TP1"));
+				$booster->setGroupeAnglais("");
+				$booster->setGroupeAllemand("");
+				$booster->setGroupeEspagnol("EI4/GE2");
+				break;
+				
+			default : die("Promotion de test inconnue.");
+		}
 	}
 	else{
 		
