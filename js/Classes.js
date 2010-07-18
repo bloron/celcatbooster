@@ -96,36 +96,56 @@ var Parametrage = new Class({
 	racine: null,
 	duration: 30,
 	CLE_URI: "URI",
+	CLES_UTILES: ['gpGen', 'gpEng', 'gpAll', 'gpEsp'],
 	
 	initialize: function(elementRacine) {
 		this.racine = $(elementRacine);
 	},
 	
-	chargeDepuisCookie: function() {
-		var filtres = chargeFiltres();
-		var premier = $$('select')[0];
-		if($defined(premier))
-			selectionneOption(premier);
+	sauveVersCookie: function(URI) {
+		return Cookie.write(this.CLE_URI, URI, {'duration': this.duration});
 	},
 	
-	selectionneOption: function(select) {
-//		select.options.each()
-		
-	}
+	chargeDepuisCookie: function() {
+		var filtres = this.chargeFiltres();
+		var premier = $$('select')[0];
+		if($defined(premier) && filtres.length > 0)
+			this.selectionneOption(premier, filtres);
+	},
 	
 	chargeFiltres: function() {
 		var filtres = [], filtresEnChaine = Cookie.read(this.CLE_URI);
 		filtresEnChaine.split("&").each(function(parametre) {
-			var valeurs = parametre.split("=")[1];
-			valeurs.split(";").each(function(uneValeur) {
-				filtres.push(uneValeur);
-			});
-		});
-		alert(JSON.encode(filtres));
+			var cle = parametre.split("=")[0];
+			if(this.CLES_UTILES.contains(cle)){
+				var valeurs = unescape(parametre.split("=")[1]);
+				valeurs.split(";").each(function(uneValeur) {
+					filtres.push(uneValeur);
+				});
+			}
+		}, this);
 		return filtres;
 	},
 	
-	sauveVersCookie: function(URI) {
-		return Cookie.write(this.CLE_URI, URI, {'duration': duration});
+	selectionneOption: function(select, filtres) {
+		var index = -1;
+		select.getChildren('option').each(function(option, numOption) {
+			if(index == -1){
+				index = filtres.indexOf(option.get('value'));
+				if(index != -1)
+					this.valideSelection(select, numOption, filtres);
+			}
+		}, this);
+	},
+	
+	valideSelection: function(select, index, filtres) {
+		select.selectedIndex = index;
+		select.fireEvent('change');
+		var sibling = select.getNext();
+		if($defined(sibling)){
+			sibling.getElements('select').each(function(unSelect) {
+				this.selectionneOption(unSelect, filtres);
+			}, this);
+		}
 	}
 });

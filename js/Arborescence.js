@@ -1,6 +1,9 @@
 
 window.addEvent('domready', function(){
 	
+	var racine = $("selection");
+	var chargeur = new Parametrage(racine);
+	
 	var nodeIt = function(nodeJSON) {
 		var node = new Noeud(nodeJSON.libelle, nodeJSON.identifiant, new Hash(nodeJSON.extra));
 		nodeJSON.categories.each(function(categorieJSON) {
@@ -17,7 +20,8 @@ window.addEvent('domready', function(){
 		url: "include/promotions.php",
 		onComplete: function(resultatJSON){
 			var noeud = JSON.decode(resultatJSON);
-			nodeIt(noeud).affiche("selection");
+			nodeIt(noeud).affiche(racine);
+			chargeur.chargeDepuisCookie();
 		}
 	}).get();
 	
@@ -43,11 +47,11 @@ window.addEvent('domready', function(){
 		});
 		return hash;
 	}
-	
+
 	var genereURI = function() {
 		return genereHashDeSelection().toQueryString();
 	}
-	
+
 	var genereMessageHash = function() {
 		var hash = genereHashDeSelection();
 		var message = "";
@@ -57,9 +61,20 @@ window.addEvent('domready', function(){
 		return message;
 	}
 	
+	var getAction = function() {
+		return $('selecteur').get('action');
+	}
+	
 	$('lienInterne').addEvent('click', function(){
-		alert(unescape(genereURI()));
-		parent.frames[0].location = this.get('target') + "?" + genereURI();
+		var URI = genereURI();
+		chargeur.sauveVersCookie(URI);
+		parent.frames[0].location = getAction() + "?" + URI;
 		return false;
+	});
+	
+	$('lienExterne').addEvent('click', function(){
+		var URI = genereURI();
+		chargeur.sauveVersCookie(URI);
+		this.set('href', getAction() + "?" + URI);
 	});
 });
