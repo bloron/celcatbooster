@@ -54,6 +54,27 @@
 			<extra name="edt" value="2" />
 		</noeud>
 		<noeud libelle="EI3" identifiant="EI3">
+			<categorie libelle="Mise à niveau " rubrique="gpGen">
+				<noeud libelle="GM1" identifiant="GM1" />
+				<noeud libelle="GM2" identifiant="GM2" />
+				<noeud libelle="GM3" identifiant="GM3" />
+				<noeud libelle="GE4" identifiant="GE4" />
+			</categorie>
+			<categorie libelle="Année Groupe " rubrique="gpGen">
+				<noeud libelle="1" identifiant="G1" />
+				<noeud libelle="2" identifiant="G2" />
+				<noeud libelle="3" identifiant="G3" />
+				<noeud libelle="4" identifiant="G4" />
+				<noeud libelle="5" identifiant="G5" />
+			</categorie>
+			<categorie libelle="Allemand G" rubrique="gpAll">
+				<noeud libelle="1" identifiant="GA1" />
+				<noeud libelle="2" identifiant="GA2" />
+			</categorie>
+			<categorie libelle="Espagnol G" rubrique="gpEsp">
+				<noeud libelle="1 ou G3" identifiant="GE1" />
+				<noeud libelle="4" identifiant="GE4" />
+			</categorie>
 			<extra name="edt" value="3" />
 		</noeud>
 		<noeud libelle="EI4" identifiant="EI4">
