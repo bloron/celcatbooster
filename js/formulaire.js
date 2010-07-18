@@ -71,6 +71,7 @@ var Parametrage = new Class({
 
 window.addEvent('domready', function(){
 
+	/*
 	var promos = {
 		EI3: {
 			AGI: {
@@ -205,4 +206,5 @@ window.addEvent('domready', function(){
 	$('opt2').fireEvent('change');
 	oParam.ecritChamps();
 	if(oParam.cookiesExistants) $('myForm').fireEvent('submit');
+	*/
 });

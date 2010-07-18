@@ -19,7 +19,7 @@ class Booster {
 	}
 	
 	public function setGroupesGeneraux($groupes){
-		$this->groupesGeneraux = $groupes;
+		$this->groupesGeneraux = in_array("", $groupes) ? array() : $groupes;
 	}
 	
 	public function setGroupeAnglais($groupe){

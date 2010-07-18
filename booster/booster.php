@@ -1,7 +1,6 @@
 <?php
 
 include("../config.php");
-header('Content-type: text/xml');
 
 if(EN_MODE_TEST){
 	$booster = Fabrique::cree(PROMOTION_TEST);
@@ -17,6 +16,7 @@ else{
 	$booster->setGroupeEspagnol((isset($_GET[GROUPE_ESPAGNOL])) ? $_GET[GROUPE_ESPAGNOL] : "");
 }
 
+header('Content-type: text/xml');
 echo $booster->emploiDuTemps();
 
 //-------------------------------------------------------------------
