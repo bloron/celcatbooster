@@ -109,8 +109,11 @@ var Parametrage = new Class({
 	chargeDepuisCookie: function() {
 		var filtres = this.chargeFiltres();
 		var premier = $$('select')[0];
-		if($defined(premier) && filtres.length > 0)
+		if($defined(premier) && filtres.length > 0){
 			this.selectionneOption(premier, filtres);
+			return true;
+		}
+		return false;
 	},
 	
 	chargeFiltres: function() {

@@ -24,7 +24,8 @@ window.addEvent('domready', function(){
 		onComplete: function(resultatJSON){
 			var noeud = JSON.decode(resultatJSON);
 			nodeIt(noeud).affiche(racine);
-			chargeur.chargeDepuisCookie();
+			if(chargeur.chargeDepuisCookie())
+				$('lienInterne').fireEvent('click');
 		}
 	}).get();
 	

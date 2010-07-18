@@ -117,6 +117,21 @@
 			<extra name="edt" value="4" />
 		</noeud>
 		<noeud libelle="EI5" identifiant="EI5">
+			<categorie libelle="Filière " rubrique="gpGen">
+				<noeud libelle="AGI" identifiant="EI5 AGI" forcer="1">
+					<categorie libelle="Groupe TD" rubrique="gpGen">
+						<noeud libelle="1" identifiant="EI5 AGI TD G1" forcer="1" />
+						<noeud libelle="2" identifiant="EI5 AGI TD G2" forcer="1" />
+					</categorie>
+					<categorie libelle="Groupe TP" rubrique="gpGen">
+						<noeud libelle="1" identifiant="EI5 AGI TP1" forcer="1" />
+						<noeud libelle="2" identifiant="EI5 AGI TP2" forcer="1" />
+						<noeud libelle="3" identifiant="EI5 AGI TP3" forcer="1" />
+					</categorie>
+				</noeud>
+				<noeud libelle="QSF-O" identifiant="EI5 QSF-O" forcer="1" />
+				<noeud libelle="QSF-S" identifiant="EI5 QSF-S" forcer="1" />
+				</categorie>
 			<extra name="edt" value="5" />
 		</noeud>
 	</categorie>
