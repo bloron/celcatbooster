@@ -56,6 +56,8 @@ class Booster {
 	}
 	
 	private function meConcerne(SimpleXMLElement $cours){
+		if($this->aucunFiltreGeneralDefini() OR $this->coursSansGroupes($cours))
+			return true;
 		if($this->estUnCoursDeLangue($cours))
 			return $this->concerneMesGroupesDeLangue($cours);
 		else
@@ -63,8 +65,6 @@ class Booster {
 	}
 	
 	protected function concerneMesGroupesGeneraux(SimpleXMLElement $cours){
-		if($this->aucunFiltreGeneralDefini() OR $this->coursSansGroupes($cours))
-			return true;
 		if($this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group))
 			return true;
 		return false;

@@ -1,0 +1,55 @@
+<noeud libelle="ISTIA" identifiant="">
+	<categorie libelle="Emploi du temps " rubrique="gpGen">
+		<noeud libelle="EI1" identifiant="EI1">
+			<extra name="edt" value="1" />
+		</noeud>
+		<noeud libelle="EI2" identifiant="EI2">
+			<extra name="edt" value="2" />
+		</noeud>
+		<noeud libelle="EI3" identifiant="EI3">
+			<extra name="edt" value="3" />
+		</noeud>
+		<noeud libelle="EI4" identifiant="EI4">
+			<categorie libelle="Filière " rubrique="gpGen">
+				<noeud libelle="AGI" identifiant="AGI">
+					<categorie libelle="AGI G" rubrique="gpGen">
+						<noeud libelle="1" identifiant="G1" />
+						<noeud libelle="2" identifiant="G2" />
+						<noeud libelle="3" identifiant="G3" />
+					</categorie>
+					<categorie libelle="AGI TP" rubrique="gpGen">
+						<noeud libelle="A" identifiant="TPA" />
+						<noeud libelle="B" identifiant="TPB" />
+						<noeud libelle="C" identifiant="TPC" />
+						<noeud libelle="D" identifiant="TPD" />
+					</categorie>
+				</noeud>
+				<noeud libelle="QSF" identifiant="QSF">
+					<categorie libelle="QSF G" rubrique="gpGen">
+						<noeud libelle="1" identifiant="G1" />
+						<noeud libelle="2" identifiant="G2" />
+					</categorie>
+					<categorie libelle="QSF TP" rubrique="gpGen">
+						<noeud libelle="A" identifiant="EI4/Q/TPA" forcer="1" />
+						<noeud libelle="B" identifiant="EI4/Q/TPB" forcer="1" />
+						<noeud libelle="C" identifiant="EI4/Q/TPC" forcer="1" />
+					</categorie>
+				</noeud>
+			</categorie>
+			<categorie libelle="Allemand GA" rubrique="gpAll">
+				<noeud libelle="1" identifiant="GA1" />
+				<noeud libelle="2" identifiant="GA2" />
+			</categorie>
+			<categorie libelle="Espagnol GE" rubrique="gpEsp">
+				<noeud libelle="1" identifiant="GE1" />
+				<noeud libelle="2" identifiant="GE2" />
+				<noeud libelle="3" identifiant="GE3" />
+				<noeud libelle="4" identifiant="GE4" />
+			</categorie>
+			<extra name="edt" value="4" />
+		</noeud>
+		<noeud libelle="EI5" identifiant="EI5">
+			<extra name="edt" value="5" />
+		</noeud>
+	</categorie>
+</noeud>
