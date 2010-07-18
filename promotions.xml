@@ -1,9 +1,56 @@
 <noeud libelle="ISTIA" identifiant="">
 	<categorie libelle="Emploi du temps " rubrique="gpGen">
 		<noeud libelle="EI1" identifiant="EI1">
+			<categorie libelle="Groupe TD" rubrique="gpGen">
+				<noeud libelle="1" identifiant="TD G1" />
+				<noeud libelle="2" identifiant="TD G2" />
+				<noeud libelle="3" identifiant="TD G3" />
+			</categorie>
+			<categorie libelle="Groupe TP" rubrique="gpGen">
+				<noeud libelle="1" identifiant="TP G1" />
+				<noeud libelle="2" identifiant="TP G2" />
+				<noeud libelle="3" identifiant="TP G3" />
+				<noeud libelle="4" identifiant="TP G4" />
+			</categorie>
+			<categorie libelle="Anglais G" rubrique="gpEng">
+				<noeud libelle="1" identifiant="Anglais G1" />
+				<noeud libelle="2" identifiant="Anglais G2" />
+				<noeud libelle="3" identifiant="Anglais G3" />
+			</categorie>
+			<categorie libelle="Espagnol " rubrique="gpEsp">
+				<noeud libelle="Débutant" identifiant="Espagnol Débutant" />
+				<noeud libelle="Avancé" identifiant="Espagnol Avancé" />
+			</categorie>
+			<categorie libelle="Allemand " rubrique="gpAll">
+				<noeud libelle="Débutant" identifiant="Allemand débutant" />
+				<noeud libelle="Avancé" identifiant="Allemand Avancé" />
+			</categorie>
 			<extra name="edt" value="1" />
 		</noeud>
 		<noeud libelle="EI2" identifiant="EI2">
+			<categorie libelle="Groupe " rubrique="gpGen">
+				<noeud libelle="1" identifiant="G1" />
+				<noeud libelle="2" identifiant="G2" />
+			</categorie>
+			<categorie libelle="Groupe TP" rubrique="gpGen">
+				<noeud libelle="1" identifiant="G1" />
+				<noeud libelle="2" identifiant="G2" />
+				<noeud libelle="3" identifiant="G3" />
+				<noeud libelle="4" identifiant="G4" />
+			</categorie>
+			<categorie libelle="Anglais G" rubrique="gpEng">
+				<noeud libelle="1" identifiant="Anglais G1" />
+				<noeud libelle="2" identifiant="Anglais G2" />
+				<noeud libelle="3" identifiant="Anglais G3" />
+			</categorie>
+			<categorie libelle="Espagnol " rubrique="gpEsp">
+				<noeud libelle="Débutant" identifiant="Espagnol débutant" />
+				<noeud libelle="Avancé" identifiant="Espagnol avancé" />
+			</categorie>
+			<categorie libelle="Allemand " rubrique="gpAll">
+				<noeud libelle="Débutant" identifiant="Allemand débutant" />
+				<noeud libelle="Avancé" identifiant="Allemand avancé" />
+			</categorie>
 			<extra name="edt" value="2" />
 		</noeud>
 		<noeud libelle="EI3" identifiant="EI3">

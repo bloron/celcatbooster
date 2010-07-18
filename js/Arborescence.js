@@ -3,6 +3,9 @@ window.addEvent('domready', function(){
 	
 	var racine = $("selection");
 	var chargeur = new Parametrage(racine);
+	var formulaire = $('selecteur');
+	
+	racine.setStyle('display', 'inline');
 	
 	var nodeIt = function(nodeJSON) {
 		var node = new Noeud(nodeJSON.libelle, nodeJSON.identifiant, new Hash(nodeJSON.extra));
@@ -62,7 +65,7 @@ window.addEvent('domready', function(){
 	}
 	
 	var getAction = function() {
-		return $('selecteur').get('action');
+		return formulaire.get('action');
 	}
 	
 	$('lienInterne').addEvent('click', function(){
