@@ -53,6 +53,9 @@
 			</categorie>
 			<extra name="edt" value="2" />
 		</noeud>
+		<noeud libelle="EI2 PassMed" identifiant="EI2-PassMed">
+			<extra name="edt" value="6" />
+		</noeud>
 		<noeud libelle="EI3" identifiant="EI3">
 			<categorie libelle="Mise à niveau " rubrique="gpGen">
 				<noeud libelle="GM1" identifiant="GM1" />
@@ -131,7 +134,17 @@
 				</noeud>
 				<noeud libelle="QSF-O" identifiant="EI5 QSF-O" forcer="1" />
 				<noeud libelle="QSF-S" identifiant="EI5 QSF-S" forcer="1" />
-				</categorie>
+			</categorie>
+			<categorie libelle="Allemand " rubrique="gpAll">
+				<noeud libelle="AGI" identifiant="EI5 AGI" forcer="1" />
+				<noeud libelle="QSF-O" identifiant="EI5 QSF-O" forcer="1" />
+				<noeud libelle="QSF-S" identifiant="EI5 QSF-S" forcer="1" />
+			</categorie>
+			<categorie libelle="Espagnol " rubrique="gpEsp">
+				<noeud libelle="AGI" identifiant="EI5 AGI" forcer="1" />
+				<noeud libelle="QSF-O" identifiant="EI5 QSF-O" forcer="1" />
+				<noeud libelle="QSF-S" identifiant="EI5 QSF-S" forcer="1" />
+			</categorie>
 			<extra name="edt" value="5" />
 		</noeud>
 	</categorie>

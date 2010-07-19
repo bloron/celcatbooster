@@ -109,7 +109,7 @@ var Parametrage = new Class({
 	chargeDepuisCookie: function() {
 		var filtres = this.chargeFiltres();
 		var premier = $$('select')[0];
-		if($defined(premier) && filtres.length > 0){
+		if($defined(premier) && filtres.getLength() > 0){
 			this.selectionneOption(premier, filtres);
 			return true;
 		}
@@ -117,13 +117,15 @@ var Parametrage = new Class({
 	},
 	
 	chargeFiltres: function() {
-		var filtres = [], filtresEnChaine = Cookie.read(this.CLE_URI);
+		var filtres = new Hash(), filtresEnChaine = Cookie.read(this.CLE_URI);
 		filtresEnChaine.split("&").each(function(parametre) {
 			var cle = parametre.split("=")[0];
 			if(this.CLES_UTILES.contains(cle)){
+				if(!$defined(filtres.get(cle)))
+					filtres.set(cle, []);
 				var valeurs = unescape(parametre.split("=")[1]);
 				valeurs.split(";").each(function(uneValeur) {
-					filtres.push(uneValeur);
+					filtres.get(cle).push(uneValeur);
 				});
 			}
 		}, this);
@@ -132,9 +134,12 @@ var Parametrage = new Class({
 	
 	selectionneOption: function(select, filtres) {
 		var index = -1;
+		var cle = select.get('rubrique');
 		select.getChildren('option').each(function(option, numOption) {
 			if(index == -1){
-				index = filtres.indexOf(option.get('value'));
+				var values = filtres.get(cle);
+				if($defined(values))
+					index = values.indexOf(option.get('value'));
 				if(index != -1)
 					this.valideSelection(select, numOption, filtres);
 			}
