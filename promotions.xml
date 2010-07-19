@@ -1,0 +1,151 @@
+<noeud libelle="ISTIA" identifiant="">
+	<categorie libelle="Emploi du temps " rubrique="gpGen">
+		<noeud libelle="EI1" identifiant="EI1">
+			<categorie libelle="Groupe TD" rubrique="gpGen">
+				<noeud libelle="1" identifiant="TD G1" />
+				<noeud libelle="2" identifiant="TD G2" />
+				<noeud libelle="3" identifiant="TD G3" />
+			</categorie>
+			<categorie libelle="Groupe TP" rubrique="gpGen">
+				<noeud libelle="1" identifiant="TP G1" />
+				<noeud libelle="2" identifiant="TP G2" />
+				<noeud libelle="3" identifiant="TP G3" />
+				<noeud libelle="4" identifiant="TP G4" />
+			</categorie>
+			<categorie libelle="Anglais G" rubrique="gpEng">
+				<noeud libelle="1" identifiant="Anglais G1" />
+				<noeud libelle="2" identifiant="Anglais G2" />
+				<noeud libelle="3" identifiant="Anglais G3" />
+			</categorie>
+			<categorie libelle="Espagnol " rubrique="gpEsp">
+				<noeud libelle="Débutant" identifiant="Espagnol Débutant" />
+				<noeud libelle="Avancé" identifiant="Espagnol Avancé" />
+			</categorie>
+			<categorie libelle="Allemand " rubrique="gpAll">
+				<noeud libelle="Débutant" identifiant="Allemand débutant" />
+				<noeud libelle="Avancé" identifiant="Allemand Avancé" />
+			</categorie>
+			<extra name="edt" value="1" />
+		</noeud>
+		<noeud libelle="EI2" identifiant="EI2">
+			<categorie libelle="Groupe " rubrique="gpGen">
+				<noeud libelle="1" identifiant="G1" />
+				<noeud libelle="2" identifiant="G2" />
+			</categorie>
+			<categorie libelle="Groupe TP" rubrique="gpGen">
+				<noeud libelle="1" identifiant="G1" />
+				<noeud libelle="2" identifiant="G2" />
+				<noeud libelle="3" identifiant="G3" />
+				<noeud libelle="4" identifiant="G4" />
+			</categorie>
+			<categorie libelle="Anglais G" rubrique="gpEng">
+				<noeud libelle="1" identifiant="Anglais G1" />
+				<noeud libelle="2" identifiant="Anglais G2" />
+				<noeud libelle="3" identifiant="Anglais G3" />
+			</categorie>
+			<categorie libelle="Espagnol " rubrique="gpEsp">
+				<noeud libelle="Débutant" identifiant="Espagnol débutant" />
+				<noeud libelle="Avancé" identifiant="Espagnol avancé" />
+			</categorie>
+			<categorie libelle="Allemand " rubrique="gpAll">
+				<noeud libelle="Débutant" identifiant="Allemand débutant" />
+				<noeud libelle="Avancé" identifiant="Allemand avancé" />
+			</categorie>
+			<extra name="edt" value="2" />
+		</noeud>
+		<noeud libelle="EI2 PassMed" identifiant="EI2-PassMed">
+			<extra name="edt" value="6" />
+		</noeud>
+		<noeud libelle="EI3" identifiant="EI3">
+			<categorie libelle="Mise à niveau " rubrique="gpGen">
+				<noeud libelle="GM1" identifiant="GM1" />
+				<noeud libelle="GM2" identifiant="GM2" />
+				<noeud libelle="GM3" identifiant="GM3" />
+				<noeud libelle="GE4" identifiant="GE4" />
+			</categorie>
+			<categorie libelle="Année Groupe " rubrique="gpGen">
+				<noeud libelle="1" identifiant="G1" />
+				<noeud libelle="2" identifiant="G2" />
+				<noeud libelle="3" identifiant="G3" />
+				<noeud libelle="4" identifiant="G4" />
+				<noeud libelle="5" identifiant="G5" />
+			</categorie>
+			<categorie libelle="Allemand G" rubrique="gpAll">
+				<noeud libelle="1" identifiant="GA1" />
+				<noeud libelle="2" identifiant="GA2" />
+			</categorie>
+			<categorie libelle="Espagnol G" rubrique="gpEsp">
+				<noeud libelle="1 ou G3" identifiant="GE1" />
+				<noeud libelle="4" identifiant="GE4" />
+			</categorie>
+			<extra name="edt" value="3" />
+		</noeud>
+		<noeud libelle="EI4" identifiant="EI4">
+			<categorie libelle="Filière " rubrique="gpGen">
+				<noeud libelle="AGI" identifiant="AGI">
+					<categorie libelle="AGI G" rubrique="gpGen">
+						<noeud libelle="1" identifiant="G1" />
+						<noeud libelle="2" identifiant="G2" />
+						<noeud libelle="3" identifiant="G3" />
+					</categorie>
+					<categorie libelle="AGI TP" rubrique="gpGen">
+						<noeud libelle="A" identifiant="TPA" />
+						<noeud libelle="B" identifiant="TPB" />
+						<noeud libelle="C" identifiant="TPC" />
+						<noeud libelle="D" identifiant="TPD" />
+					</categorie>
+				</noeud>
+				<noeud libelle="QSF" identifiant="QSF">
+					<categorie libelle="QSF G" rubrique="gpGen">
+						<noeud libelle="1" identifiant="G1" />
+						<noeud libelle="2" identifiant="G2" />
+					</categorie>
+					<categorie libelle="QSF TP" rubrique="gpGen">
+						<noeud libelle="A" identifiant="EI4/Q/TPA" forcer="1" />
+						<noeud libelle="B" identifiant="EI4/Q/TPB" forcer="1" />
+						<noeud libelle="C" identifiant="EI4/Q/TPC" forcer="1" />
+					</categorie>
+				</noeud>
+			</categorie>
+			<categorie libelle="Allemand GA" rubrique="gpAll">
+				<noeud libelle="1" identifiant="GA1" />
+				<noeud libelle="2" identifiant="GA2" />
+			</categorie>
+			<categorie libelle="Espagnol GE" rubrique="gpEsp">
+				<noeud libelle="1" identifiant="GE1" />
+				<noeud libelle="2" identifiant="GE2" />
+				<noeud libelle="3" identifiant="GE3" />
+				<noeud libelle="4" identifiant="GE4" />
+			</categorie>
+			<extra name="edt" value="4" />
+		</noeud>
+		<noeud libelle="EI5" identifiant="EI5">
+			<categorie libelle="Filière " rubrique="gpGen">
+				<noeud libelle="AGI" identifiant="EI5 AGI" forcer="1">
+					<categorie libelle="Groupe TD" rubrique="gpGen">
+						<noeud libelle="1" identifiant="EI5 AGI TD G1" forcer="1" />
+						<noeud libelle="2" identifiant="EI5 AGI TD G2" forcer="1" />
+					</categorie>
+					<categorie libelle="Groupe TP" rubrique="gpGen">
+						<noeud libelle="1" identifiant="EI5 AGI TP1" forcer="1" />
+						<noeud libelle="2" identifiant="EI5 AGI TP2" forcer="1" />
+						<noeud libelle="3" identifiant="EI5 AGI TP3" forcer="1" />
+					</categorie>
+				</noeud>
+				<noeud libelle="QSF-O" identifiant="EI5 QSF-O" forcer="1" />
+				<noeud libelle="QSF-S" identifiant="EI5 QSF-S" forcer="1" />
+			</categorie>
+			<categorie libelle="Allemand " rubrique="gpAll">
+				<noeud libelle="AGI" identifiant="EI5 AGI" forcer="1" />
+				<noeud libelle="QSF-O" identifiant="EI5 QSF-O" forcer="1" />
+				<noeud libelle="QSF-S" identifiant="EI5 QSF-S" forcer="1" />
+			</categorie>
+			<categorie libelle="Espagnol " rubrique="gpEsp">
+				<noeud libelle="AGI" identifiant="EI5 AGI" forcer="1" />
+				<noeud libelle="QSF-O" identifiant="EI5 QSF-O" forcer="1" />
+				<noeud libelle="QSF-S" identifiant="EI5 QSF-S" forcer="1" />
+			</categorie>
+			<extra name="edt" value="5" />
+		</noeud>
+	</categorie>
+</noeud>

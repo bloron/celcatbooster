@@ -17,6 +17,7 @@ else{
 	$booster->setGroupeEspagnol((isset($_GET[GROUPE_ESPAGNOL])) ? $_GET[GROUPE_ESPAGNOL] : "");
 }
 
+header('Content-type: text/xml');
 echo $booster->emploiDuTemps();
 
 //-------------------------------------------------------------------

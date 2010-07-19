@@ -19,7 +19,7 @@ class Booster {
 	}
 	
 	public function setGroupesGeneraux($groupes){
-		$this->groupesGeneraux = $groupes;
+		$this->groupesGeneraux = in_array("", $groupes) ? array() : $groupes;
 	}
 	
 	public function setGroupeAnglais($groupe){
@@ -56,6 +56,8 @@ class Booster {
 	}
 	
 	private function meConcerne(SimpleXMLElement $cours){
+		if($this->aucunFiltreGeneralDefini() OR $this->coursSansGroupes($cours))
+			return true;
 		if($this->estUnCoursDeLangue($cours))
 			return $this->concerneMesGroupesDeLangue($cours);
 		else
@@ -63,8 +65,6 @@ class Booster {
 	}
 	
 	protected function concerneMesGroupesGeneraux(SimpleXMLElement $cours){
-		if($this->aucunFiltreGeneralDefini() OR $this->coursSansGroupes($cours))
-			return true;
 		if($this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group))
 			return true;
 		return false;
@@ -86,6 +86,10 @@ class Booster {
 		return $this->groupeEspagnol == "";
 	}
 	
+	protected function pasDeSecondeLangue(){
+		return ($this->pasDeGroupeEspagnol() AND $this->pasDeGroupeAllemand());
+	}
+	
 	protected function coursSansGroupes(SimpleXMLElement $cours){
 		return !isset($cours->resources->group);
 	}
@@ -96,8 +100,9 @@ class Booster {
 	
 	protected function concerneMonGroupeAnglais(SimpleXMLElement $cours){
 		if($this->estUnCoursAnglais($cours)){
-			if($this->pasDeGroupeAnglais())
-				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group);
+			if($this->pasDeGroupeAnglais()){
+				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group, true);
+			}
 			else
 				return $this->groupesCorrespondent($this->groupeAnglais, $cours->resources->group);
 		}
@@ -106,7 +111,7 @@ class Booster {
 	
 	protected function concerneMonGroupeAllemand(SimpleXMLElement $cours){
 		if($this->estUnCoursAllemand($cours)){
-			if($this->pasDeGroupeAllemand())
+			if($this->pasDeSecondeLangue())
 				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group);
 			else
 				return $this->groupesCorrespondent($this->groupeAllemand, $cours->resources->group);
@@ -116,7 +121,7 @@ class Booster {
 	
 	protected function concerneMonGroupeEspagnol(SimpleXMLElement $cours){
 		if($this->estUnCoursEspagnol($cours)){
-			if($this->pasDeGroupeEspagnol())
+			if($this->pasDeSecondeLangue())
 				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group);
 			else
 				return $this->groupesCorrespondent($this->groupeEspagnol, $cours->resources->group);
@@ -140,9 +145,9 @@ class Booster {
 		return (strpos(strtolower($cours->resources->module->item[0]), "espagnol") !== false);
 	}
 	
-	protected function groupesCorrespondent($mesGroupes, SimpleXMLElement $lesGroupesDuCours){
+	protected function groupesCorrespondent($mesGroupes, SimpleXMLElement $lesGroupesDuCours, $trace = false){
 		$groupesAppartenance = (is_array($mesGroupes)) ? $mesGroupes : array($mesGroupes);
-		$groupesDuCours = (is_array($lesGroupesDuCours->item)) ? $lesGroupesDuCours->item : array($lesGroupesDuCours->item);
+		$groupesDuCours = (count($lesGroupesDuCours->item) > 1) ? $lesGroupesDuCours->item : array($lesGroupesDuCours->item[0]);
 		foreach($groupesDuCours as $groupe){
 			if(in_array(trim($groupe), $groupesAppartenance))
 				return true;
