@@ -72,7 +72,7 @@ window.addEvent('domready', function(){
 	$('lienInterne').addEvent('click', function(){
 		var URI = genereURI();
 		chargeur.sauveVersCookie(URI);
-		parent.frames[0].location = getAction() + "?" + URI;
+		parent.frames[0].frames[0].location = getAction() + "?" + URI;
 		return false;
 	});
 	

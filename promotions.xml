@@ -63,6 +63,11 @@
 				<noeud libelle="GM3" identifiant="GM3" />
 				<noeud libelle="GE4" identifiant="GE4" />
 			</categorie>
+			<categorie libelle="Mise à niveau " rubrique="gpGen">
+				<noeud libelle="C G1" identifiant="C1" />
+				<noeud libelle="C G2" identifiant="C2" />
+				<noeud libelle="VB" identifiant="VB" />
+			</categorie>
 			<categorie libelle="Année Groupe " rubrique="gpGen">
 				<noeud libelle="1" identifiant="G1" />
 				<noeud libelle="2" identifiant="G2" />
