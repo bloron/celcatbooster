@@ -14,12 +14,12 @@ class Fabrique {
 	public static function cree($type) {
 		$booster = null;
 		switch($type){
-			case self::PLANNING_EI1 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g2047.xml"); break;
-			case self::PLANNING_EI2 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g17238.xml"); break;
-			case self::PLANNING_EI3 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g2096.xml"); break;
-			case self::PLANNING_EI4 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g15807.xml"); break;
-			case self::PLANNING_EI5 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g29804.xml"); break;
-			case self::PLANNING_EI2_PASSMED : 	$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g33515.xml"); break;
+			case self::PLANNING_EI1 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g2047"); break;
+			case self::PLANNING_EI2 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g17238"); break;
+			case self::PLANNING_EI3 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g2096"); break;
+			case self::PLANNING_EI4 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g15807"); break;
+			case self::PLANNING_EI5 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g29804"); break;
+			case self::PLANNING_EI2_PASSMED : 	$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g33515"); break;
 			default : break;
 		}
 		return $booster;

@@ -2,16 +2,22 @@
 
 class Booster {
 	
+	public static $XML = "xml";
+	public static $ICAL = "ical";
+	
 	private $serveur;
-	private $cheminFichierDistant;
 	protected $groupesGeneraux;
 	protected $groupeAnglais;
 	protected $groupeAllemand;
 	protected $groupeEspagnol;
+	protected $fichierXML;
+	protected $fichierICS;
 	
 	public function __construct($serveur, $cheminFichierDistant){
+		$this->fichierXML = $cheminFichierDistant . ".xml";
+		$this->fichierICS = $cheminFichierDistant . ".ics";
 		$this->serveur = $serveur;
-		$this->cheminFichierDistant = $cheminFichierDistant;
+		$this->fichierXML = $this->fichierXML;
 		$this->setGroupesGeneraux(array());
 		$this->setGroupeAnglais(array());
 		$this->setGroupeAllemand(array());
@@ -34,6 +40,20 @@ class Booster {
 		$this->groupeEspagnol = $groupe;
 	}
 	
+	public function afficheEmploiDuTemps($format){
+		switch ($format) {
+			case Booster::$ICAL:
+				header('Content-type: text/calendar');
+			break;
+			
+			case Booster::$XML:
+			default:
+				header('Content-type: text/xml');
+			break;
+		}
+		echo $this->format($this->emploiDuTemps(), $format);
+	}
+	
 	public function emploiDuTemps(){
 		$racine = simplexml_load_string($this->getSourceXML());
 		$resultat = '<?xml version="1.0" encoding="utf-8"?>' ."\n". '<?xml-stylesheet type="text/xsl" href="ttss.xsl"?>' ."\n". "<timetable>";
@@ -53,6 +73,73 @@ class Booster {
 		}
 		$resultat .= "</timetable>";
 		return $resultat;
+	}
+	
+	private function format($timetable, $format){
+		switch ($format) {
+			case Booster::$ICAL:
+				$ids = $this->listeIdentifiants($timetable);
+				$reponse = $this->getSourceICS();
+				$ics = substr($reponse, strpos($reponse, "BEGIN:VCALENDAR"));
+				$lignes = explode("\n", $ics);
+				$result = "";
+				$i = 0;
+				$nbLignes = count($lignes);
+				while($i < $nbLignes){
+					$ligne = $lignes[$i];
+					if(strpos($ligne, "BEGIN:VEVENT") !== false){
+						$str = $lignes[$i + 3];
+						$id = $this->substr($str, '(', '-');
+						if(in_array($id, $ids)){
+							for($j = 0; $j < 9; $j++){
+								$copy = $lignes[$i + $j];
+								if(strpos($copy, "SUMMARY") !== false){
+									$title = $this->substr($copy, "- ", "\\");
+									$new = " " . substr($title, strrpos($title, "/") + 1);
+									$result .= str_replace($title, $new, $copy) . "\n";
+								}
+								else $result .= $copy . "\n";
+							}
+						}
+						$i += 9;
+					}
+					else{
+						$result .= $ligne . "\n";
+						$i++;
+					}
+				}
+				return $result;
+			break;
+			
+			case Booster::$XML:
+			default:
+				return $timetable;
+			break;
+		}
+	}
+	
+	public static function substr($chaine, $after, $before){
+		$substr = "";
+		$deb = strpos($chaine, $after);
+		$fin = 0;
+		if($deb !== false){
+			$deb += count($after);
+			$fin = strpos($chaine, $before, $deb);
+			if($fin !== false){
+				$substr = substr($chaine, $deb, $fin - $deb);
+			}
+		}
+		return $substr;
+	}
+	
+	private function listeIdentifiants($timetable){
+		$racine = simplexml_load_string($timetable);
+		$events = $racine->xpath("//event");
+		$ids = array();
+		foreach($events as $e){
+			array_push($ids, (string) $e['id']);
+		}
+		return $ids;
 	}
 	
 	private function meConcerne(SimpleXMLElement $cours){
@@ -156,7 +243,11 @@ class Booster {
 	}
 	
 	private function getSourceXML(){
-		return $this->getFichierDistant($this->serveur, $this->cheminFichierDistant);
+		return $this->getFichierDistant($this->serveur, $this->fichierXML);
+	}
+	
+	private function getSourceICS(){
+		return $this->getFichierDistant($this->serveur, $this->fichierICS);
 	}
 	
 	public static function getFichierDistant($serveur, $chemin){

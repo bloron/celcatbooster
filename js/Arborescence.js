@@ -81,4 +81,10 @@ window.addEvent('domready', function(){
 		chargeur.sauveVersCookie(URI);
 		this.set('href', getAction() + "?" + URI);
 	});
+	
+	$('lienICal').addEvent('click', function(){
+		var URI = genereURI();
+		chargeur.sauveVersCookie(URI);
+		this.set('href', getAction() + "?" + URI + "&format=ical");
+	});
 });
