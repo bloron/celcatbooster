@@ -16,7 +16,6 @@ class Booster {
 	public function __construct($serveur, $cheminFichierDistant){
 		$this->fichierXML = $cheminFichierDistant . ".xml";
 		$this->fichierICS = $cheminFichierDistant . ".ics";
-		$this->serveur = $serveur;
 		$this->fichierXML = $this->fichierXML;
 		$this->setGroupesGeneraux(array());
 		$this->setGroupeAnglais(array());
