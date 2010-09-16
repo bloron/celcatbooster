@@ -3,11 +3,11 @@
 include("../config.php");
 
 if(EN_MODE_TEST){
-	$booster = Fabrique::cree(PROMOTION_TEST);
+	$booster = Fabrique::creeBooster(PROMOTION_TEST);
 	parametrageDeTest($booster);
 }
 else{
-	$booster = Fabrique::cree($_GET[EMPLOI_DU_TEMPS]);
+	$booster = Fabrique::creeBooster($_GET[EMPLOI_DU_TEMPS]);
 	if($booster == null)
 		die("Erreur : l'emploi du temps demandé est inconnu.");
 	$booster->setGroupesGeneraux(explode(";", utf8_encode($_GET[GROUPES_GENERAUX])));

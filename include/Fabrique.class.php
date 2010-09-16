@@ -11,7 +11,7 @@ class Fabrique {
 	private function __construct(){
 	}
 	
-	public static function cree($type) {
+	public static function creeBooster($type) {
 		$booster = null;
 		switch($type){
 			case self::PLANNING_EI1 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g2047"); break;

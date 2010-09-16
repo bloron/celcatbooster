@@ -2,7 +2,7 @@
 
 abstract class Formatter
 {
-	private $sourceXML;
+	protected $sourceXML;
 	
 	public function __construct(SimpleXMLElement $source){
 		$this->sourceXML = $source;
