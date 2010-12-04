@@ -6,11 +6,12 @@ echo nodeize($racine);
 
 function nodeize(SimpleXMLElement $node, $identifiantPrécédent = ""){
 	$identifiant = ($identifiantPrécédent == "") ? $node['identifiant'] : $identifiantPrécédent . "/" . $node['identifiant'];
+	$optionnel = ($node['idOptionnel'] == "1") ? ";" . $identifiantPrécédent . " " . $node['identifiant'] : "";
 	if($node['forcer'] == true)
 		$identifiant = $node['identifiant'];
 	$json = "{" .
 			"libelle: '" . $node['libelle'] . "'," .
-			"identifiant: '" . $identifiant . "',";
+			"identifiant: '" . $identifiant . $optionnel . "',";
 	if(count($node->extra) > 0){
 		$nbExtra = 0;
 		$json .= "extra: {";

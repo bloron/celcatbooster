@@ -103,7 +103,7 @@ var Parametrage = new Class({
 	},
 	
 	sauveVersCookie: function(URI) {
-		return Cookie.write(this.CLE_URI, URI, {'duration': this.duration});
+		return escape(Cookie.write(this.CLE_URI, URI, {'duration': this.duration}));
 	},
 	
 	chargeDepuisCookie: function() {
@@ -137,11 +137,15 @@ var Parametrage = new Class({
 		var cle = select.get('rubrique');
 		select.getChildren('option').each(function(option, numOption) {
 			if(index == -1){
-				var values = filtres.get(cle);
-				if($defined(values))
-					index = values.indexOf(option.get('value'));
-				if(index != -1)
-					this.valideSelection(select, numOption, filtres);
+				option.get('value').split(";").each(function(uneOption){
+					if(index == -1){
+						var values = filtres.get(cle);
+						if($defined(values))
+							index = values.indexOf(uneOption);
+						if(index != -1)
+						this.valideSelection(select, numOption, filtres);
+					}
+				}, this);
 			}
 		}, this);
 	},

@@ -72,7 +72,8 @@ window.addEvent('domready', function(){
 	$('lienInterne').addEvent('click', function(){
 		var URI = genereURI();
 		chargeur.sauveVersCookie(URI);
-		parent.frames[0].frames[0].location = getAction() + "?" + URI;
+		var maFrame = $('celcatboosterInnerFrame');
+		maFrame.set('src', getAction() + "?" + URI);
 		return false;
 	});
 	

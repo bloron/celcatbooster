@@ -87,7 +87,7 @@
 		</noeud>
 		<noeud libelle="EI4" identifiant="EI4">
 			<categorie libelle="Filière " rubrique="gpGen">
-				<noeud libelle="AGI" identifiant="AGI">
+				<noeud libelle="AGI" identifiant="AGI" idOptionnel="1">
 					<categorie libelle="AGI G" rubrique="gpGen">
 						<noeud libelle="1" identifiant="G1" />
 						<noeud libelle="2" identifiant="G2" />
@@ -100,7 +100,7 @@
 						<noeud libelle="D" identifiant="TPD" />
 					</categorie>
 				</noeud>
-				<noeud libelle="QSF" identifiant="QSF">
+				<noeud libelle="QSF" identifiant="QSF" idOptionnel="1">
 					<categorie libelle="QSF G" rubrique="gpGen">
 						<noeud libelle="1" identifiant="G1" />
 						<noeud libelle="2" identifiant="G2" />
