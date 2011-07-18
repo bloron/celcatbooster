@@ -4,18 +4,18 @@ $racine = simplexml_load_string($xml);
 
 echo nodeize($racine);
 
-function nodeize(SimpleXMLElement $node, $identifiantPrécédent = ""){
-	$identifiant = ($identifiantPrécédent == "") ? $node['identifiant'] : $identifiantPrécédent . "/" . $node['identifiant'];
-	$optionnel = ($node['idOptionnel'] == "1") ? ";" . $identifiantPrécédent . " " . $node['identifiant'] : "";
-	if($node['forcer'] == true)
-		$identifiant = $node['identifiant'];
+function nodeize(SimpleXMLElement $entree, $identifiantPrécédent = ""){
+	$identifiant = ($identifiantPrécédent == "") ? $entree['identifiant'] : $identifiantPrécédent . "/" . $entree['identifiant'];
+	$optionnel = ($entree['idOptionnel'] == "1") ? ";" . $identifiantPrécédent . " " . $entree['identifiant'] : "";
+	if($entree['forcer'] == true)
+		$identifiant = $entree['identifiant'];
 	$json = "{" .
-			"libelle: '" . $node['libelle'] . "'," .
+			"libelle: '" . (isset($entree['libelle']) ? $entree['libelle'] : $entree['identifiant']) . "'," .
 			"identifiant: '" . $identifiant . $optionnel . "',";
-	if(count($node->extra) > 0){
+	if(count($entree->extra) > 0){
 		$nbExtra = 0;
 		$json .= "extra: {";
-		foreach($node->extra as $extra){
+		foreach($entree->extra as $extra){
 			if($nbExtra > 0) $json .= ",";
 			$json .= $extra['name'] . ": " . $extra['value'];
 			$nbExtra++;
@@ -24,16 +24,16 @@ function nodeize(SimpleXMLElement $node, $identifiantPrécédent = ""){
 	}
 	$json .= "categories: [";
 	$nbCategories = 0;
-	foreach($node->categorie as $categorie){
+	foreach($entree->categorie as $categorie){
 		if($nbCategories > 0) $json .= ",";
 		$json .= 	"{" .
 					"libelle: '" . $categorie['libelle'] . "'," .
 					"rubrique: '" . $categorie['rubrique'] . "'," .
 					"noeuds: [";
 		$nbNoeuds = 0;
-		foreach($categorie->noeud as $noeud){
+		foreach($categorie->entree as $element){
 			if($nbNoeuds > 0) $json .= ",";
-			$json .= nodeize($noeud, $identifiant);
+			$json .= nodeize($element, $identifiant);
 			$nbNoeuds++;
 		}
 		$json .= "]}";
