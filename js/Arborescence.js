@@ -53,7 +53,8 @@ window.addEvent('domready', function(){
 	}
 
 	var genereURI = function() {
-		return genereHashDeSelection().toQueryString();
+		var base = genereHashDeSelection().toQueryString();
+		return base.replace("%C3%A9", "%E9");
 	}
 
 	var genereMessageHash = function() {
