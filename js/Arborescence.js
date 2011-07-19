@@ -42,7 +42,7 @@ window.addEvent('domready', function(){
 				var extraValue = select.options[select.selectedIndex].get('edt');
 				if($defined(extraValue))
 					hash.set('edt', extraValue);
-				if(nbSelectsNonNuls > 1){
+				if(nbSelectsNonNuls > 0){
 					var oldVal = hash.get(select.get('rubrique'));
 					var newVal = (oldVal == null) ? select.get('value') : oldVal + ";" + select.get('value');
 					hash.set(select.get('rubrique'), newVal);
