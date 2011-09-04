@@ -87,81 +87,46 @@
 				<entree libelle="3" identifiant="TC/G3" />
 				<entree libelle="4" identifiant="TC/G4" />
 			</categorie>
-			<categorie libelle="Semestre 2 Option 1 " rubrique="gpGen">
-				<entree libelle="AGI" identifiant="AGI">
-					<categorie libelle="AGI " rubrique="gpGen">
-						<entree libelle="G1" identifiant="G1" />
-						<entree libelle="G2" identifiant="G2" />
-						<entree libelle="G3" identifiant="G3" />
-					</categorie>
-					<categorie libelle="AGI " rubrique="gpGen">
-						<entree libelle="TP1" identifiant="TPAGI1" />
-						<entree libelle="TP2" identifiant="TPAGI2" />
-						<entree libelle="TP3" identifiant="TPAGI3" />
-						<entree libelle="TP4" identifiant="TPAGI4" />
-					</categorie>
-				</entree>
-				<entree libelle="IMQ " identifiant="IMQ">
-					<categorie libelle="IMQ " rubrique="gpGen">
-						<entree libelle="G1" identifiant="G1" />
-						<entree libelle="G2" identifiant="G2" />
-						<entree libelle="G3" identifiant="G3" />
-					</categorie>
-					<categorie libelle="IMQ " rubrique="gpGen">
-						<entree libelle="TP1" identifiant="TPIMQ1" />
-						<entree libelle="TP2" identifiant="TPIMQ2" />
-						<entree libelle="TP3" identifiant="TPIMQ3" />
-						<entree libelle="TP4" identifiant="TPIMQ4" />
-					</categorie>
-				</entree>
-				<entree libelle="II " identifiant="II">
-					<categorie libelle="II " rubrique="gpGen">
-						<entree libelle="G1" identifiant="G1" />
-						<entree libelle="G2" identifiant="G2" />
-					</categorie>
-					<categorie libelle="II " rubrique="gpGen">
-						<entree libelle="TP1" identifiant="TPII1" />
-						<entree libelle="TP2" identifiant="TPII2" />
-						<entree libelle="TP3" identifiant="TPII3" />
-					</categorie>
-				</entree>
+			<categorie libelle="Allemand G" rubrique="gpAll">
+				<entree libelle="1" identifiant="GA1" />
+				<entree libelle="2" identifiant="GA2" />
 			</categorie>
-			<categorie libelle="Semestre 2 Option 2 " rubrique="gpGen">
-				<entree libelle="AGI" identifiant="AGI">
-					<categorie libelle="AGI " rubrique="gpGen">
-						<entree libelle="G1" identifiant="G1" />
-						<entree libelle="G2" identifiant="G2" />
-						<entree libelle="G3" identifiant="G3" />
+			<categorie libelle="Espagnol G" rubrique="gpEsp">
+				<entree libelle="1" identifiant="GE1" />
+				<entree libelle="2" identifiant="GE2" />
+				<entree libelle="3" identifiant="GE3" />
+			</categorie>
+			<extra name="edt" value="3" />
+		</entree>
+		<entree libelle="EI4" identifiant="EI4">
+			<categorie libelle="Filière " rubrique="gpGen">
+				<entree identifiant="EI4 AGI" idOptionnel="1" forcer="1">
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI4/AGI/G1" forcer="1"/>
+						<entree identifiant="EI4/AGI/G2" forcer="1"/>
 					</categorie>
-					<categorie libelle="AGI " rubrique="gpGen">
-						<entree libelle="TP1" identifiant="TPAGI1" />
-						<entree libelle="TP2" identifiant="TPAGI2" />
-						<entree libelle="TP3" identifiant="TPAGI3" />
-						<entree libelle="TP4" identifiant="TPAGI4" />
-					</categorie>
-				</entree>
-				<entree libelle="IMQ " identifiant="IMQ">
-					<categorie libelle="IMQ " rubrique="gpGen">
-						<entree libelle="G1" identifiant="G1" />
-						<entree libelle="G2" identifiant="G2" />
-						<entree libelle="G3" identifiant="G3" />
-					</categorie>
-					<categorie libelle="IMQ " rubrique="gpGen">
-						<entree libelle="TP1" identifiant="TPIMQ1" />
-						<entree libelle="TP2" identifiant="TPIMQ2" />
-						<entree libelle="TP3" identifiant="TPIMQ3" />
-						<entree libelle="TP4" identifiant="TPIMQ4" />
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI4/AGI/TPA" forcer="1"/>
+						<entree identifiant="EI4/AGI/TPB" forcer="1"/>
 					</categorie>
 				</entree>
-				<entree libelle="II " identifiant="II">
-					<categorie libelle="II " rubrique="gpGen">
-						<entree libelle="G1" identifiant="G1" />
-						<entree libelle="G2" identifiant="G2" />
+				<entree identifiant="EI4 QSF" idOptionnel="1" forcer="1">
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI4/QSF/G1" forcer="1"/>
+						<entree identifiant="EI4/QSF/G2" forcer="1"/>
 					</categorie>
-					<categorie libelle="II " rubrique="gpGen">
-						<entree libelle="TP1" identifiant="TPII1" />
-						<entree libelle="TP2" identifiant="TPII2" />
-						<entree libelle="TP3" identifiant="TPII3" />
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI4/Q/TPA" forcer="1"/>
+						<entree identifiant="EI4/Q/TPB" forcer="1"/>
+						<entree identifiant="EI4/Q/TPC" forcer="1"/>
+					</categorie>
+				</entree>
+				<entree identifiant="INNO" idOptionnel="1" >
+					<categorie rubrique="gpGen">
+						<entree identifiant="G1" />
+					</categorie>
+					<categorie rubrique="gpGen">
+						<entree identifiant="Spécifique" />
 					</categorie>
 				</entree>
 			</categorie>
@@ -173,73 +138,33 @@
 				<entree libelle="1" identifiant="GE1" />
 				<entree libelle="2" identifiant="GE2" />
 				<entree libelle="3" identifiant="GE3" />
-				<entree libelle="4" identifiant="GE4" />
-			</categorie>
-			<extra name="edt" value="3" />
-		</entree>
-		<entree libelle="EI4" identifiant="EI4">
-			<categorie libelle="Filière " rubrique="gpGen">
-				<entree libelle="AGI" identifiant="AGI" idOptionnel="1">
-					<categorie libelle="AGI G" rubrique="gpGen">
-						<entree libelle="1" identifiant="G1" />
-						<entree libelle="2" identifiant="G2" />
-						<entree libelle="3" identifiant="G3" />
-					</categorie>
-					<categorie libelle="AGI TP" rubrique="gpGen">
-						<entree libelle="A" identifiant="TPA" />
-						<entree libelle="B" identifiant="TPB" />
-						<entree libelle="C" identifiant="TPC" />
-						<entree libelle="D" identifiant="TPD" />
-					</categorie>
-				</entree>
-				<entree libelle="QSF" identifiant="QSF" idOptionnel="1">
-					<categorie libelle="QSF G" rubrique="gpGen">
-						<entree libelle="1" identifiant="G1" />
-						<entree libelle="2" identifiant="G2" />
-					</categorie>
-					<categorie libelle="QSF TP" rubrique="gpGen">
-						<entree libelle="A" identifiant="EI4/Q/TPA" forcer="1" />
-						<entree libelle="B" identifiant="EI4/Q/TPB" forcer="1" />
-						<entree libelle="C" identifiant="EI4/Q/TPC" forcer="1" />
-					</categorie>
-				</entree>
-			</categorie>
-			<categorie libelle="Allemand GA" rubrique="gpAll">
-				<entree libelle="1" identifiant="GA1" />
-				<entree libelle="2" identifiant="GA2" />
-			</categorie>
-			<categorie libelle="Espagnol GE" rubrique="gpEsp">
-				<entree libelle="1" identifiant="GE1" />
-				<entree libelle="2" identifiant="GE2" />
-				<entree libelle="3" identifiant="GE3" />
-				<entree libelle="4" identifiant="GE4" />
 			</categorie>
 			<extra name="edt" value="4" />
 		</entree>
-		<entree libelle="EI5" identifiant="EI5">
+		<entree identifiant="EI5">
 			<categorie libelle="Filière " rubrique="gpGen">
 				<entree identifiant="EI5 AGI parcours IAIE" forcer="1" >
-					<categorie libelle="Groupe TD" rubrique="gpGen">
-						<entree libelle="1" identifiant="EI5 AGI-IAIE TD G1" forcer="1" />
-						<entree libelle="2" identifiant="EI5 AGI-IAIE TD G2" forcer="1" />
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI5 AGI-IAIE TD G1" forcer="1" />
+						<entree identifiant="EI5 AGI-IAIE TD G2" forcer="1" />
 					</categorie>
-					<categorie libelle="Groupe TP" rubrique="gpGen">
-						<entree libelle="1" identifiant="EI5 AGI-IAIE TP1" forcer="1" />
-						<entree libelle="2" identifiant="EI5 AGI-IAIE TP2" forcer="1" />
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI5 AGI-IAIE TP1" forcer="1" />
+						<entree identifiant="EI5 AGI-IAIE TP2" forcer="1" />
 					</categorie>
 				</entree>
 				<entree identifiant="EI5 AGI parcours IHMRV" forcer="1" />
 				<entree identifiant="EI5 QSF-S" forcer="1" >
-					<categorie libelle="Groupe TP" rubrique="gpGen">
-						<entree libelle="1" identifiant="EI5 QSF-S TP1" forcer="1" />
-						<entree libelle="2" identifiant="EI5 QSF-S TP2" forcer="1" />
-						<entree libelle="3" identifiant="EI5 QSF-S TP3" forcer="1" />
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI5 QSF-S TP1" forcer="1" />
+						<entree identifiant="EI5 QSF-S TP2" forcer="1" />
+						<entree identifiant="EI5 QSF-S TP3" forcer="1" />
 					</categorie>
 				</entree>
 				<entree identifiant="EI5 QSF-O" forcer="1" >
-					<categorie libelle="Groupe TP" rubrique="gpGen">
-						<entree libelle="1" identifiant="EI5 QSF-O TP1" forcer="1" />
-						<entree libelle="2" identifiant="EI5 QSF-O TP2" forcer="1" />
+					<categorie rubrique="gpGen">
+						<entree identifiant="EI5 QSF-O TP1" forcer="1" />
+						<entree identifiant="EI5 QSF-O TP2" forcer="1" />
 					</categorie>
 				</entree>
 			</categorie>
