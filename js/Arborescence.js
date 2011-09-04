@@ -32,23 +32,30 @@ window.addEvent('domready', function(){
 	});
 	
 	$('lienICal').addEvent('click', function(){
-		var URI = genereURI();
-		this.set('href', formulaire.get('action') + "?" + URI + "&format=ical");
 		chargeur.sauveVersCookie(URI);
 	});
+
+	function data2nodes(nodeJSON) {
+		var node = new Noeud(nodeJSON.libelle, nodeJSON.identifiant, new Hash(nodeJSON.extra), onSelectChange);
+		nodeJSON.categories.each(function(categorieJSON) {
+			var categorie = new Categorie(categorieJSON.libelle, categorieJSON.rubrique);
+			categorieJSON.noeuds.each(function(noeud) {
+				categorie.add(data2nodes(noeud));
+			});
+			node.addCategorie(categorie);
+		});
+		return node;
+	}
+
+	function onSelectChange(){
+		var lien = $('lienICal');
+		var URI = genereURI();
+		var href = formulaire.get('action') + "?" + URI + "&format=ical";
+		lien.set('href', href);
+		/*console.log('Href = ', href);*/
+	}
 });
 
-function data2nodes(nodeJSON) {
-	var node = new Noeud(nodeJSON.libelle, nodeJSON.identifiant, new Hash(nodeJSON.extra));
-	nodeJSON.categories.each(function(categorieJSON) {
-		var categorie = new Categorie(categorieJSON.libelle, categorieJSON.rubrique);
-		categorieJSON.noeuds.each(function(noeud) {
-			categorie.add(data2nodes(noeud));
-		});
-		node.addCategorie(categorie);
-	});
-	return node;
-}
 
 function genereHashDeSelection() {
 	var hash = new Hash();

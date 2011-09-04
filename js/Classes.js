@@ -23,11 +23,14 @@ var Noeud = new Class({
 	
 	LISTE_TYPE: 'div',
 	LISTE_ELEMENT: 'div',
+
+	onSelectChange: function(){},
 	
-	initialize: function(libelle, identifiant, extraValues) {
+	initialize: function(libelle, identifiant, extraValues, onSelectChange) {
 		this.libelle = libelle;
 		this.identifiant = identifiant;
-		this.extraValues = ($defined(extraValues)) ? extraValues : new Hash();
+		this.extraValues = $defined(extraValues) ? extraValues : new Hash();
+		this.onSelectChange = $defined(onSelectChange) ? onSelectChange : function(){};
 	},
 	
 	addCategorie: function(categorie) {
@@ -88,6 +91,7 @@ var Noeud = new Class({
 			noeud.affiche(parent);
 		else
 			$(parent).getChildren(this.LISTE_TYPE).destroy();
+		this.onSelectChange();
 	}
 });
 
