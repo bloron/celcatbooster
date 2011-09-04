@@ -4,18 +4,15 @@
 			<categorie libelle="Groupe " rubrique="gpGen">
 				<entree identifiant="TD G1" />
 				<entree identifiant="TD G2" />
-				<entree identifiant="TD G3" />
 			</categorie>
 			<categorie libelle="Groupe TP" rubrique="gpGen">
 				<entree libelle="1" identifiant="TP G1" />
 				<entree libelle="2" identifiant="TP G2" />
 				<entree libelle="3" identifiant="TP G3" />
-				<entree libelle="4" identifiant="TP G4" />
 			</categorie>
 			<categorie libelle="Anglais G" rubrique="gpEng">
 				<entree libelle="1" identifiant="Anglais G1" />
 				<entree libelle="2" identifiant="Anglais G2" />
-				<entree libelle="3" identifiant="Anglais G3" />
 			</categorie>
 			<categorie libelle="Espagnol " rubrique="gpEsp">
 				<entree libelle="Débutant" identifiant="Espagnol Débutant" />
