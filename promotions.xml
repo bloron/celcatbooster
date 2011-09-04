@@ -187,8 +187,8 @@
 			</categorie>
 			<extra name="edt" value="5" />
 		</entree>
-		<entree identifiant="MASTER ISMP QSF-O">
-			<extra name="edt" value="5" />
-		</entree>
+		<!--<entree identifiant="MASTER ISMP QSF-O">-->
+		<!--<extra name="edt" value="5" />-->
+		<!--</entree>-->
 	</categorie>
 </entree>
