@@ -50,6 +50,23 @@
 			<extra name="edt" value="2" />
 		</entree>
 		<entree libelle="EI2 PassMed" identifiant="EI2-PassMed">
+			<categorie libelle="Groupe TP" rubrique="gpGen">
+				<entree libelle="1" identifiant="TP1" />
+				<entree libelle="2" identifiant="TP2" />
+			</categorie>
+			<categorie libelle="Anglais G" rubrique="gpEng">
+				<entree libelle="1" identifiant="Anglais G1" />
+				<entree libelle="2" identifiant="Anglais G2" />
+				<entree libelle="3" identifiant="Anglais G3" />
+			</categorie>
+			<categorie libelle="Espagnol " rubrique="gpEsp">
+				<entree libelle="intermédiaire" identifiant="Espagnol intermédiaire" />
+				<entree libelle="avancé" identifiant="Espagnol avancé" />
+			</categorie>
+			<categorie libelle="Allemand " rubrique="gpAll">
+				<entree libelle="Débutant" identifiant="Allemand débutant" />
+				<entree libelle="Avancé" identifiant="Allemand avancé" />
+			</categorie>
 			<extra name="edt" value="6" />
 		</entree>
 		<entree libelle="EI3" identifiant="EI3">
