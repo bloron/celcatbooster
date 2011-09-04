@@ -33,7 +33,6 @@
 				<entree libelle="1" identifiant="G1" />
 				<entree libelle="2" identifiant="G2" />
 				<entree libelle="3" identifiant="G3" />
-				<entree libelle="4" identifiant="G4" />
 			</categorie>
 			<categorie libelle="Anglais G" rubrique="gpEng">
 				<entree libelle="1" identifiant="Anglais G1" />
