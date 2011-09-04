@@ -74,6 +74,9 @@
 				<entree libelle="GM1" identifiant="GM1" />
 				<entree libelle="GM2" identifiant="GM2" />
 				<entree libelle="GM3" identifiant="GM3" />
+				<entree libelle="GE1" identifiant="GE1" />
+				<entree libelle="GE2" identifiant="GE2" />
+				<entree libelle="GE3" identifiant="GE3" />
 				<entree libelle="GE4" identifiant="GE4" />
 			</categorie>
 			<categorie libelle="Mise à niveau " rubrique="gpGen">
@@ -88,22 +91,22 @@
 				<entree libelle="4" identifiant="G4" />
 				<entree libelle="5" identifiant="G5" />
 			</categorie>
-			<categorie libelle="Semestre 1 TP" rubrique="gpGen">
-				<entree libelle="A" identifiant="TPA" />
-				<entree libelle="B" identifiant="TPB" />
-				<entree libelle="C" identifiant="TPC" />
-				<entree libelle="D" identifiant="TPD" />
-			</categorie>
-			<categorie libelle="Semestre 2 TC" rubrique="gpGen">
-				<entree libelle="1" identifiant="TC/G1" />
-				<entree libelle="2" identifiant="TC/G2" />
-				<entree libelle="3" identifiant="TC/G3" />
-				<entree libelle="4" identifiant="TC/G4" />
-			</categorie>
-			<categorie libelle="Allemand G" rubrique="gpAll">
-				<entree libelle="1" identifiant="GA1" />
-				<entree libelle="2" identifiant="GA2" />
-			</categorie>
+			<!--<categorie libelle="Semestre 1 TP" rubrique="gpGen">-->
+			<!--<entree libelle="A" identifiant="TPA" />-->
+			<!--<entree libelle="B" identifiant="TPB" />-->
+			<!--<entree libelle="C" identifiant="TPC" />-->
+			<!--<entree libelle="D" identifiant="TPD" />-->
+			<!--</categorie>-->
+			<!--<categorie libelle="Semestre 2 TC" rubrique="gpGen">-->
+			<!--<entree libelle="1" identifiant="TC/G1" />-->
+			<!--<entree libelle="2" identifiant="TC/G2" />-->
+			<!--<entree libelle="3" identifiant="TC/G3" />-->
+			<!--<entree libelle="4" identifiant="TC/G4" />-->
+			<!--</categorie>-->
+			<!--<categorie libelle="Allemand G" rubrique="gpAll">-->
+			<!--<entree libelle="1" identifiant="GA1" />-->
+			<!--<entree libelle="2" identifiant="GA2" />-->
+			<!--</categorie>-->
 			<categorie libelle="Espagnol G" rubrique="gpEsp">
 				<entree libelle="1" identifiant="GE1" />
 				<entree libelle="2" identifiant="GE2" />
