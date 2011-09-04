@@ -167,6 +167,7 @@
 					<categorie rubrique="gpGen">
 						<entree identifiant="EI5 AGI-IAIE TP1" forcer="1" />
 						<entree identifiant="EI5 AGI-IAIE TP2" forcer="1" />
+						<entree identifiant="EI5 AGI-IAIE TP3" forcer="1" />
 					</categorie>
 				</entree>
 				<entree identifiant="EI5 AGI parcours IHMRV" forcer="1" />
