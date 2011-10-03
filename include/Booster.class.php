@@ -44,7 +44,7 @@ class Booster {
 		$formater = null;
 		switch ($format) {
 			case Booster::$ICAL:
-				header('Content-type: text/calendar');
+				header('Content-type: text/calendar; charset=utf-8');
 				$formater = new ICal($sourceXML, $this->getSourceICS());
 			break;
 			

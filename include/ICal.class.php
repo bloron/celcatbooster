@@ -24,6 +24,7 @@ class ICal extends Formatter
 				if(in_array($id, $ids)){
 					for($j = 0; $j < 9; $j++){
 						$ligne = $lignes[$i + $j];
+						$ligne = str_replace("SUMMARY", "SUMMARY;CHARSET=UTF-8", $ligne);
 						$estTitre = strpos($ligne, "SUMMARY") !== false;
 						$result .= $estTitre ? $this->filtreTitre($ligne) : $ligne;
 						$result .= "\n";
