@@ -14,12 +14,12 @@ class Fabrique {
 	public static function creeBooster($type) {
 		$booster = null;
 		switch($type){
-			case self::PLANNING_EI1 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g2047"); break;
-			case self::PLANNING_EI2 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g17238"); break;
-			case self::PLANNING_EI3 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g2096"); break;
-			case self::PLANNING_EI4 : 			$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g15807"); break;
-			case self::PLANNING_EI2_PASSMED : 	$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g33515"); break;
-			case self::PLANNING_EI5 :		 	$booster = new Booster("nead.univ-angers.fr", "/celcat/istia/g29804"); break;
+			case self::PLANNING_EI1 : 			$booster = new BoosterEI1(); break;
+			case self::PLANNING_EI2 : 			$booster = new BoosterEI2(); break;
+			case self::PLANNING_EI3 : 			$booster = new BoosterEI3(); break;
+			case self::PLANNING_EI4 : 			$booster = new BoosterEI4(); break;
+			case self::PLANNING_EI2_PASSMED : 	$booster = new BoosterEI2Passmed(); break;
+			case self::PLANNING_EI5 :		 	$booster = new BoosterEI5(); break;
 			default : break;
 		}
 		return $booster;

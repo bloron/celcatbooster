@@ -185,6 +185,13 @@
 					</categorie>
 				</entree>
 			</categorie>
+			<categorie libelle="Anglais " rubrique="gpEng">
+				<entree libelle=" Groupe TOEIC" identifiant="Groupe TOEIC" forcer="1" />
+				<entree libelle=" Groupe Anglais LV1" identifiant="Anglais LV1" forcer="1" />
+			</categorie>
+			<categorie libelle="LV2 Espagnol ou Allemand" rubrique="gpEsp">
+				<entree libelle="" identifiant="1" />
+			</categorie>
 			<extra name="edt" value="5" />
 		</entree>
 		<!--<entree identifiant="MASTER ISMP QSF-O">-->

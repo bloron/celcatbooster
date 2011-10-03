@@ -130,8 +130,9 @@ class Booster {
 			if($this->pasDeGroupeAnglais()){
 				return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group, true);
 			}
-			else
+			else{
 				return $this->groupesCorrespondent($this->groupeAnglais, $cours->resources->group);
+			}
 		}
 		return false;
 	}
@@ -161,17 +162,28 @@ class Booster {
 	}
 	
 	protected function estUnCoursAnglais(SimpleXMLElement $cours){
-		return (strpos(strtolower($cours->resources->module->item[0]), "anglais") !== false);
+		return $this->estUnCoursDeType($cours, "anglais");
 	}
 	
 	protected function estUnCoursAllemand(SimpleXMLElement $cours){
-		return (strpos(strtolower($cours->resources->module->item[0]), "allemand") !== false);
+		return $this->estUnCoursDeType($cours, "allemand");
 	}
 	
 	protected function estUnCoursEspagnol(SimpleXMLElement $cours){
-		return (strpos(strtolower($cours->resources->module->item[0]), "espagnol") !== false);
+		return $this->estUnCoursDeType($cours, "espagnol");
 	}
 	
+	protected function estUnCoursDeType(SimpleXMLElement $cours, $type){
+		$trouve = false;
+		$count = $cours->resources->module->count();
+		$i = 0;
+		while(!$trouve && $i < $count){
+			$trouve = strpos(strtolower($cours->resources->module->item[$i]), strtolower($type)) !== false;
+			$i++;
+		}
+		return $trouve;
+	}
+
 	protected function groupesCorrespondent($mesGroupes, SimpleXMLElement $lesGroupesDuCours, $trace = false){
 		$groupesAppartenance = (is_array($mesGroupes)) ? $mesGroupes : array($mesGroupes);
 		$groupesDuCours = (count($lesGroupesDuCours->item) > 1) ? $lesGroupesDuCours->item : array($lesGroupesDuCours->item[0]);

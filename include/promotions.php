@@ -4,9 +4,9 @@ $racine = simplexml_load_string($xml);
 
 echo nodeize($racine);
 
-function nodeize(SimpleXMLElement $entree, $identifiantPrécédent = ""){
-	$identifiant = ($identifiantPrécédent == "") ? $entree['identifiant'] : $identifiantPrécédent . "/" . $entree['identifiant'];
-	$optionnel = ($entree['idOptionnel'] == "1") ? ";" . $identifiantPrécédent . " " . $entree['identifiant'] : "";
+function nodeize(SimpleXMLElement $entree, $identifiantPrecedent = ""){
+	$identifiant = ($identifiantPrecedent == "") ? $entree['identifiant'] : $identifiantPrecedent . "/" . $entree['identifiant'];
+	$optionnel = ($entree['idOptionnel'] == "1") ? ";" . $identifiantPrecedent . " " . $entree['identifiant'] : "";
 	if($entree['forcer'] == true)
 		$identifiant = $entree['identifiant'];
 	$json = "{" .
