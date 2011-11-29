@@ -7,6 +7,7 @@ class Fabrique {
 	const PLANNING_EI4 = 4;
 	const PLANNING_EI5 = 5;
 	const PLANNING_EI2_PASSMED = 6;
+	const PLANNING_MASTER_SDS = 7;
 	
 	private function __construct(){
 	}
@@ -20,6 +21,7 @@ class Fabrique {
 			case self::PLANNING_EI4 : 			$booster = new BoosterEI4(); break;
 			case self::PLANNING_EI2_PASSMED : 	$booster = new BoosterEI2Passmed(); break;
 			case self::PLANNING_EI5 :		 	$booster = new BoosterEI5(); break;
+			case self::PLANNING_MASTER_SDS :	$booster = new BoosterMasterSDS(); break;
 			default : break;
 		}
 		return $booster;

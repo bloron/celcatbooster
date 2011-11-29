@@ -70,47 +70,56 @@
 			<extra name="edt" value="6" />
 		</entree>
 		<entree libelle="EI3" identifiant="EI3">
-			<categorie libelle="Mise à niveau " rubrique="gpGen">
-				<entree libelle="GM1" identifiant="GM1" />
-				<entree libelle="GM2" identifiant="GM2" />
-				<entree libelle="GM3" identifiant="GM3" />
-				<entree libelle="GE1" identifiant="GE1" />
-				<entree libelle="GE2" identifiant="GE2" />
-				<entree libelle="GE3" identifiant="GE3" />
-				<entree libelle="GE4" identifiant="GE4" />
-			</categorie>
-			<categorie libelle="Mise à niveau " rubrique="gpGen">
-				<entree libelle="C G1" identifiant="C1" />
-				<entree libelle="C G2" identifiant="C2" />
-				<entree libelle="VB" identifiant="VB" />
-			</categorie>
+
+			<!-- A n'activer que durant la période de mise à niveau -->
+			<!--<categorie libelle="Mise à niveau " rubrique="gpGen">-->
+			<!--<entree libelle="GM1" identifiant="GM1" />-->
+			<!--<entree libelle="GM2" identifiant="GM2" />-->
+			<!--<entree libelle="GM3" identifiant="GM3" />-->
+			<!--<entree libelle="GE1" identifiant="GE1" />-->
+			<!--<entree libelle="GE2" identifiant="GE2" />-->
+			<!--<entree libelle="GE3" identifiant="GE3" />-->
+			<!--<entree libelle="GE4" identifiant="GE4" />-->
+			<!--</categorie>-->
+			<!--<categorie libelle="Mise à niveau " rubrique="gpGen">-->
+			<!--<entree libelle="C G1" identifiant="C1" />-->
+			<!--<entree libelle="C G2" identifiant="C2" />-->
+			<!--<entree libelle="VB" identifiant="VB" />-->
+			<!--</categorie>-->
+
 			<categorie libelle="Semestre 1 Groupe " rubrique="gpGen">
 				<entree libelle="1" identifiant="G1" />
 				<entree libelle="2" identifiant="G2" />
 				<entree libelle="3" identifiant="G3" />
 				<entree libelle="4" identifiant="G4" />
 				<entree libelle="5" identifiant="G5" />
+				<entree libelle="6" identifiant="G6" />
 			</categorie>
-			<!--<categorie libelle="Semestre 1 TP" rubrique="gpGen">-->
-			<!--<entree libelle="A" identifiant="TPA" />-->
-			<!--<entree libelle="B" identifiant="TPB" />-->
-			<!--<entree libelle="C" identifiant="TPC" />-->
-			<!--<entree libelle="D" identifiant="TPD" />-->
-			<!--</categorie>-->
+			<categorie libelle="Semestre 1 TP" rubrique="gpGen">
+				<entree libelle="A" identifiant="TPA" />
+				<entree libelle="B" identifiant="TPB" />
+				<entree libelle="C" identifiant="TPC" />
+				<entree libelle="D" identifiant="TPD" />
+				<entree libelle="E" identifiant="TPE" />
+				<entree libelle="F" identifiant="TPF" />
+				<entree libelle="G" identifiant="TPG" />
+				<entree libelle="H" identifiant="TPH" />
+			</categorie>
 			<!--<categorie libelle="Semestre 2 TC" rubrique="gpGen">-->
 			<!--<entree libelle="1" identifiant="TC/G1" />-->
 			<!--<entree libelle="2" identifiant="TC/G2" />-->
 			<!--<entree libelle="3" identifiant="TC/G3" />-->
 			<!--<entree libelle="4" identifiant="TC/G4" />-->
 			<!--</categorie>-->
-			<!--<categorie libelle="Allemand G" rubrique="gpAll">-->
-			<!--<entree libelle="1" identifiant="GA1" />-->
-			<!--<entree libelle="2" identifiant="GA2" />-->
-			<!--</categorie>-->
 			<categorie libelle="Espagnol G" rubrique="gpEsp">
 				<entree libelle="1" identifiant="GE1" />
 				<entree libelle="2" identifiant="GE2" />
 				<entree libelle="3" identifiant="GE3" />
+				<entree libelle="4" identifiant="GE4" />
+			</categorie>
+			<categorie libelle="Allemand G" rubrique="gpAll">
+				<entree libelle="1" identifiant="GA1" />
+				<entree libelle="2" identifiant="GA2" />
 			</categorie>
 			<extra name="edt" value="3" />
 		</entree>
@@ -145,6 +154,20 @@
 						<entree identifiant="Spécifique" />
 					</categorie>
 				</entree>
+			</categorie>
+			<categorie libelle="Communication " rubrique="gpCom">
+				<entree identifiant="G1" />
+				<entree identifiant="G2" />
+				<entree identifiant="G3" />
+				<entree identifiant="G4" />
+				<entree identifiant="G5" />
+			</categorie>
+			<categorie libelle="Anglais " rubrique="gpEng">
+				<entree identifiant="G1" />
+				<entree identifiant="G2" />
+				<entree identifiant="G3" />
+				<entree identifiant="G4" />
+				<entree identifiant="G5" />
 			</categorie>
 			<categorie libelle="Allemand G" rubrique="gpAll">
 				<entree libelle="1" identifiant="GA1" />
@@ -194,8 +217,11 @@
 			</categorie>
 			<extra name="edt" value="5" />
 		</entree>
-		<!--<entree identifiant="MASTER ISMP QSF-O">-->
-		<!--<extra name="edt" value="5" />-->
-		<!--</entree>-->
+		<entree identifiant="MASTER SDS">
+			<categorie libelle="MASTER 2 SDS" rubrique="gpGen">
+				<entree libelle="" identifiant="MASTER2 SDS" forcer="1" />
+			</categorie>
+			<extra name="edt" value="7" />
+		</entree>
 	</categorie>
 </entree>

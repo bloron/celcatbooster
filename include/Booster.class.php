@@ -175,7 +175,7 @@ class Booster {
 	
 	protected function estUnCoursDeType(SimpleXMLElement $cours, $type){
 		$trouve = false;
-		$count = $cours->resources->module->count();
+		$count = count($cours->resources->children());
 		$i = 0;
 		while(!$trouve && $i < $count){
 			$trouve = strpos(strtolower($cours->resources->module->item[$i]), strtolower($type)) !== false;
