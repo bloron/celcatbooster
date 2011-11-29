@@ -4,8 +4,14 @@ class Booster {
 	
 	public static $XML = "xml";
 	public static $ICAL = "ical";
+	public static $GROUP_IDENTIFIER = "gp";
+	public static $GROUPES_GENERAUX = "gpGen";
+	public static $GROUPE_ANGLAIS = "gpEng";
+	public static $GROUPE_ALLEMAND = "gpAll";
+	public static $GROUPE_ESPAGNOL = "gpEsp";
 	
 	private $serveur;
+	protected $groupes;
 	protected $groupesGeneraux;
 	protected $groupeAnglais;
 	protected $groupeAllemand;
@@ -21,8 +27,21 @@ class Booster {
 		$this->setGroupeAnglais(array());
 		$this->setGroupeAllemand(array());
 		$this->setGroupeEspagnol(array());	
+		$this->groupes = array();
 	}
 	
+	public function setGroupes(array $vars){
+		foreach($vars as $key => $value){
+			if(String::startswith($key, self::$GROUP_IDENTIFIER)){
+				$this->groupes[$key] = explode(";", $value);
+			}
+		}
+		$this->setGroupesGeneraux(explode(";", utf8_encode($vars[self::$GROUPES_GENERAUX])));
+		$this->setGroupeAnglais((isset($vars[self::$GROUPE_ANGLAIS])) ? $vars[self::$GROUPE_ANGLAIS] : "");
+		$this->setGroupeAllemand((isset($vars[self::$GROUPE_ALLEMAND])) ? $vars[self::$GROUPE_ALLEMAND] : "");
+		$this->setGroupeEspagnol((isset($vars[self::$GROUPE_ESPAGNOL])) ? $vars[self::$GROUPE_ESPAGNOL] : "");
+	}
+
 	public function setGroupesGeneraux($groupes){
 		$this->groupesGeneraux = in_array("", $groupes) ? array() : $groupes;
 	}
@@ -87,10 +106,16 @@ class Booster {
 			return true;
 		if($this->estUnCoursDeLangue($cours))
 			return $this->concerneMesGroupesDeLangue($cours);
+		else if($this->concerneUnGroupeParticulier($cours))
+			return true;
 		else
 			return $this->concerneMesGroupesGeneraux($cours);
 	}
 	
+	protected function concerneUnGroupeParticulier(SimpleXMLElement $cours){
+		return false;
+	}
+
 	protected function concerneMesGroupesGeneraux(SimpleXMLElement $cours){
 		if($this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group))
 			return true;

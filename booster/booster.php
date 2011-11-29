@@ -10,10 +10,7 @@ else{
 	$booster = Fabrique::creeBooster($_GET[EMPLOI_DU_TEMPS]);
 	if($booster == null)
 		die("Erreur : l'emploi du temps demandé est inconnu.");
-	$booster->setGroupesGeneraux(explode(";", utf8_encode($_GET[GROUPES_GENERAUX])));
-	$booster->setGroupeAnglais((isset($_GET[GROUPE_ANGLAIS])) ? $_GET[GROUPE_ANGLAIS] : "");
-	$booster->setGroupeAllemand((isset($_GET[GROUPE_ALLEMAND])) ? $_GET[GROUPE_ALLEMAND] : "");
-	$booster->setGroupeEspagnol((isset($_GET[GROUPE_ESPAGNOL])) ? $_GET[GROUPE_ESPAGNOL] : "");
+	$booster->setGroupes($_GET);
 }
 
 $booster->afficheEmploiDuTemps($_GET['format']);

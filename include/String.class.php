@@ -15,4 +15,12 @@ class String {
 		}
 		return $substr;
 	}
+
+	public static function startswith($hay, $needle) {
+		return substr($hay, 0, strlen($needle)) === $needle;
+	}
+
+	public static function endswith($hay, $needle) {
+		return substr($hay, -strlen($needle)) === $needle;
+	}
 }
