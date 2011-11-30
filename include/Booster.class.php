@@ -13,10 +13,6 @@ class Booster {
 	private $serveur;
 	private $specialFilters;
 	protected $groupes;
-	protected $groupesGeneraux;
-	protected $groupeAnglais;
-	protected $groupeAllemand;
-	protected $groupeEspagnol;
 	protected $fichierXML;
 	protected $fichierICS;
 	
@@ -29,10 +25,6 @@ class Booster {
 		), $specialFilters);
 		$this->fichierXML = $cheminFichierDistant . ".xml";
 		$this->fichierICS = $cheminFichierDistant . ".ics";
-		$this->setGroupesGeneraux(array());
-		$this->setGroupeAnglais(array());
-		$this->setGroupeAllemand(array());
-		$this->setGroupeEspagnol(array());	
 		$this->groupes = array();
 	}
 	
@@ -40,30 +32,12 @@ class Booster {
 		foreach($vars as $key => $value){
 			if(String::startswith($key, self::$GROUP_IDENTIFIER)){
 				$this->groupes[$key] = explode(";", $value);
+				foreach($this->groupes[$key] as $subkey => $subvalue)
+					$this->groupes[$key][$subkey] = utf8_encode($subvalue);
 			}
 		}
-		$this->setGroupesGeneraux(explode(";", utf8_encode($vars[self::$GROUPES_GENERAUX])));
-		$this->setGroupeAnglais((isset($vars[self::$GROUPE_ANGLAIS])) ? $vars[self::$GROUPE_ANGLAIS] : "");
-		$this->setGroupeAllemand((isset($vars[self::$GROUPE_ALLEMAND])) ? $vars[self::$GROUPE_ALLEMAND] : "");
-		$this->setGroupeEspagnol((isset($vars[self::$GROUPE_ESPAGNOL])) ? $vars[self::$GROUPE_ESPAGNOL] : "");
 	}
 
-	public function setGroupesGeneraux($groupes){
-		$this->groupesGeneraux = in_array("", $groupes) ? array() : $groupes;
-	}
-	
-	public function setGroupeAnglais($groupe){
-		$this->groupeAnglais = $groupe;
-	}
-	
-	public function setGroupeAllemand($groupe){
-		$this->groupeAllemand = $groupe;
-	}
-	
-	public function setGroupeEspagnol($groupe){
-		$this->groupeEspagnol = $groupe;
-	}
-	
 	public function afficheEmploiDuTemps($format){
 		$sourceXML = simplexml_load_string($this->emploiDuTemps());
 		$formater = null;
@@ -126,22 +100,18 @@ class Booster {
 		}
 	}
 	
-	protected function concerneUnGroupeParticulier(SimpleXMLElement $cours){
-		return false;
-	}
-
 	protected function concerneMesGroupesGeneraux(SimpleXMLElement $cours){
-		if($this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group))
+		if($this->groupesCorrespondent($this->groupes[self::$GROUPES_GENERAUX], $cours->resources->group))
 			return true;
 		return false;
 	}
 	
 	protected function aucunFiltreGeneralDefini(){
-		return count($this->groupesGeneraux) == 0;
+		return count($this->groupes[self::$GROUPES_GENERAUX]) == 0;
 	}
 	
 	protected function pasDeSecondeLangue(){
-		return ($this->groupeAllemand == "" AND $this->groupeEspagnol == "");
+		return (!(isset($this->groupes[self::$GROUPE_ESPAGNOL]) OR isset($this->groupes[self::$GROUPE_ESPAGNOL])));
 	}
 	
 	protected function coursSansGroupes(SimpleXMLElement $cours){
@@ -149,23 +119,22 @@ class Booster {
 	}
 
 	private function filtreAnglais(SimpleXMLElement $cours){
-		return $this->filtreLangues($cours, $this->groupeAnglais);
+		return $this->filtreLangues($cours, $this->groupes[self::$GROUPE_ANGLAIS]);
 	}
 	
 	private function filtreEspagnol(SimpleXMLElement $cours){
-		return $this->filtreLangues($cours, $this->groupeEspagnol);
+		return $this->filtreLangues($cours, $this->groupes[self::$GROUPE_ESPAGNOL]);
 	}
 	
 	private function filtreAllemand(SimpleXMLElement $cours){
-		return $this->filtreLangues($cours, $this->groupeAllemand);
+		return $this->filtreLangues($cours, $this->groupes[self::$GROUPE_ALLEMAND]);
 	}
 	
-	private function filtreLangues(SimpleXMLElement $cours, $groupeSpecial){
-		if($groupeSpecial != "")
-			return $this->groupesCorrespondent($groupeSpecial, $cours->resources->group);
+	private function filtreLangues(SimpleXMLElement $cours, $groupesSpeciaux){
+		if(is_array($groupesSpeciaux))
+			return $this->groupesCorrespondent($groupesSpeciaux, $cours->resources->group);
 		else
-			return $this->groupesCorrespondent($this->groupesGeneraux, $cours->resources->group);
-		return false;
+			return $this->groupesCorrespondent($this->groupes[self::$GROUPES_GENERAUX], $cours->resources->group);
 	}
 	
 	protected function estUnCoursDeType(SimpleXMLElement $cours, $type){
@@ -215,5 +184,9 @@ class Booster {
 			$contenuFichier .= substr($buffer, strpos($buffer, '<'));
 		}
 		return $contenuFichier;
+	}
+
+	public static function debug($var){
+		echo "<pre>" . print_r($var, true) . "</pre>";
 	}
 }
