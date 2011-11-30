@@ -6,7 +6,7 @@ class BoosterEI5 extends Booster {
 	}
 		
 	protected function concerneMonGroupeAnglais(SimpleXMLElement $cours){
-		if($this->estUnCoursAnglais($cours) && !$this->pasDeGroupeAnglais()){
+		if($this->estUnCoursDeType($cours, "anglais") && $this->groupeAnglais != ""){
 			$remarque = strtolower(trim($cours->notes));
 			$groupe = strtolower(trim($this->groupeAnglais));
 			return strpos($remarque, $groupe) !== false;
@@ -15,14 +15,14 @@ class BoosterEI5 extends Booster {
 	}
 
 	protected function concerneMonGroupeAllemand(SimpleXMLElement $cours){
-		if($this->estUnCoursAllemand($cours)){
+		if($this->estUnCoursDeType($cours, "allemand")){
 			return !$this->pasDeSecondeLangue();
 		}
 		return false;
 	}
 
 	protected function concerneMonGroupeEspagnol(SimpleXMLElement $cours){
-		if($this->estUnCoursEspagnol($cours)){
+		if($this->estUnCoursDeType($cours, "espagnol")){
 			return !$this->pasDeSecondeLangue();
 		}
 		return false;
