@@ -30,9 +30,9 @@
 				<entree libelle="2" identifiant="G2" />
 			</categorie>
 			<categorie libelle="Groupe TP" rubrique="gpGen">
-				<entree libelle="1" identifiant="G1" />
-				<entree libelle="2" identifiant="G2" />
-				<entree libelle="3" identifiant="G3" />
+				<entree libelle="1" identifiant="TP1" />
+				<entree libelle="2" identifiant="TP2" />
+				<entree libelle="3" identifiant="TP3" />
 			</categorie>
 			<categorie libelle="Anglais G" rubrique="gpEng">
 				<entree libelle="1" identifiant="Anglais G1" />
