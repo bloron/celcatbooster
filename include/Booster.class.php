@@ -13,6 +13,7 @@ class Booster {
 	private $serveur;
 	private $specialFilters;
 	protected $groupes;
+	protected $groupesStrings;
 	protected $fichierXML;
 	protected $fichierICS;
 	
@@ -28,10 +29,14 @@ class Booster {
 		$this->groupes = array();
 	}
 	
+	/**
+	* $vars array Tableau des groupes, de la forme $vars['gpGen'] = "EI5/EI5%20AGI/..."; $vars['gpEng'] = "...";
+	*/
 	public function setGroupes(array $vars){
 		foreach($vars as $key => $value){
 			if(String::startswith($key, self::$GROUP_IDENTIFIER)){
 				$this->groupes[$key] = explode(";", $value);
+				$this->groupesStrings[$key] = utf8_encode($value);
 				foreach($this->groupes[$key] as $subkey => $subvalue)
 					$this->groupes[$key][$subkey] = utf8_encode($subvalue);
 			}

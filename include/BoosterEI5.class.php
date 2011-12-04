@@ -11,10 +11,17 @@ class BoosterEI5 extends Booster {
 		
 	protected function concerneMonGroupeAnglais(SimpleXMLElement $cours){
 		$remarque = strtolower(trim($cours->notes));
+		$profs = array();
+		foreach($cours->resources->staff->item as $item){
+			$profs[] = (string) $item;
+		}
 		$matched = false;
 		foreach($this->groupes[self::$GROUPE_ANGLAIS] as $monGroupe){
 			$monGroupe = strtolower(trim($monGroupe));
-			$matched = ($matched OR strpos($remarque, $monGroupe) !== false);
+			$monProf = (in_array("FERRIER,Catherine", $profs) && strpos($this->groupesStrings[self::$GROUPES_GENERAUX], "AGI"));
+			$monProf = $monProf ||
+						(in_array("REVERDY,Valerie", $profs) && strpos($this->groupesStrings[self::$GROUPES_GENERAUX], "QSF"));
+			$matched = ($matched OR ($monProf AND strpos($remarque, $monGroupe) !== false));
 		}
 		return $matched;
 	}
