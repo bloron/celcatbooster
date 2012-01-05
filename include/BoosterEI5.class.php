@@ -23,7 +23,7 @@ class BoosterEI5 extends Booster {
 						(in_array("REVERDY,Valerie", $profs) && strpos($this->groupesStrings[self::$GROUPES_GENERAUX], "QSF"));
 			$matched = ($matched OR ($monProf AND strpos($remarque, $monGroupe) !== false));
 		}
-		return $matched;
+		return $matched OR $this->groupesCorrespondent("EI5 AGI", $cours->resources->group);
 	}
 
 	/* Les EI5 actuels (2011-2012) ont Allemand et Espagnol en même temps */
@@ -33,5 +33,12 @@ class BoosterEI5 extends Booster {
 
 	protected function concerneMonGroupeEspagnol(SimpleXMLElement $cours){
 		return !$this->pasDeSecondeLangue();
+	}
+	
+	/***** REDEFINITION pour la gestion de groupes ultra spécifiques (EI5 AGI pour définir EI5 IAIE et EI5 IHM-RV) *****/
+	protected function groupesCorrespondent($mesGroupes, SimpleXMLElement $lesGroupesDuCours){
+		$groupesAppartenance = (is_array($mesGroupes)) ? $mesGroupes : array($mesGroupes);
+		$groupesAppartenance[] = "EI5 AGI";
+		return parent::groupesCorrespondent($groupesAppartenance, $lesGroupesDuCours);
 	}
 }
