@@ -2,30 +2,25 @@
 
 class Booster {
 	
-	public static $XML = "xml";
-	public static $ICAL = "ical";
 	public static $GROUP_IDENTIFIER = "gp";
 	public static $GROUPES_GENERAUX = "gpGen";
 	public static $GROUPE_ANGLAIS = "gpEng";
 	public static $GROUPE_ALLEMAND = "gpAll";
 	public static $GROUPE_ESPAGNOL = "gpEsp";
 	
-	private $serveur;
+	private $sourceXML;
+    private $resource;
 	private $specialFilters;
 	protected $groupes;
 	protected $groupesStrings;
-	protected $fichierXML;
-	protected $fichierICS;
 	
-	public function __construct($serveur, $cheminFichierDistant, array $specialFilters = array()){
-		$this->serveur = $serveur;
+	public function __construct($dataResource, array $specialFilters = array()){
+		$this->resource = $dataResource;
 		$this->specialFilters = array_merge(array(
 			"anglais"	=> "filtreAnglais",
 			"espagnol"	=> "filtreEspagnol",
 			"allemand"	=> "filtreAllemand"
 		), $specialFilters);
-		$this->fichierXML = $cheminFichierDistant . ".xml";
-		$this->fichierICS = $cheminFichierDistant . ".ics";
 		$this->groupes = array();
 	}
 	
@@ -43,22 +38,11 @@ class Booster {
 		}
 	}
 
-	public function afficheEmploiDuTemps($format){
-		$sourceXML = simplexml_load_string($this->emploiDuTemps());
-		$formater = null;
-		switch ($format) {
-			case Booster::$ICAL:
-				header('Content-type: text/calendar; charset=utf-8');
-				$formater = new ICal($sourceXML, $this->getSourceICS());
-			break;
-			
-			case Booster::$XML:
-			default:
-				header('Content-type: text/xml');
-				$formater = new XMLCal($sourceXML);
-			break;
-		}
-		echo $formater->format();
+	public function afficheEmploiDuTemps(Formatter $formatter){
+        $emploiDuTempsCleaned = $this->emploiDuTemps();
+        $xmlAssocie = simplexml_load_string($emploiDuTempsCleaned);
+        header($formatter->getContentType());
+		echo $formatter->format($xmlAssocie);
 	}
 	
 	public function emploiDuTemps(){
@@ -116,30 +100,38 @@ class Booster {
 	}
 	
 	protected function pasDeSecondeLangue(){
-		return (!(isset($this->groupes[self::$GROUPE_ESPAGNOL]) OR isset($this->groupes[self::$GROUPE_ESPAGNOL])));
+		return (!($this->issetGroup(self::$GROUPE_ESPAGNOL) OR $this->issetGroup(self::$GROUPE_ESPAGNOL)));
 	}
+    
+    private function issetGroup($groupKey) {
+        return isset($this->groupes[$groupKey]);
+    }
+    
+    private function getGroup($groupKey) {
+        return $this->issetGroup($groupKey) ? $this->groupes[$groupKey] : array();
+    }
 	
 	protected function coursSansGroupes(SimpleXMLElement $cours){
 		return !isset($cours->resources->group);
 	}
 
 	private function filtreAnglais(SimpleXMLElement $cours){
-		return $this->filtreLangues($cours, $this->groupes[self::$GROUPE_ANGLAIS]);
+		return $this->filtreLangues($cours, $this->getGroup(self::$GROUPE_ANGLAIS));
 	}
 	
 	private function filtreEspagnol(SimpleXMLElement $cours){
-		return $this->filtreLangues($cours, $this->groupes[self::$GROUPE_ESPAGNOL]);
+		return $this->filtreLangues($cours, $this->getGroup(self::$GROUPE_ESPAGNOL));
 	}
 	
 	private function filtreAllemand(SimpleXMLElement $cours){
-		return $this->filtreLangues($cours, $this->groupes[self::$GROUPE_ALLEMAND]);
+		return $this->filtreLangues($cours, $this->getGroup(self::$GROUPE_ALLEMAND));
 	}
 	
 	private function filtreLangues(SimpleXMLElement $cours, $groupesSpeciaux){
 		if(is_array($groupesSpeciaux))
 			return $this->groupesCorrespondent($groupesSpeciaux, $cours->resources->group);
 		else
-			return $this->groupesCorrespondent($this->groupes[self::$GROUPES_GENERAUX], $cours->resources->group);
+			return $this->groupesCorrespondent($this->getGroup(self::$GROUPES_GENERAUX), $cours->resources->group);
 	}
 	
 	protected function estUnCoursDeType(SimpleXMLElement $cours, $type){
@@ -164,34 +156,14 @@ class Booster {
 	}
 	
 	private function getSourceXML(){
-		return $this->getFichierDistant($this->serveur, $this->fichierXML);
+		return $this->sourceXML;
 	}
-	
-	private function getSourceICS(){
-		return $this->getFichierDistant($this->serveur, $this->fichierICS);
-	}
-	
-	public static function getFichierDistant($serveur, $chemin){
-		$contenuFichier = "";
-		$socket = fsockopen($serveur, 80);
-		if($socket !== false){
-			$poststring = 
-			
-	            "GET ". $chemin ." HTTP/1.0\r\n" . 
-	            "Connection: close\r\n\r\n"; 
+    
+    public function getResource() {
+        return $this->resource;
+    }
 
-			fputs($socket, $poststring); 
-	        $buffer = ''; 
-	        while(!feof($socket)) 
-	            $buffer .= fgets($socket); 
-	
-	        fclose($socket);
-			$contenuFichier .= substr($buffer, strpos($buffer, '<'));
-		}
-		return $contenuFichier;
-	}
-
-	public static function debug($var){
-		echo "<pre>" . print_r($var, true) . "</pre>";
-	}
+    public function setSourceXML($sourceXML) {
+        $this->sourceXML = $sourceXML;
+    }
 }

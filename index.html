@@ -1,18 +1,17 @@
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="js/mootools-1.2.4-core.js"></script>
+        <script src="js/Classes.js"></script>
+        <script src="js/Arborescence.js"></script>
+    </head>
 
-<script src="js/mootools-1.2.4-core.js"></script>
-<script src="js/Classes.js"></script>
-<script src="js/Arborescence.js"></script>
-
-<form id="selecteur" action="booster/booster.php" method="get" target="booster" >
-	<fieldset>
-	<legend>Sélection des critères</legend>
-	<div id="selection"></div>
-	<span>Visualiser <a id="lienInterne" href="#">ci-dessous</a>, <a id="lienExterne" href="#" target="_blank">dans une nouvelle page</a> ou <a id="lienICal" href="#" target="_blank">au format iCalendar</a>.</span>
-	</fieldset>
-</form>
-<iframe id="celcatboosterInnerFrame" src="" height="900px" width="100%"></iframe>
+    <form id="selecteur" action="celcat/booster.php" method="get" target="booster" >
+        <fieldset>
+            <legend>Sélection des critères</legend>
+            <div id="selection"></div>
+            <span>Visualiser <a id="lienInterne" href="#">ci-dessous</a>, <a id="lienExterne" href="#" target="_blank">dans une nouvelle page</a> ou <a id="lienICal" href="#" target="_blank">au format iCalendar</a>.</span>
+        </fieldset>
+    </form>
+    <iframe id="celcatboosterInnerFrame" src="" style="height: 900px;width:100%;"></iframe>
 </html>

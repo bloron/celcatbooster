@@ -4,13 +4,12 @@ class ICal extends Formatter
 {
 	private $sourceICS;
 	
-	public function __construct(SimpleXMLElement $sourceXML, $sourceICS){
-		parent::__construct($sourceXML);
+	public function __construct($sourceICS){
 		$this->sourceICS = $sourceICS;
 	}
 	
-	public function format(){
-		$ids = $this->listeIdentifiants($this->sourceXML);
+	public function format(SimpleXMLElement $source){
+		$ids = $this->listeIdentifiants($source);
 		$ics = substr($this->sourceICS, strpos($this->sourceICS, "BEGIN:VCALENDAR"));
 		$lignes = explode("\n", $ics);
 		$result = "";
@@ -50,7 +49,7 @@ class ICal extends Formatter
 		return $titreFinal;
 	}
 	
-	private function listeIdentifiants($racine){
+	private function listeIdentifiants(SimpleXMLElement $racine){
 		$events = $racine->xpath("//event");
 		$ids = array();
 		foreach($events as $e){
@@ -58,4 +57,8 @@ class ICal extends Formatter
 		}
 		return $ids;
 	}
+
+    public function getContentType() {
+        return "Content-type: text/calendar; charset=utf-8";
+    }
 }

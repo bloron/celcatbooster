@@ -1,0 +1,84 @@
+<!--Fichier de paramétrage des créneaux horaires -->
+<!--Veuillez renseigner ici les créneaux horaires que vous souhaitez afficher dans votre emploi du temps sous format grille.
+
+Pour chaque noeud xml :
+
+        <time id="x">
+             <starttime>hh:mm</starttime>
+             <endtime>hh:mm</endtime>
+        </time>
+
+1- Veuillez remplacer le id x dans l'ordre chronologique des créneaux:
+        Exemple: Le premier créneau id = "1"
+
+
+2- Veuillez remplacer dans starttime l'heure de démarrage du créneau (en respectant le format 'hh:mm')
+
+        Exemple: Le premier créneau starttime = 08:00
+
+
+3- Veuillez remplacer dans endtime l'heure de fin du créneau (en respectant le format 'hh:mm')
+
+        Exemple: Le premier créneau endtime = 09:00
+
+
+Si vous avez besoin de rajouter des créneaux horaires, faites-le à la fin du dernier nœud présent -->
+<!--Pour tous renseignements  veuillez contacter le support technique CELCAT:
+Téléphone: +33 (0)1 46 04 77 72
+email:     support@celcat.fr       -->
+<grid>
+	<day>
+        <time id="1">
+             <starttime>08:00</starttime>
+             <endtime>09:00</endtime>
+        </time>
+		<time id="2">
+			<starttime>09:00</starttime>
+			<endtime>10:00</endtime>
+		</time>
+		<time id="3">
+			<starttime>10:00</starttime>
+			<endtime>11:00</endtime>
+		</time>
+		<time id="4">
+			<starttime>11:00</starttime>
+			<endtime>12:00</endtime>
+		</time>
+		<time id="5">
+			<starttime>12:00</starttime>
+			<endtime>13:00</endtime>
+		</time>
+		<time id="6">
+			<starttime>13:00</starttime>
+			<endtime>14:00</endtime>
+		</time>
+		<time id="7">
+			<starttime>14:00</starttime>
+			<endtime>15:00</endtime>
+		</time>
+		<time id="8">
+			<starttime>15:00</starttime>
+			<endtime>16:00</endtime>
+		</time>
+		<time id="9">
+			<starttime>16:00</starttime>
+			<endtime>17:00</endtime>
+		</time>
+		<time id="10">
+			<starttime>17:00</starttime>
+			<endtime>18:00</endtime>
+		</time>
+		<time id="11">
+			<starttime>18:00</starttime>
+			<endtime>19:00</endtime>
+		</time>
+		<time id="12">
+			<starttime>19:00</starttime>
+			<endtime>20:00</endtime>
+		</time>
+		<time id="13">
+			<starttime>20:00</starttime>
+			<endtime>21:00</endtime>
+		</time>
+	</day>
+</grid>

@@ -1,11 +1,25 @@
 <?php
 
 function autoChargement($class){
-	require "../include/" . $class . ".class.php";
+    $pathes = array(
+        "../include/",
+        "../include/format/",
+        "../include/util/",
+        "../include/promotions/"
+    );
+    $i = 0;
+    $nbPathes = count($pathes);
+    $fileExists = false;
+    while(!$fileExists && $i < $nbPathes){
+        $fileExists = file_exists($pathes[$i] . $class . ".class.php");
+        if(!$fileExists)
+            $i++;
+    }
+    if($fileExists)
+        require $pathes[$i] . $class . ".class.php";
 }
 
 spl_autoload_register("autoChargement");
 
-define("EN_MODE_TEST", false);
-define("PROMOTION_TEST", Fabrique::PLANNING_EI4);
 define("EMPLOI_DU_TEMPS", 	"edt");
+define("FORMAT_SORTIE", 	"format");

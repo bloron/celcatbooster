@@ -147,7 +147,7 @@ var Parametrage = new Class({
 						if($defined(values))
 							index = values.indexOf(uneOption);
 						if(index != -1)
-						this.valideSelection(select, numOption, filtres);
+                            this.valideSelection(select, numOption, filtres);
 					}
 				}, this);
 			}

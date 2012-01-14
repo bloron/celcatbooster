@@ -1,60 +1,17 @@
 <?php
 
-include("../config.php");
+//---------------FICHIER DE NON-REGRESSION -------------//
 
-if(EN_MODE_TEST){
-	$booster = Fabrique::creeBooster(PROMOTION_TEST);
-	parametrageDeTest($booster);
-}
-else{
-	$booster = Fabrique::creeBooster($_GET[EMPLOI_DU_TEMPS]);
-	if($booster == null)
-		die("Erreur : l'emploi du temps demandé est inconnu.");
-	$booster->setGroupes($_GET);
-}
+/*
+ * Anciennement, l'url indiquée pour accéder à la ressource d'emploi du temps
+ * était booster/booster.php. Pour plus de clarté et de cohérence, le dossier
+ * associé à celcat s'appelle dorénavant celcat/, ce qui implique d'appeler
+ * manuellement le fichier depuis ce script pour supporter l'ancien fonctionnement.
+ * 
+ * A noter que ce fichier (et tout le dossier booster) pourront être supprimés
+ * dès la rentrée 2012/2013, puisque seuls les nouveaux liens en celcat/booster
+ * existeront.
+ */
 
-$booster->afficheEmploiDuTemps($_GET['format']);
-
-//-------------------------------------------------------------------
-
-function parametrageDeTest(Booster $booster){
-
-	switch(PROMOTION_TEST){
-		case Fabrique::PLANNING_EI1 :
-			$booster->setGroupesGeneraux(array("EI1", "EI1/TD G1", "EI1/TP G1"));
-			$booster->setGroupeAnglais("EI1/Anglais G2");
-			$booster->setGroupeAllemand("EI1/Allemand Avancé");
-			$booster->setGroupeEspagnol("");
-			break;
-			
-		case Fabrique::PLANNING_EI2 :
-			$booster->setGroupesGeneraux(array("EI2", "EI2/G1", "EI2/TP1"));
-			$booster->setGroupeAnglais("EI2/Anglais G3");
-			$booster->setGroupeAllemand("EI2/Allemand débutant");
-			$booster->setGroupeEspagnol("");
-			break;
-			
-		case Fabrique::PLANNING_EI3 :
-			$booster->setGroupesGeneraux(array("EI3", "EI3/GM1", "EI3/G1"));
-			$booster->setGroupeAnglais("");
-			$booster->setGroupeAllemand("");
-			$booster->setGroupeEspagnol("EI3/GE1");
-			break;
-			
-		case Fabrique::PLANNING_EI4 :
-			$booster->setGroupesGeneraux(array("EI4", "EI4/AGI/G1", "EI4/AGI/TPA"));
-			$booster->setGroupeAnglais("");
-			$booster->setGroupeAllemand("");
-			$booster->setGroupeEspagnol("EI4/GE2");
-			break;
-			
-		case Fabrique::PLANNING_EI5 :
-			$booster->setGroupesGeneraux(array("EI5", "EI5 AGI", "EI5 AGI TD G1", "EI5 AGI TP1"));
-			$booster->setGroupeAnglais("");
-			$booster->setGroupeAllemand("");
-			$booster->setGroupeEspagnol("EI4/GE2");
-			break;
-			
-		default : die("Promotion de test inconnue.");
-	}
-}
+include '../celcat/booster.php';
+?>

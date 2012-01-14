@@ -24,7 +24,7 @@ function nodeize(SimpleXMLElement $entree, $identifiantPrecedent = ""){
 	}
 	$json .= "categories: [";
 	$nbCategories = 0;
-	foreach($entree->categorie as $categorie){
+	foreach($entree->filtre as $categorie){
 		if($nbCategories > 0) $json .= ",";
 		$json .= 	"{" .
 					"libelle: '" . $categorie['libelle'] . "'," .

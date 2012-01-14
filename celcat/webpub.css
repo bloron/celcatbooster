@@ -1,0 +1,649 @@
+﻿/***************************************************/
+/* Styles général pour les pages d'emploi du temps */
+/***************************************************/
+
+p {                 /**** Styles pour les paragraphes des pages help.html,index1.html et le saut de ligne après le titre de l'emploi du temps *****/
+  font-family:      Verdana, Arial, Helvetica, sans-serif; 
+  color:            #305064;                               
+  font-size:        12px   
+}
+
+/*********************************************************************/
+/* Format des menus déroulants et des sélections de semaines "*/
+/*********************************************************************/ 
+
+/*** Menu déroulant et weeklists ***/
+          span.noprint{width:100%; text-align:left}
+          table.noprint{width:100%}
+          tr.noprint {width:100%; text-align:left}
+          td.noprint_left {width: 30%; text-align:left}
+          
+          td.noprint_middle {width: 20%}
+          td.noprint_right {width:30%; text-align:right}
+          td.noprint_end {width:5%}
+
+/*Lien "weeklist" sous le menu déroulant pour les semaines disposant d'événements */          
+          a.not_empty_week:link{font-weight: bold}
+          a.not_empty_week:hover{font-weight: bold}           
+          a.not_empty_week:visited{font-weight: bold}
+          
+/*Lien "weeklist" sous le menu déroulant pour les semaines sans événement */                     
+          a.empty_week:link {font-style: italic; color: #827F7C}
+          a.empty_week:visited {font-style: italic;color: #C4C0BC}
+
+
+/*** Options du lien pour forcer le lien Room Booker sur la page***/
+          a.noprint_right {font-weight: bold }
+          a:hover.noprint_right {font-weight: bold}
+          img.noprint_right{border:	none}
+
+
+/** Menu pour changer de vue **/
+          td.changeview {width: 20%; text-align:left}
+          table.menu{cursor:	pointer}      
+           
+          
+ /*********************************************************************/
+/* Format du tableau de la grille et du diagramme des emplois du temps "*/
+/*********************************************************************/          
+       
+
+	  /*Grille d'emploi du temps vide (sans événement) */
+      table.empty{
+          border-collapse:	collapse;
+          empty-cells:		show;
+          margin:			0px auto;
+          padding:			0;
+          border:			2px solid #A5BEC6;
+		  width:			95%;
+		  text-align:		left;
+          background:		#ffffff;
+         }
+
+      /*Grille d'emploi du temps non vide (avec événement) */
+      table.not_empty{
+          border-collapse:	collapse;
+          empty-cells:		show;
+          margin:			0px auto;
+          padding:			0;
+		  width:			95%;
+ 		  border:			2px solid #A5BEC6;
+		  text-align:		left;
+		  background:		#FFFFFF
+         }
+         
+  
+      td.span_description{text-align:center}
+
+      
+
+	  /***Cellule vide pour les lignes d'une ressources sauf la dernière ligne. Right et Left doivent être actifs pour les lignes des heures***/
+      td.empty {
+		  border-style:		none solid none solid;
+          border-width:		1px;
+          border-color: 	#A5BEC6
+          }
+          
+          
+
+      /*** Cellule vide pour la dernière ligne d'une ressources ***/
+	  td.empty_bottom 
+	  {
+		  border-style:		none solid solid solid;
+          border-width:		1px;
+          border-color: 	#A5BEC6
+      }
+
+
+
+
+	  /*** Cellule pour les journées vides ***/
+	  td.time_limits
+	  {
+		  border-style:		solid solid solid solid;
+          border-width:		1px;
+          border-color: 	#A5BEC6
+      }
+          
+          
+      /*** En-tête de la colonne des jours dans la ligne des heures***/
+	  th.times_days
+	  {
+		  /** Autres valeurs modifiables **/
+		  border-style:		none;
+          border-width:		1px;
+          border-color: 	#A5BEC6
+          
+      }
+          
+          
+
+/*** En-têtes de la ligne des heures ***/
+	  th.times
+	  {
+		  border-style: 	solid solid solid solid;
+          border-width:		1px;
+          border-color: 	#A5BEC6;
+          text-align:       center
+
+      }
+          
+/*********************************************/         
+/*** Mise en forme générale de l'événement ***/
+/*********************************************/
+          td.event {border:1px solid #A5BEC6;
+          vertical-align : top}
+          
+          img.no_room_in_event{border:none}
+          span.event_title{font-weight:bold}
+		  span.event_resources{color:#305064}
+		  span.resource_title{color:#305064}
+		  span.combined_dates{font-weight:bold; color:#305064}
+                
+          
+/*********************************************/
+/* Valeur spécifique pour la grile simple    */
+/*********************************************/
+          td.days {
+          			border:				1px solid #A5BEC6;
+          			font-weight:		bold;
+          			text-align:       	center;
+          			text-transform:     capitalize 
+          }          
+
+	/*** Mise en forme des événements en grille  ***/
+
+          td.grid_event {border:1px solid #A5BEC6;
+          vertical-align: 	center;
+          text-align:       center
+          }
+
+		  span.event_grid_title{color:#305064}
+		  span.resource_grid_group{color:#305064}
+		  span.resource_grid_staff{color:#305064}
+		  span.resource_grid_module{color:#305064}
+		  span.resource_grid_student{color:#305064}
+		  span.resource_grid_room{color:#305064}
+		  span.resource_grid_equipment{color:#305064}
+		  span.resource_grid_team{color:#305064}
+		  
+/*********************************************/
+/* Valeur spécifique pour la grile Diagramme"*/
+/*********************************************/
+/*** Mise en forme des événements en diagramme  ***/
+
+          td.multi_event {
+          border-style: 	solid;
+          border-width:     1px  1px 1px 1px;          
+          border-color:		#A5BEC6;
+          vertical-align : 	center;
+          text-align:       center;
+          
+          }
+
+		  span.event_multi_title{color:#305064}
+		  span.resource_multi_group{color:#305064}
+		  span.resource_multi_staff{color: #305064}
+		  span.resource_multi_module{color:#305064}
+		  span.resource_multi_student{color:#305064}
+		  span.resource_multi_room{color:#305064}
+		  span.resource_multi_equipment{color:#305064}
+		  span.resource_multi_team{color:#305064}
+		  
+		  
+		  /** TD.days_usagechart et TD.day_separation devraient être uniforme pour un meilleur rendu**/
+          td.days_usagechart  {
+          		border-style:		solid;
+          		border-width:		3px 1px 1px 1px;
+          		border-color:		#A5BEC6;
+          		font-weight:		bold;
+          		text-align:       	center;
+          		text-transform:     capitalize          		         
+          }
+          
+          /**Td en colspan sur toute la largeur sauf TD.days_usagechart. Permet de séparer l'EDT par jour**/
+          td.day_separation{border-style:solid;
+          border-width:2px 1px 1px 1px;
+          border-color:#A5BEC6
+          }
+          
+          th.times_resources {	border:		none; 
+          						width:		10%;
+ }
+          td.empty_days{border:1px solid #A5BEC6}
+          td.resources{border-style:solid solid solid solid;
+          border-width:1px;
+          border-color:#A5BEC6;
+          }
+
+
+
+
+
+
+/*********************************************************************/
+/* Format du tableau de la liste des emplois du temps "*/
+/*********************************************************************/ 
+th.days_list{ 		width:	10%}
+th.hours_list{		width:	10%}
+th.details_list{	width:	80%}
+span.day_list {
+          		font-weight:		bold;
+          		text-align:       	center;
+          		text-transform:     capitalize          		         
+          }
+
+
+          
+/**************************************/
+/* Style des balises HTML standardes "*/
+/**************************************/ 
+
+h2 { 
+  font-size:        14px;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  font-weight:      bold; 
+  margin-bottom:    1px;
+  line-height:      normal;
+  padding:          0; 
+  margin:           0; 
+  text-align:       center;
+
+
+}
+
+h3 { 
+  font-size:        13px;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  font-weight:      normal; 
+  margin-bottom:    1px;
+  line-height:      normal;
+  padding:          0; 
+  margin:           0; 
+
+}
+
+h4 { 
+  font-size:        12px;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  font-weight:      bold; 
+  margin-bottom:    1px;
+  line-height:      normal;
+  padding:          0; 
+  margin:           0; 
+
+
+  
+}
+h5 { 
+  font-size:        11px;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  font-weight:      normal; 
+  margin-bottom:    1px;
+  line-height:      normal;
+  padding:          0; 
+  margin:           0; 
+
+
+}
+td { 
+  font-size:        12px;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  font-weight:      normal; 
+  margin-bottom:    1px;
+  line-height:      normal;
+  padding:          0; 
+  margin:           0;
+
+
+}
+tr { 
+  font-size:        12px;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  font-weight:      normal; 
+  margin-bottom:    1px;
+  line-height:      normal;
+  padding:          0; 
+  margin:           0; 
+
+
+}
+
+/**********************************************************************************/
+/* Styles pour le footer sur la page du moteur de recherche et les emplois du temps */
+/**********************************************************************************/
+body.finder {
+  color:            #305064; 
+}
+
+/***********************************************************************************/
+/* Peut être utilisées pour les styles des liens hypertexte du moteur de recherche */
+/***********************************************************************************/
+
+a.finder1 { 
+  text-decoration:  none;
+}
+
+a.finder0 {
+  text-decoration:  none;
+}
+
+a.ttlink  { 
+  text-decoration:  none; 
+}
+
+a.xmllink {}
+a.pdflink {}
+
+/*********************************************************************/
+/* Ligne affichée avant le footer de la page help.html et intro.xml "*/
+/*********************************************************************/ 
+hr { 
+  /*noshade: noshade;*/
+  width: 15%;
+  text-align: center;
+  color: #A5BEC6;
+}
+
+/**************************************/
+/* Styles pour la page d'introduction */
+/**************************************/
+body.intro {
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+/*background-image: url("blumrbll.jpg")*/ /**** Image d'arrière. Par défaut, desactivé *****/
+  color:            #305064;
+  font-size:        15px;
+  line-height:      normal;
+  text-align:       center;
+}
+
+table.intro {       /* Styles pour la table indiquant les couleurs des cases des événements de la page d'introduction */
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  line-height:      normal;
+  margin-left:      auto;
+  margin-right:     auto;
+  text-align:       center;
+}
+
+
+
+/*******************************/
+/* Styles des titres et des liens pour la navigation des pages */
+/*******************************/
+p.nav {
+ font-family:       Verdana, Arial, Helvetica, sans-serif;
+ font-size:         12px;
+ font-style:        normal;
+ font-weight:       normal;
+ font-variant:      normal;
+ color:             #305064;
+}
+
+a:link{  
+font-family:        Verdana, Arial, Helvetica, sans-serif; 
+  font-size:        12px;
+  font-style:       normal; 
+  line-height:      normal; 
+  font-weight:      normal; 
+  color:            #305064; 
+  text-decoration:  underline;
+}
+a:visited {
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  font-size:        12px;
+  font-style:       normal; 
+  line-height:      normal; 
+  font-weight:      normal;
+  color:            #3050E2;
+  text-decoration:  underline;
+}
+a:hover {
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  font-size:        12px;
+  font-style:       italic;
+  line-height:      normal;
+  font-weight:      normal;
+  font-variant:     normal;
+  color:            #3050E2;
+  text-decoration:  underline;	
+}
+
+
+
+/*************************************************************************************************/
+/* Permet, lors de l'impression HTML des emploi du temps, d'excule ou d'inclure des informations */
+/* Dans le modèle par défaut, le menu déroulant des semaines est exclu (noprint) de l'impression */
+/* , ainsi que les liens 'Imprimer' et 'Version PDF' *********************************************/
+/*************************************************************************************************/  
+
+@media 
+   print{	a:link, a:visited, H2 {color: #305064; text-decoration:  none;}
+  			.noprint {display:none }
+  			table.empty{display:none}
+  			span.no_room_in_event{display:none}
+  			@page { size:landscape;}
+  			.toggleouter {display:none }
+  			 
+}
+
+
+/*********************************/
+/* Valeurs pour le template.html */
+/*********************************/
+
+.template_body{
+    /**** Styles pour le corps des pages d'emploi du temps *****/
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  color:            #305064;
+  background-image: url("blumrbll.jpg");
+  font-size:        12px;
+  font-style:       normal;
+  line-height:      normal;
+  font-weight:      normal;
+  font-variant:     normal;  
+  margin:0px 0px; 
+  padding:0px;
+  text-align:center;
+}
+
+.template_main_table{
+width:100%;
+Height:100%;
+padding:0px;
+margin:0px;
+border-spacing:0;
+}
+
+.template_second_table{
+width:100%;
+Height:100%;
+padding:0px;
+margin:0px;
+border-spacing:0;
+}
+
+.template_menu_row{
+  height:           0px;
+  background-color: #7CAED1;
+}
+
+.template_heading_row{
+ background-color: none; /*#BCD429; */  
+}
+
+.template_content_row{
+ background-color: none; /*#BCD429; */  
+}
+
+.template_bottom_row{
+ background-color: none; /*#BCD429; */
+
+}
+
+
+
+
+
+/*******************************/
+/*** Styles pour les boutons ***/
+/*******************************/  
+
+.Button {
+  background-image: url("LargeBtn.gif");
+  background-color: #7CAED1; /*VALEUR UPSUD*/
+  width:            85px;
+  width:            expression("85px");
+  height:           22px;
+  height:           expression("22px");
+  text-align:       Center;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  font-size:        12px;
+  font-weight:      normal;
+  color:            #305064;
+  cursor:           pointer;
+  cursor:           hand;
+  text-overflow:    ellipsis;
+  overflow:         hidden;
+  padding:          4px;
+  padding-bottom:   0px;
+  vertical-align:   text-top;
+  text-decoration:  none;
+  display:          block;
+  border:			none;
+}
+:link.Button {
+  color:            #305064;
+}
+:visited.Button { 
+  color:            #305064;
+}
+:hover.Button {
+  text-decoration:  none;
+  background-color: #3050E2; /*VALEUR UPSUD*/
+  color :           #ffffff;
+}
+
+
+/********************************************************************************/
+/* Styles pour le bouton 'moteur de recherche' utilise le gif "ExtraLargeBtn.gif"*/
+/********************************************************************************/ 
+.BigButton {
+  background-image: url("ExtraLargeBtn.gif");
+  background-color: #7CAED1; /*VALEUR UPSUD*/
+  width:            170px;
+  width:            expression("170px");
+  height:           22px;
+  height:           expression("22px");
+  text-align:       Center;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+  font-size:        12px;
+  font-weight:      normal;
+  color:            #305064;
+  cursor:           pointer;
+  cursor:           hand;
+  text-overflow:    ellipsis;
+  overflow:         hidden;
+  padding:          4px;
+  padding-bottom:   0px;
+  vertical-align:   text-top;
+  text-decoration:  none;
+  display:          block;
+}
+:link.BigButton { 
+  color:            #305064
+}
+:visited.BigButton {
+  color:            #305064
+}
+:hover.BigButton {
+  text-decoration:  none;
+  background-color: #3050E2;
+  color:            #ffffff
+}
+
+/***************************************************/
+/* Styles de IFRAME contenant l'emploi du temps XML. */
+/***************************************************/
+
+IFRAME {
+  overflow: auto;
+  height: 99%;
+  width: 99%;
+  top: 0px;
+  left: 0px;
+  border-style:     none; 
+  border-width:     Opx;
+  border-collapse:  collapse;
+  padding:          0; 
+  margin:           0;
+  frameborder:      0;
+  
+}
+
+
+
+/*********************************************************************/
+/*                     Pied de page                                  */
+/*********************************************************************/ 
+          .toggleouter 
+          {
+          	border:0;
+          	width:100%;
+          	text-align:left;}
+
+
+
+
+
+/*******************************************************************************************************/
+/* Styles d'affiche des noms de jour pour les pages pages d'emploi du temps ****************************/
+/* Styles Utilisés dans le menu déroulant de la fenêtre Option Publication, onglet Style ***************/
+/* Accéder à la fenêtre par Web Publisher | Onglet Publie | Bouton Publier | bouton Option Publication */
+/*******************************************************************************************************/
+/* Couleur d'origine...*/
+.day0 { background-color: #ffffff; }
+.day1 { background-color: #eeeeee; }
+.day2 { background-color: #dddddd; }
+.day3 { background-color: #cccccc; }
+.day4 { background-color: #bbbbbb; }
+.day5 { background-color: #aaaaaa; }
+.day6 { background-color: #999999; }
+/* alternation... */
+.alternationday0 { background-color: #80c0ff; }
+.alternationday1 { background-color: #ffff80; }
+.alternationday2 { background-color: #80c0ff; }
+.alternationday3 { background-color: #ffff80; }
+.alternationday4 { background-color: #80c0ff; }
+.alternationday5 { background-color: #ffff80; }
+.alternationday6 { background-color: #80c0ff; }
+/* grisage... */
+.grisageday0 { background-color: #ffffff; }
+.grisageday1 { background-color: #eeeeee; }
+.grisageday2 { background-color: #dddddd; }
+.grisageday3 { background-color: #cccccc; }
+.grisageday4 { background-color: #bbbbbb; }
+.grisageday5 { background-color: #aaaaaa; }
+.grisageday6 { background-color: #999999; }
+/* inversion ... */
+.inversionday4 { background-color: #ff8080; }
+.inversionday3 { background-color: #ffc080; }
+.inversionday2 { background-color: #ffff80; }
+.inversionday1 { background-color: #80ff80; }
+.inversionday0 { background-color: #8080ff; }
+.inversionday5 { background-color: #c080c0; }
+.inversionday6 { background-color: #ff80ff; }
+/* Moirage ... */
+.inversionday4 { background-color: #ff8080; }
+.inversionday3 { background-color: #ffc080; }
+.inversionday2 { background-color: #ffff80; }
+.inversionday1 { background-color: #80ff80; }
+.inversionday0 { background-color: #8080ff; }
+.inversionday5 { background-color: #c080c0; }
+.inversionday6 { background-color: #ff80ff; }
