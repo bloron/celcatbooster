@@ -127,7 +127,7 @@
                 <entree identifiant="TC5" />
                 <entree identifiant="TC6" />
             </filtre>
-            <filtre libelle="Groupe " rubrique="gpGen">
+            <filtre libelle="TP1 - " rubrique="gpGen">
                 <entree identifiant="TPG1" />
                 <entree identifiant="TPG2" />
                 <entree identifiant="TPG3" />
@@ -145,7 +145,25 @@
                 <entree identifiant="TPG15" />
                 <entree identifiant="TPG16" />
             </filtre>
-            <filtre libelle="Anglais " rubrique="gpGen">
+            <filtre libelle="TP2 - " rubrique="gpGen">
+                <entree identifiant="TPG1" />
+                <entree identifiant="TPG2" />
+                <entree identifiant="TPG3" />
+                <entree identifiant="TPG4" />
+                <entree identifiant="TPG5" />
+                <entree identifiant="TPG6" />
+                <entree identifiant="TPG7" />
+                <entree identifiant="TPG8" />
+                <entree identifiant="TPG9" />
+                <entree identifiant="TPG10" />
+                <entree identifiant="TPG11" />
+                <entree identifiant="TPG12" />
+                <entree identifiant="TPG13" />
+                <entree identifiant="TPG14" />
+                <entree identifiant="TPG15" />
+                <entree identifiant="TPG16" />
+            </filtre>
+            <filtre libelle="Anglais " rubrique="gpEng">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
@@ -177,7 +195,7 @@
         </entree>
         <entree libelle="EI4" identifiant="EI4">
             <filtre libelle="Filière " rubrique="gpGen">
-                <entree identifiant="EI4 AGI" idOptionnel="1" forcer="1">
+                <entree identifiant="EI4 AGI" forcer="1">
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI4/AGI/G1" forcer="1"/>
                         <entree identifiant="EI4/AGI/G2" forcer="1"/>
@@ -187,7 +205,7 @@
                         <entree identifiant="EI4/AGI/TPB" forcer="1"/>
                     </filtre>
                 </entree>
-                <entree identifiant="EI4 QSF" idOptionnel="1" forcer="1">
+                <entree identifiant="EI4 QSF" forcer="1">
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI4/QSF/G1" forcer="1"/>
                         <entree identifiant="EI4/QSF/G2" forcer="1"/>
@@ -198,7 +216,7 @@
                         <entree identifiant="EI4/Q/TPC" forcer="1"/>
                     </filtre>
                 </entree>
-                <entree identifiant="INNO" idOptionnel="1" >
+                <entree identifiant="INNO" >
                     <filtre rubrique="gpGen">
                         <entree identifiant="G1" />
                     </filtre>
