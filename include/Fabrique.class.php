@@ -12,7 +12,7 @@ class Fabrique {
     private static $XML = "xml";
 	private static $ICAL = "ical";
     
-    private static $SERVEUR_CELCAT = "nead.univ-angers.fr";
+    private static $SERVEUR_CELCAT = "celcat.univ-angers.fr";
 	
 	private function __construct(){
 	}
@@ -20,7 +20,7 @@ class Fabrique {
 	public static function creeBooster($type) {
 		$booster = null;
 		switch($type){
-			case self::PLANNING_EI1 : 			$booster = new BoosterEI1(grehg); break;
+			case self::PLANNING_EI1 : 			$booster = new BoosterEI1(); break;
 			case self::PLANNING_EI2 : 			$booster = new BoosterEI2(); break;
 			case self::PLANNING_EI3 : 			$booster = new BoosterEI3(); break;
 			case self::PLANNING_EI4 : 			$booster = new BoosterEI4(); break;
