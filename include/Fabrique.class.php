@@ -29,7 +29,7 @@ class Fabrique {
 			case self::PLANNING_MASTER_SDS :	$booster = new BoosterMasterSDS(); break;
 			default : break;
 		}
-        $xmlData = self::getFile($booster->getResource() . ".xml");
+        $xmlData = self::getFile("/istia/" . $booster->getResource() . ".xml");
         $booster->setSourceXML($xmlData);
 		return $booster;
 	}
