@@ -3,13 +3,13 @@
     <filtre libelle="Emploi du temps " rubrique="gpGen">
         <entree libelle="EI1" identifiant="EI1">
             <filtre libelle="Groupe " rubrique="gpGen">
-                <entree identifiant="TD G1" />
-                <entree identifiant="TD G2" />
+                <entree libelle="1" identifiant="G1" />
+                <entree libelle="2" identifiant="G2" />
             </filtre>
             <filtre libelle="Groupe TP" rubrique="gpGen">
-                <entree libelle="1" identifiant="TP G1" />
-                <entree libelle="2" identifiant="TP G2" />
-                <entree libelle="3" identifiant="TP G3" />
+                <entree libelle="1" identifiant="TP1" />
+                <entree libelle="2" identifiant="TP2" />
+                <entree libelle="3" identifiant="TP3" />
             </filtre>
             <filtre libelle="Anglais G" rubrique="gpEng">
                 <entree libelle="1" identifiant="Anglais G1" />
@@ -51,10 +51,10 @@
             <extra name="edt" value="2" />
         </entree>
         <entree libelle="EI2 PassMed" identifiant="EI2-PassMed">
-            <filtre libelle="Groupe TP" rubrique="gpGen">
+           <!-- <filtre libelle="Groupe TP" rubrique="gpGen">
                 <entree libelle="1" identifiant="TP1" />
                 <entree libelle="2" identifiant="TP2" />
-            </filtre>
+            </filtre> -->
             <filtre libelle="Anglais G" rubrique="gpEng">
                 <entree libelle="1" identifiant="Anglais G1" />
                 <entree libelle="2" identifiant="Anglais G2" />
@@ -73,7 +73,7 @@
         <entree libelle="EI3" identifiant="EI3">
 
             <!-- A n'activer que durant la période de mise à niveau -->
-<!--            <filtre libelle="Mise à niveau " rubrique="gpGen">
+            <filtre libelle="Mise à niveau " rubrique="gpGen">
                 <entree libelle="GM1" identifiant="GM1" />
                 <entree libelle="GM2" identifiant="GM2" />
                 <entree libelle="GM3" identifiant="GM3" />
@@ -82,14 +82,14 @@
                 <entree libelle="GE3" identifiant="GE3" />
                 <entree libelle="GE4" identifiant="GE4" />
             </filtre>
-            <filtre libelle="Mise à niveau " rubrique="gpGen">
+            <!-- <filtre libelle="Mise à niveau " rubrique="gpGen">
                 <entree libelle="C G1" identifiant="C1" />
                 <entree libelle="C G2" identifiant="C2" />
                 <entree libelle="VB" identifiant="VB" />
-            </filtre>-->
+            </filtre> -->
 
             <!-- 1er semestre -->
-<!--            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
+            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
                 <entree libelle="1" identifiant="G1" />
                 <entree libelle="2" identifiant="G2" />
                 <entree libelle="3" identifiant="G3" />
@@ -106,10 +106,10 @@
                 <entree libelle="F" identifiant="TPF" />
                 <entree libelle="G" identifiant="TPG" />
                 <entree libelle="H" identifiant="TPH" />
-            </filtre>-->
+            </filtre>
             
             <!-- 2eme semestre -->
-            <filtre libelle="Option 1 " rubrique="gpGen">
+  <!--          <filtre libelle="Option 1 " rubrique="gpGen">
                 <entree identifiant="AGI" />
                 <entree identifiant="IMQ" />
                 <entree identifiant="II" />
@@ -162,30 +162,28 @@
                 <entree identifiant="TPG14" />
                 <entree identifiant="TPG15" />
                 <entree identifiant="TPG16" />
-            </filtre>
+            </filtre> -->
             <filtre libelle="Anglais " rubrique="gpEng">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
                 <entree identifiant="G5" />
-                <entree identifiant="G6" />
             </filtre>
-            <filtre libelle="Communication " rubrique="gpGen">
+        <!--    <filtre libelle="Communication " rubrique="gpGen">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
                 <entree identifiant="G5" />
                 <entree identifiant="G6" />
-            </filtre>
+            </filtre>-->
                         
             <!-- LV2 -->
             <filtre libelle="Espagnol G" rubrique="gpEsp">
                 <entree libelle="1" identifiant="GE1" />
                 <entree libelle="2" identifiant="GE2" />
                 <entree libelle="3" identifiant="GE3" />
-                <entree libelle="4" identifiant="GE4" />
             </filtre>
             <filtre libelle="Allemand G" rubrique="gpAll">
                 <entree libelle="1" identifiant="GA1" />
@@ -199,10 +197,12 @@
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI4/AGI/G1" forcer="1"/>
                         <entree identifiant="EI4/AGI/G2" forcer="1"/>
+                        <entree identifiant="EI4/AGI/G3" forcer="1"/>
                     </filtre>
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI4/AGI/TPA" forcer="1"/>
                         <entree identifiant="EI4/AGI/TPB" forcer="1"/>
+                        <entree identifiant="EI4/AGI/TPC" forcer="1"/>
                     </filtre>
                 </entree>
                 <entree identifiant="EI4 QSF" forcer="1">
@@ -247,6 +247,7 @@
                 <entree libelle="1" identifiant="GE1" />
                 <entree libelle="2" identifiant="GE2" />
                 <entree libelle="3" identifiant="GE3" />
+                <entree libelle="4" identifiant="GE4" />
             </filtre>
             <extra name="edt" value="4" />
         </entree>
@@ -258,17 +259,27 @@
                         <entree identifiant="EI5 AGI-IAIE TD G2" forcer="1" />
                     </filtre>
                     <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 AGI-IAIE TP1" forcer="1" />
-                        <entree identifiant="EI5 AGI-IAIE TP2" forcer="1" />
-                        <entree identifiant="EI5 AGI-IAIE TP3" forcer="1" />
+                        <entree identifiant="EI5 AGI-IAIE TP1" forcer="1"/>
+                    </filtre>
+                    <filtre libelle="Anglais1 - " rubrique="gpEng">
+                        <entree libelle=" Groupe EI5 IAIE" identifiant="Groupe EI5 IAIE;TEST TOEIC BLANC" forcer="1" />
                     </filtre>
                 </entree>
-                <entree identifiant="EI5 AGI parcours IHMRV" forcer="1" />
+                <entree identifiant="EI5 AGI parcours IHMRV" forcer="1" >
+                   <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 AGI-IHRMV TP G1" forcer="1" />
+                    </filtre>
+                    <filtre libelle="Anglais1 - " rubrique="gpEng">
+                        <entree libelle=" Groupe EI5 IHMRV" identifiant="Groupe EI5 IHMRV;TEST TOEIC BLANC" forcer="1" />
+                    </filtre>
+                </entree>
                 <entree identifiant="EI5 QSF-S" forcer="1" >
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI5 QSF-S TP1" forcer="1" />
                         <entree identifiant="EI5 QSF-S TP2" forcer="1" />
-                        <entree identifiant="EI5 QSF-S TP3" forcer="1" />
+                    </filtre>
+                    <filtre libelle="Anglais1 - " rubrique="gpEng">
+                        <entree libelle=" Groupe EI5 QSF-S" identifiant="Groupe EI5 QSF-S;TEST TOEIC BLANC" forcer="1" />
                     </filtre>
                 </entree>
                 <entree identifiant="EI5 QSF-O" forcer="1" >
@@ -276,29 +287,61 @@
                         <entree identifiant="EI5 QSF-O TP1" forcer="1" />
                         <entree identifiant="EI5 QSF-O TP2" forcer="1" />
                     </filtre>
+                    <filtre libelle="Anglais1 - " rubrique="gpEng">
+                        <entree libelle=" Groupe EI5 QSF-O" identifiant="Groupe EI5 QSF-O;TEST TOEIC BLANC" forcer="1" />
+                    </filtre>
+                </entree>
+                <entree identifiant="EI5 INNO CIMC" forcer="1" >
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 INNO" forcer="1" />
+                    </filtre>
+                    <filtre libelle="Anglais1 - " rubrique="gpEng">
+                        <entree libelle=" Groupe EI5 INNO" identifiant="Groupe EI5 INNO;TEST TOEIC BLANC" forcer="1" />
+                    </filtre>
+                </entree>
+                <entree identifiant="EI5 INNO CPIM" forcer="1" >
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 INNO" forcer="1" />
+                    </filtre>
+                    <filtre libelle="Anglais1 - " rubrique="gpEng">
+                        <entree libelle=" Groupe EI5 INNO" identifiant="Groupe EI5 INNO;TEST TOEIC BLANC" forcer="1" />
+                    </filtre>
                 </entree>
             </filtre>
-            <filtre libelle="Anglais1 - " rubrique="gpEng">
-                <entree libelle=" Groupe TOEIC" identifiant="Groupe TOEIC" forcer="1" />
-                <entree libelle=" Groupe Anglais LV1" identifiant="Anglais LV1" forcer="1" />
-            </filtre>
+            <!--<filtre libelle="Anglais1 - " rubrique="gpEng">
+                <entree libelle=" Groupe EI5 IAIE" identifiant="Groupe EI5 IAIE;TEST TOEIC BLANC" forcer="1" />
+                <entree libelle=" Groupe EI5 IHMRV" identifiant="Groupe EI5 IHMRV;TEST TOEIC BLANC" forcer="1" />
+                <entree libelle=" Groupe EI5 QSF-S" identifiant="Groupe EI5 QSF-S;TEST TOEIC BLANC" forcer="1" />
+            </filtre>-->
             <filtre libelle="Anglais2 - " rubrique="gpEng">
                 <entree identifiant="Groupe TOEIC 1" forcer="1" />
                 <entree identifiant="Groupe TOEIC 2" forcer="1" />
-                <entree identifiant="Groupe TOEIC 3" forcer="1" />
-                <entree identifiant="Groupe TOEIC 4" forcer="1" />
-                <entree identifiant="Groupe LV1 AGI" forcer="1" />
             </filtre>
-            <filtre libelle="LV2 Espagnol ou Allemand" rubrique="gpEsp">
-                <entree libelle="" identifiant="1" />
+            <filtre libelle="LV2 Allemand ou Espagnol" rubrique="gpEsp">
+                <entree libelle="" identifiant="EI5 LV2 Allemand; EI5 LV2 Espagnol" />
             </filtre>
             <extra name="edt" value="5" />
         </entree>
-        <entree identifiant="MASTER SDS">
-            <filtre libelle="MASTER 2 SDS" rubrique="gpGen">
-                <entree libelle="" identifiant="MASTER2 SDS" forcer="1" />
+        <entree identifiant="M2 BIO-Industrie">
+            <filtre libelle="M2 Inno BIO-Industrie" rubrique="gpGen">
+                <entree libelle="" identifiant="M2 Inno BIO-Industrie" forcer="1" />
             </filtre>
-            <extra name="edt" value="7" />
+            <filtre libelle="Anglais - " rubrique="gpEng">
+                <entree libelle=" M2 Inno BIO-Industrie" identifiant="M2 Inno BIO-Industrie" forcer="1" />
+            </filtre>
+            <filtre libelle="Espagnol - " rubrique="gpEsp">
+                <entree libelle="M2 Espagnol" identifiant="M2 Inno BIO-Industrie" forcer="1" />
+            </filtre>
+            <extra name="edt" value="8" />
+        </entree>
+        <entree identifiant="MASTER1 INNOVATION">
+            <filtre libelle="Anglais - " rubrique="gpEng">
+                <entree libelle=" MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
+            </filtre>
+            <filtre libelle="Espagnol - " rubrique="gpEsp">
+                <entree libelle="MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
+            </filtre>
+            <extra name="edt" value="9" />
         </entree>
     </filtre>
 </entree>

@@ -8,6 +8,8 @@ class Fabrique {
 	const PLANNING_EI5 = 5;
 	const PLANNING_EI2_PASSMED = 6;
 	const PLANNING_MASTER_SDS = 7;
+        const PLANNING_MASTER2_BIOINDUSTRIE = 8;
+        const PLANNING_MASTER1_INNO = 9;
     
     private static $XML = "xml";
 	private static $ICAL = "ical";
@@ -27,6 +29,8 @@ class Fabrique {
 			case self::PLANNING_EI2_PASSMED : 	$booster = new BoosterEI2Passmed(); break;
 			case self::PLANNING_EI5 :		 	$booster = new BoosterEI5(); break;
 			case self::PLANNING_MASTER_SDS :	$booster = new BoosterMasterSDS(); break;
+                        case self::PLANNING_MASTER2_BIOINDUSTRIE :	$booster = new BoosterMaster2InnoBIOIndustrie(); break;
+                        case self::PLANNING_MASTER1_INNO :	$booster = new BoosterMaster1Inno(); break;
 			default : break;
 		}
         $xmlData = self::getFile("/istia/" . $booster->getResource() . ".xml");
