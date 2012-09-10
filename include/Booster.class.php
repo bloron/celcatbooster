@@ -13,8 +13,17 @@ class Booster {
     protected $groupes;
     protected $groupesStrings;
 
+    /**
+     * Constructeur.
+     * @param String $dataResource Chaîne XML provenant du site de l'université, et contenant l'emploi du temps non filtré.
+     *  array $specialFilters Tableau associatif éventuel, associant un nom de cours à une méthode. Si le nom
+     * de cours est trouvé lors de l'analyse, c'est le résultat de la méthode qui devra dire si le cours nous concerne (return true)
+     * ou pas (return false).
+     */
     public function __construct($dataResource, array $specialFilters = array()) {
+        // On stocke le flux XML dans une variable
         $this->resource = $dataResource;
+        // On associe certains cours à des méthodes particulières (les cours de langues ont toujours des règles spécifiques)
         $this->specialFilters = array_merge(array(
             "anglais" => "filtreAnglais",
             "espagnol" => "filtreEspagnol",
@@ -24,7 +33,8 @@ class Booster {
     }
 
     /**
-     * $vars array Tableau des groupes, de la forme $vars['gpGen'] = "EI5/EI5%20AGI/..."; $vars['gpEng'] = "...";
+     * Permet de dire de quels groupes on fait partie.
+     * @param array $vars Tableau des groupes, de la forme $vars['gpGen'] = "EI5/EI5%20AGI/..."; $vars['gpEng'] = "...";
      */
     public function setGroupes(array $vars) {
         foreach ($vars as $key => $value) {
@@ -37,6 +47,10 @@ class Booster {
         }
     }
 
+    /**
+     * Méthode d'exécution du filtrage. Lance l'analyse, filtre les cours, puis formate la sortie.
+     * @param Formatter $formatter Instance s'occupant de formater la sortie (XML ou ICS)
+     */
     public function afficheEmploiDuTemps(Formatter $formatter) {
         $emploiDuTempsCleaned = $this->emploiDuTemps();
         $xmlAssocie = simplexml_load_string($emploiDuTempsCleaned);
@@ -44,6 +58,11 @@ class Booster {
         echo $formatter->format($xmlAssocie);
     }
 
+    /**
+     * Méthode qui s'occupe du filtrage. Elle utilise le flux XML d'entrée, filtre chaque cours, puis renvoie une chaîne XML
+     * élaguée des cours qui ne nous intéressent pas.
+     * @return String Flux XML sans les cours filtrés.
+     */
     public function emploiDuTemps() {
         $racine = simplexml_load_string($this->getSourceXML());
         $resultat = '<?xml version="1.0" encoding="utf-8"?>' . "\n" . '<?xml-stylesheet type="text/xsl" href="ttss.xsl"?>' . "\n" . "<timetable>";
@@ -65,10 +84,18 @@ class Booster {
         return $resultat;
     }
 
+    /**
+     * Méthode inutile ?
+     */
     private function format(Formatter $formater) {
         return $formater->format();
     }
 
+    /**
+     * Méthode de filtrage. Prend un élément XML en paramètre, et renvoie TRUE si le cours est à conserver, FALSE s'il doit être filtré.
+     * @param SimpleXMLElement $cours Cours sous forme d'objet SimpleXML
+     * @return boolean 
+     */
     private function meConcerne(SimpleXMLElement $cours) {
         if ($this->aucunFiltreGeneralDefini() OR $this->coursSansGroupes($cours))
             return true;
@@ -88,6 +115,11 @@ class Booster {
         }
     }
 
+    /**
+     * Méthode qui teste si un cours concerne mes groupes généraux (CM, TD, TP, ...)
+     * @param SimpleXMLElement $cours
+     * @return boolean 
+     */
     protected function concerneMesGroupesGeneraux(SimpleXMLElement $cours) {
         if ($this->groupesCorrespondent($this->groupes[self::$GROUPES_GENERAUX], $cours->resources->group))
             return true;
@@ -97,7 +129,7 @@ class Booster {
     protected function aucunFiltreGeneralDefini() {
         return count($this->groupes[self::$GROUPES_GENERAUX]) == 0;
     }
-
+    
     protected function pasDeSecondeLangue() {
         return (!($this->issetGroup(self::$GROUPE_ESPAGNOL) OR $this->issetGroup(self::$GROUPE_ESPAGNOL)));
     }
@@ -133,6 +165,12 @@ class Booster {
             return $this->groupesCorrespondent($this->getGroup(self::$GROUPES_GENERAUX), $cours->resources->group);
     }
 
+    /**
+     * Permet de savoir le type de cours en effectuant un test sur le nom.
+     * @param SimpleXMLElement $cours Objet de cours qu'on souhaite tester
+     * @param type $type Nom du cours
+     * @return type Retourne TRUE si le nom passé en paramètre est présent dans le nom du cours, FALSE sinon.
+     */
     protected function estUnCoursDeType(SimpleXMLElement $cours, $type) {
         $trouve = false;
         $count = count($cours->resources->children());
@@ -144,6 +182,10 @@ class Booster {
         return $trouve;
     }
 
+    /**
+     * Méthode testant si un de mes groupes correspond à celui du cours. Si oui, c'est qu'il faut le conserver !
+     * @return boolean TRUE si un de mes groupes figure dans le cours, FALSE sinon.
+     */
     protected function groupesCorrespondent($mesGroupes, SimpleXMLElement $lesGroupesDuCours) {
         $groupesAppartenance = (is_array($mesGroupes)) ? $mesGroupes : array($mesGroupes);
         $groupesDuCours = (count($lesGroupesDuCours->item) > 1) ? $lesGroupesDuCours->item : array($lesGroupesDuCours->item[0]);
