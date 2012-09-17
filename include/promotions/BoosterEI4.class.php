@@ -2,9 +2,7 @@
 class BoosterEI4 extends Booster {
 	
 	public function __construct(){
-		parent::__construct("g15807"/*, array(
-			"communication"	=> "filterComm"
-		)*/);
+		parent::__construct("g15807");
 	}
 
 	/*protected function filterComm(SimpleXMLElement $cours){
@@ -12,4 +10,6 @@ class BoosterEI4 extends Booster {
 			return true;
 		return false;
 	}*/
+        
+    
 }

@@ -95,7 +95,6 @@
                 <entree libelle="3" identifiant="G3" />
                 <entree libelle="4" identifiant="G4" />
                 <entree libelle="5" identifiant="G5" />
-                <entree libelle="6" identifiant="G6" />
             </filtre>
             <filtre libelle="Semestre 1 TP" rubrique="gpGen">
                 <entree libelle="A" identifiant="TPA" />
@@ -105,7 +104,6 @@
                 <entree libelle="E" identifiant="TPE" />
                 <entree libelle="F" identifiant="TPF" />
                 <entree libelle="G" identifiant="TPG" />
-                <entree libelle="H" identifiant="TPH" />
             </filtre>
             
             <!-- 2eme semestre -->
@@ -204,6 +202,9 @@
                         <entree identifiant="EI4/AGI/TPB" forcer="1"/>
                         <entree identifiant="EI4/AGI/TPC" forcer="1"/>
                     </filtre>
+                    <filtre  rubrique="gpGen">
+                        <entree libelle="Master 1 Maths" identifiant="EI4/AGI/G1\'" forcer="1"/>
+                    </filtre>
                 </entree>
                 <entree identifiant="EI4 QSF" forcer="1">
                     <filtre rubrique="gpGen">
@@ -214,6 +215,9 @@
                         <entree identifiant="EI4/Q/TPA" forcer="1"/>
                         <entree identifiant="EI4/Q/TPB" forcer="1"/>
                         <entree identifiant="EI4/Q/TPC" forcer="1"/>
+                    </filtre>
+                    <filtre  rubrique="gpGen">
+                         <entree libelle="Master 1 Maths" identifiant="EI4/QSF/G1\'" forcer="1"/>
                     </filtre>
                 </entree>
                 <entree identifiant="INNO" >
@@ -231,6 +235,7 @@
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
                 <entree identifiant="G5" />
+                <entree identifiant="G6" />
             </filtre>
             <filtre libelle="Anglais " rubrique="gpEng">
                 <entree identifiant="G1" />
@@ -238,6 +243,7 @@
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
                 <entree identifiant="G5" />
+                <entree identifiant="G6" />
             </filtre>
             <filtre libelle="Allemand G" rubrique="gpAll">
                 <entree libelle="1" identifiant="GA1" />

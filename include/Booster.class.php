@@ -7,6 +7,7 @@ class Booster {
     public static $GROUPE_ANGLAIS = "gpEng";
     public static $GROUPE_ALLEMAND = "gpAll";
     public static $GROUPE_ESPAGNOL = "gpEsp";
+    public static $GROUPE_MASTER = "gpMas";
     private $sourceXML;
     private $resource;
     private $specialFilters;
