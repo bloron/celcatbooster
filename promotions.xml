@@ -229,7 +229,7 @@
                     </filtre>
                 </entree>
             </filtre>
-            <filtre libelle="Communication " rubrique="gpCom">
+            <filtre libelle="Communication &amp; droit " rubrique="gpCom">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
