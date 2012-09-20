@@ -59,7 +59,7 @@ class Fabrique {
 		$formatter = null;
 		switch($type){
             case self::$ICAL :
-                $icsData = self::getFile($booster->getResource() . "_utf8.ics");
+                $icsData = self::getFile("/istia/" . $booster->getResource() . ".ics");
                 $formatter = new ICal($icsData); break;
             case self::$XML :
 			default : 
