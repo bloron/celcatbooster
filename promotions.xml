@@ -195,7 +195,6 @@
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI4/AGI/G1" forcer="1"/>
                         <entree identifiant="EI4/AGI/G2" forcer="1"/>
-                        <entree identifiant="EI4/AGI/G3" forcer="1"/>
                     </filtre>
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI4/AGI/TPA" forcer="1"/>
