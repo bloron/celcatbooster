@@ -221,10 +221,11 @@
                 </entree>
                 <entree identifiant="INNO" >
                     <filtre rubrique="gpGen">
-                        <entree identifiant="G1" />
+                        <entree identifiant="Spécifique" />
                     </filtre>
                     <filtre rubrique="gpGen">
-                        <entree identifiant="Spécifique" />
+                        <entree identifiant="TP G1" />
+                        <entree identifiant="TP G2" />
                     </filtre>
                 </entree>
             </filtre>
