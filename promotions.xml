@@ -221,7 +221,7 @@
                 </entree>
                 <entree identifiant="INNO" >
                     <filtre rubrique="gpGen">
-                        <entree identifiant="Spécifique" />
+                        <entree libelle="Spécifique" identifiant="Spécifique;EI4/INNO/G1" />
                     </filtre>
                     <filtre rubrique="gpGen">
                         <entree identifiant="TP G1" />

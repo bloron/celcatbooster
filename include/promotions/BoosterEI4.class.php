@@ -8,9 +8,10 @@ class BoosterEI4 extends Booster {
 	}
 
 	protected function filterComm(SimpleXMLElement $cours){
-		if($this->groupesCorrespondent($this->groupes['gpCom'], $cours->resources->group))
-			return true;
-		return false;
+		if(($this->groupesCorrespondent($this->groupes['gpCom'], $cours->resources->group)) || ($this->groupesCorrespondent($this->groupes['gpGen'], $cours->resources->group)))
+                    return true;
+                else
+                    return false;
 	}
         
     
