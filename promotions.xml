@@ -73,7 +73,7 @@
         <entree libelle="EI3" identifiant="EI3">
 
             <!-- A n'activer que durant la période de mise à niveau -->
-            <filtre libelle="Mise à niveau " rubrique="gpGen">
+<!--            <filtre libelle="Mise à niveau " rubrique="gpGen">
                 <entree libelle="GM1" identifiant="GM1" />
                 <entree libelle="GM2" identifiant="GM2" />
                 <entree libelle="GM3" identifiant="GM3" />
@@ -81,7 +81,7 @@
                 <entree libelle="GE2" identifiant="GE2" />
                 <entree libelle="GE3" identifiant="GE3" />
                 <entree libelle="GE4" identifiant="GE4" />
-            </filtre>
+            </filtre>	-->
             <!-- <filtre libelle="Mise à niveau " rubrique="gpGen">
                 <entree libelle="C G1" identifiant="C1" />
                 <entree libelle="C G2" identifiant="C2" />
@@ -89,7 +89,7 @@
             </filtre> -->
 
             <!-- 1er semestre -->
-            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
+<!--            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
                 <entree libelle="1" identifiant="G1" />
                 <entree libelle="2" identifiant="G2" />
                 <entree libelle="3" identifiant="G3" />
@@ -104,10 +104,10 @@
                 <entree libelle="E" identifiant="TPE" />
                 <entree libelle="F" identifiant="TPF" />
                 <entree libelle="G" identifiant="TPG" />
-            </filtre>
+            </filtre>	-->
             
             <!-- 2eme semestre -->
-  <!--          <filtre libelle="Option 1 " rubrique="gpGen">
+            <filtre libelle="Option 1 " rubrique="gpGen">
                 <entree identifiant="AGI" />
                 <entree identifiant="IMQ" />
                 <entree identifiant="II" />
@@ -123,44 +123,28 @@
                 <entree identifiant="TC3" />
                 <entree identifiant="TC4" />
                 <entree identifiant="TC5" />
-                <entree identifiant="TC6" />
             </filtre>
-            <filtre libelle="TP1 - " rubrique="gpGen">
-                <entree identifiant="TPG1" />
-                <entree identifiant="TPG2" />
-                <entree identifiant="TPG3" />
-                <entree identifiant="TPG4" />
-                <entree identifiant="TPG5" />
-                <entree identifiant="TPG6" />
-                <entree identifiant="TPG7" />
-                <entree identifiant="TPG8" />
-                <entree identifiant="TPG9" />
-                <entree identifiant="TPG10" />
-                <entree identifiant="TPG11" />
-                <entree identifiant="TPG12" />
-                <entree identifiant="TPG13" />
-                <entree identifiant="TPG14" />
-                <entree identifiant="TPG15" />
-                <entree identifiant="TPG16" />
+            <filtre libelle="TP AGI" rubrique="gpGen">
+		<entree libelle="1" identifiant="AGI/TPAGI1" />
+                <entree libelle="2" identifiant="AGI/TPAGI2" />
+                <entree libelle="3" identifiant="AGI/TPAGI3" />
+                <entree libelle="4" identifiant="AGI/TPAGI4" />
+                <entree libelle="5" identifiant="AGI/TPAGI5" />
             </filtre>
-            <filtre libelle="TP2 - " rubrique="gpGen">
-                <entree identifiant="TPG1" />
-                <entree identifiant="TPG2" />
-                <entree identifiant="TPG3" />
-                <entree identifiant="TPG4" />
-                <entree identifiant="TPG5" />
-                <entree identifiant="TPG6" />
-                <entree identifiant="TPG7" />
-                <entree identifiant="TPG8" />
-                <entree identifiant="TPG9" />
-                <entree identifiant="TPG10" />
-                <entree identifiant="TPG11" />
-                <entree identifiant="TPG12" />
-                <entree identifiant="TPG13" />
-                <entree identifiant="TPG14" />
-                <entree identifiant="TPG15" />
-                <entree identifiant="TPG16" />
-            </filtre> -->
+            <filtre libelle="TP II" rubrique="gpGen">
+		<entree libelle="1" identifiant="II/TPII1" />
+                <entree libelle="2" identifiant="II/TPII2" />
+                <entree libelle="3" identifiant="II/TPII3" />
+                <entree libelle="4" identifiant="II/TPII4" />
+                <entree libelle="5" identifiant="II/TPII5" />
+            </filtre>
+	    <filtre libelle="TP IMQ" rubrique="gpGen">
+		<entree libelle="1" identifiant="IMQ/TPIMQ1" />
+                <entree libelle="2" identifiant="IMQ/TPIMQ2" />
+                <entree libelle="3" identifiant="IMQ/TPIMQ3" />
+                <entree libelle="4" identifiant="IMQ/TPIMQ4" />
+                <entree libelle="5" identifiant="IMQ/TPIMQ5" />
+            </filtre>
             <filtre libelle="Anglais " rubrique="gpEng">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
@@ -168,14 +152,13 @@
                 <entree identifiant="G4" />
                 <entree identifiant="G5" />
             </filtre>
-        <!--    <filtre libelle="Communication " rubrique="gpGen">
+            <filtre libelle="Communication " rubrique="gpGen">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
                 <entree identifiant="G5" />
-                <entree identifiant="G6" />
-            </filtre>-->
+            </filtre>
                         
             <!-- LV2 -->
             <filtre libelle="Espagnol G" rubrique="gpEsp">
