@@ -11,17 +11,25 @@
                 <entree libelle="2" identifiant="TP2" />
                 <entree libelle="3" identifiant="TP3" />
             </filtre>
+            <filtre libelle="Groupe " rubrique="gpGen">
+                <entree libelle="A" identifiant="GA" />
+                <entree libelle="B" identifiant="GB" />
+            </filtre>
+            <filtre libelle="Groupe TP" rubrique="gpGen">
+                <entree libelle=" A" identifiant="TP A" />
+                <entree libelle=" B" identifiant="TP B" />
+                <entree libelle=" C" identifiant="EI1/TP C"/>
+            </filtre>
             <filtre libelle="Anglais G" rubrique="gpEng">
                 <entree libelle="1" identifiant="Anglais G1" />
                 <entree libelle="2" identifiant="Anglais G2" />
             </filtre>
             <filtre libelle="Espagnol " rubrique="gpEsp">
                 <entree libelle="Débutant" identifiant="Espagnol Débutant" />
-                <filtre libelle="Avancé" identifiant="Espagnol Avancé" />
+                <entree libelle="Avancé" identifiant="Espagnol Avancé" />
             </filtre>
             <filtre libelle="Allemand " rubrique="gpAll">
-                <entree libelle="Débutant" identifiant="Allemand débutant" />
-                <entree libelle="Avancé" identifiant="Allemand Avancé" />
+                <entree identifiant="Allemand" />
             </filtre>
             <extra name="edt" value="1" />
         </entree>
@@ -193,33 +201,39 @@
                         <entree identifiant="EI4/QSF/G1" forcer="1"/>
                         <entree identifiant="EI4/QSF/G2" forcer="1"/>
                     </filtre>
-                    <filtre rubrique="gpGen">
-                        <entree identifiant="EI4/Q/TPA" forcer="1"/>
-                        <entree identifiant="EI4/Q/TPB" forcer="1"/>
-                        <entree identifiant="EI4/Q/TPC" forcer="1"/>
-                    </filtre>
+                    <!-- <filtre rubrique="gpGen">
+                        <entree identifiant="EI4/QSF/TPA" forcer="1"/>
+                        <entree identifiant="EI4/QSF/TPB" forcer="1"/>
+                        <entree identifiant="EI4/QSF/TPC" forcer="1"/>
+                    </filtre> -->
                     <filtre  rubrique="gpGen">
                          <entree libelle="Master 1 Maths" identifiant="EI4/QSF/G1\'" forcer="1"/>
                     </filtre>
                 </entree>
-                <entree identifiant="INNO" >
+                <entree identifiant="EI4 INNO" >
                     <filtre rubrique="gpGen">
-                        <entree libelle="Spécifique" identifiant="Spécifique;EI4/INNO/G1" />
+                        <entree libelle="G1" identifiant="Spécifique;EI4/INNO/G1" />
                     </filtre>
+                      <!-- 2ème semestre -->
                     <filtre rubrique="gpGen">
+                        <entree libelle="CIMC" identifiant="EI4/INNO/CIMC" forcer="1" />
+                        <entree libelle="CPIM" identifiant="EI4/INNO/CPIM" forcer="1"/>
+                    </filtre>
+                    
+                    <!-- <filtre rubrique="gpGen">
                         <entree identifiant="TP G1" />
                         <entree identifiant="TP G2" />
-                    </filtre>
+                    </filtre> -->
                 </entree>
             </filtre>
-            <filtre libelle="Communication &amp; droit " rubrique="gpCom">
+           <!--  <filtre libelle="Communication &amp; droit " rubrique="gpCom">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
                 <entree identifiant="G5" />
                 <entree identifiant="G6" />
-            </filtre>
+            </filtre> -->
             <filtre libelle="Anglais " rubrique="gpEng">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
