@@ -46,7 +46,7 @@ class Fabrique {
 			default : break;
 		}
         // On va chercher le contenu XML de l'emploi du temps disponible sur le web
-        $xmlData = self::getFile("/istia/" . $booster->getResource() . ".xml");
+        $xmlData = self::getFile("/bb/" . $booster->getResource() . ".xml");
         $booster->setSourceXML($xmlData);
 		return $booster;
 	}

@@ -3,7 +3,7 @@
 class BoosterEI5 extends Booster {
 
     public function __construct() {
-        parent::__construct("g29804", array(
+        parent::__construct("g146422", array(
             "anglais" => "concerneMonGroupeAnglais",
             "espagnol" => "concerneMonGroupeEspagnol",
             "allemand" => "concerneMonGroupeAllemand"

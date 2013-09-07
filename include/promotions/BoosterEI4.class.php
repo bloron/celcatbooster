@@ -2,7 +2,7 @@
 class BoosterEI4 extends Booster {
 	
 	public function __construct(){
-		parent::__construct("g15807",array(
+		parent::__construct("g146386",array(
             "communication" => "filterComm",
             "droit du travail" => "filterComm"));
 	}
