@@ -105,7 +105,7 @@
             </filtre>
 
             <!-- 1er semestre -->
-<!--            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
+            <!--            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
                 <entree libelle="1" identifiant="G1" />
                 <entree libelle="2" identifiant="G2" />
                 <entree libelle="3" identifiant="G3" />
@@ -142,21 +142,21 @@
                 <entree identifiant="TC5" />
             </filtre>
             <filtre libelle="TP AGI" rubrique="gpGen">
-		<entree libelle="1" identifiant="AGI/TPAGI1" />
+                <entree libelle="1" identifiant="AGI/TPAGI1" />
                 <entree libelle="2" identifiant="AGI/TPAGI2" />
                 <entree libelle="3" identifiant="AGI/TPAGI3" />
                 <entree libelle="4" identifiant="AGI/TPAGI4" />
                 <entree libelle="5" identifiant="AGI/TPAGI5" />
             </filtre>
             <filtre libelle="TP II" rubrique="gpGen">
-		<entree libelle="1" identifiant="II/TPII1" />
+                <entree libelle="1" identifiant="II/TPII1" />
                 <entree libelle="2" identifiant="II/TPII2" />
                 <entree libelle="3" identifiant="II/TPII3" />
                 <entree libelle="4" identifiant="II/TPII4" />
                 <entree libelle="5" identifiant="II/TPII5" />
             </filtre>
-	    <filtre libelle="TP IMQ" rubrique="gpGen">
-		<entree libelle="1" identifiant="IMQ/TPIMQ1" />
+            <filtre libelle="TP IMQ" rubrique="gpGen">
+                <entree libelle="1" identifiant="IMQ/TPIMQ1" />
                 <entree libelle="2" identifiant="IMQ/TPIMQ2" />
                 <entree libelle="3" identifiant="IMQ/TPIMQ3" />
                 <entree libelle="4" identifiant="IMQ/TPIMQ4" />
@@ -179,7 +179,7 @@
             -->
                         
             <!-- LV2 -->
-<!--            <filtre libelle="Espagnol G" rubrique="gpEsp">
+            <!--            <filtre libelle="Espagnol G" rubrique="gpEsp">
                 <entree libelle="1" identifiant="GE1" />
                 <entree libelle="2" identifiant="GE2" />
                 <entree libelle="3" identifiant="GE3" />
@@ -225,12 +225,12 @@
                     </filtre>
                     -->
                 </entree>
-                <entree identifiant="EI4/INNO/Spécifique" >
+                <entree libelle="INNO" identifiant="EI4/INNO/Spécifique" >
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI4/INNO/TP G1" forcer="1"/>
                         <entree identifiant="EI4/INNO/TP G2" forcer="1"/>
                     </filtre>
-                      <!-- 2ème semestre -->
+                    <!-- 2ème semestre -->
                     <!--
                     <filtre rubrique="gpGen">
                         <entree libelle="CIMC" identifiant="EI4/INNO/CIMC" forcer="1" />
@@ -271,75 +271,60 @@
         </entree>
         <entree identifiant="EI5">
             <filtre libelle="Filière " rubrique="gpGen">
-                <entree identifiant="EI5 AGI parcours IAIE" forcer="1" >
+                <entree identifiant="EI5 AGI" forcer="1" >
                     <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 AGI-IAIE TD G1" forcer="1" />
-                        <entree identifiant="EI5 AGI-IAIE TD G2" forcer="1" />
+                        <entree identifiant="EI5 AGI parcours IAIE" forcer="1" >
+                            <filtre rubrique="gpGen">
+                                <entree identifiant="EI5 AGI-IAIE TD G1" forcer="1" />
+                                <entree identifiant="EI5 AGI-IAIE TD G2" forcer="1" />
+                            </filtre>
+                            <filtre rubrique="gpGen">
+                                <entree identifiant="EI5 AGI-IAIE TP1" forcer="1" />
+                                <entree identifiant="EI5 AGI-IAIE TP2" forcer="1" />
+                            </filtre>
+                            <filtre rubrique="gpGen">
+                                <entree identifiant="EI5 AGI-IAIE Projets" forcer="1" />
+                            </filtre>
+                        </entree>
+                        <entree identifiant="EI5 AGI parcours IHMRV" forcer="1" >
+                            <filtre rubrique="gpGen">
+                                <entree identifiant="EI5 AGI-IHMRV Projets" forcer="1" />
+                            </filtre>
+                        </entree>
                     </filtre>
                     <filtre rubrique="gpGen">
                         <entree identifiant="EI5 AGI-TD1 TC" forcer="1" />
                         <entree identifiant="EI5 AGI-TD2 TC" forcer="1" />
                     </filtre>
-                    <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 AGI-IAIE TP1" forcer="1" />
-                        <entree identifiant="EI5 AGI-IAIE TP2" forcer="1" />
-                    </filtre>
-                    <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 AGI-IAIE Projets" forcer="1" />
-                    </filtre>
-                    <!--<filtre libelle="Anglais1 - " rubrique="gpEng">
-                        <entree libelle=" Groupe EI5 IAIE" identifiant="Groupe EI5 IAIE;TEST TOEIC BLANC" forcer="1" />
-                    </filtre>-->
                 </entree>
-                <entree identifiant="EI5 AGI parcours IHMRV" forcer="1" >
-                     <filtre rubrique="gpGen">                        
-                        <entree identifiant="EI5 AGI-TD2 TC" forcer="1" />
-                    </filtre>
+                <entree identifiant="EI5 QSF" forcer="1" >
                     <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 AGI-IAIE Projets" forcer="1" />
+                        <entree identifiant="EI5 QSF-S" forcer="1" >
+                            <filtre rubrique="gpGen">
+                                <entree identifiant="EI5 QSF-S TP1" forcer="1" />
+                                <entree identifiant="EI5 QSF-S TP2" forcer="1" />
+                            </filtre>
+                        </entree>
+                        <entree identifiant="EI5 QSF-O" forcer="1" />
                     </filtre>
                 </entree>
-                <entree identifiant="EI5 QSF-S" forcer="1" >
+                <entree identifiant="EI5 INNO" forcer="1" >
                     <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 QSF-S TP1" forcer="1" />
-                        <entree identifiant="EI5 QSF-S TP2" forcer="1" />
+                        <entree identifiant="EI5 INNO CIMC" forcer="1" />
+                        <entree identifiant="EI5 INNO CPIM" forcer="1" />  
                     </filtre>
-                </entree>
-                <entree identifiant="EI5 QSF-O" forcer="1" >
-                </entree>
-                <entree identifiant="EI5 INNO CIMC" forcer="1" >
-                    <!--<filtre rubrique="gpGen">
-                        <entree identifiant="EI5 INNO" forcer="1" />
-                    </filtre>-->
                     <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 INNO Projet innovation" forcer="1" />
-                    </filtre>
-                </entree>
-                <entree identifiant="EI5 INNO CPIM" forcer="1" >
-                    <!--<filtre rubrique="gpGen">
-                        <entree identifiant="EI5 INNO" forcer="1" />
-                    </filtre>-->
-                    <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 INNO Projet innovation" forcer="1" />
+                        <entree identifiant="EI5 INNO IDI" forcer="1" />
                     </filtre>
                 </entree>
             </filtre>
-            <!--<filtre libelle="Anglais1 - " rubrique="gpEng">
-                <entree libelle=" Groupe EI5 IAIE" identifiant="Groupe EI5 IAIE;TEST TOEIC BLANC" forcer="1" />
-                <entree libelle=" Groupe EI5 IHMRV" identifiant="Groupe EI5 IHMRV;TEST TOEIC BLANC" forcer="1" />
-                <entree libelle=" Groupe EI5 QSF-S" identifiant="Groupe EI5 QSF-S;TEST TOEIC BLANC" forcer="1" />
-            </filtre>-->
-            <!--<filtre libelle="Anglais2 - " rubrique="gpEng">
-                <entree identifiant="Groupe TOEIC 1" forcer="1" />
-                <entree identifiant="Groupe TOEIC 2" forcer="1" />
-            </filtre>-->
             <filtre libelle="LV2 Allemand ou Espagnol" rubrique="gpEsp">
-                <entree libelle="" identifiant="EI5 LV2 Allemand; EI5 LV2 Espagnol" />
+                <entree libelle="" identifiant="EI5" />
             </filtre>
             <extra name="edt" value="5" />
         </entree>
         <entree identifiant="MASTER1 INNOVATION">
-             <filtre libelle="MASTER1 INNOVATION" rubrique="gpGen">
+            <filtre libelle="MASTER1 INNOVATION" rubrique="gpGen">
                 <entree libelle="" identifiant="MASTER1 INNOVATION" forcer="1" />
             </filtre>
             <filtre libelle="Anglais - " rubrique="gpEng">
