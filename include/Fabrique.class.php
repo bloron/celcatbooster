@@ -12,8 +12,9 @@ class Fabrique {
 	const PLANNING_EI5 = 5;
 	const PLANNING_EI2_PASSMED = 6;
 	const PLANNING_MASTER_SDS = 7;
-    const PLANNING_MASTER2_BIOINDUSTRIE = 8;
-    const PLANNING_MASTER1_INNO = 9;
+        const PLANNING_MASTER1_INNO = 8;
+        const PLANNING_MASTER2_BIOINDUSTRIE = 9;
+    
     
     // Formats de sortie de l'emploi du temps filtré
     private static $XML = "xml";

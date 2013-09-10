@@ -276,16 +276,27 @@
                         <entree identifiant="EI5 AGI-IAIE TD G1" forcer="1" />
                         <entree identifiant="EI5 AGI-IAIE TD G2" forcer="1" />
                     </filtre>
-                    <filtre libelle="Anglais1 - " rubrique="gpEng">
-                        <entree libelle=" Groupe EI5 IAIE" identifiant="Groupe EI5 IAIE;TEST TOEIC BLANC" forcer="1" />
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 AGI-TD1 TC" forcer="1" />
+                        <entree identifiant="EI5 AGI-TD2 TC" forcer="1" />
                     </filtre>
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 AGI-IAIE TP1" forcer="1" />
+                        <entree identifiant="EI5 AGI-IAIE TP2" forcer="1" />
+                    </filtre>
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 AGI-IAIE Projets" forcer="1" />
+                    </filtre>
+                    <!--<filtre libelle="Anglais1 - " rubrique="gpEng">
+                        <entree libelle=" Groupe EI5 IAIE" identifiant="Groupe EI5 IAIE;TEST TOEIC BLANC" forcer="1" />
+                    </filtre>-->
                 </entree>
                 <entree identifiant="EI5 AGI parcours IHMRV" forcer="1" >
-                   <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 AGI-IHRMV TP G1" forcer="1" />
+                     <filtre rubrique="gpGen">                        
+                        <entree identifiant="EI5 AGI-TD2 TC" forcer="1" />
                     </filtre>
-                    <filtre libelle="Anglais1 - " rubrique="gpEng">
-                        <entree libelle=" Groupe EI5 IHMRV" identifiant="Groupe EI5 IHMRV;TEST TOEIC BLANC" forcer="1" />
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 AGI-IAIE Projets" forcer="1" />
                     </filtre>
                 </entree>
                 <entree identifiant="EI5 QSF-S" forcer="1" >
@@ -293,33 +304,23 @@
                         <entree identifiant="EI5 QSF-S TP1" forcer="1" />
                         <entree identifiant="EI5 QSF-S TP2" forcer="1" />
                     </filtre>
-                    <filtre libelle="Anglais1 - " rubrique="gpEng">
-                        <entree libelle=" Groupe EI5 QSF-S" identifiant="Groupe EI5 QSF-S;TEST TOEIC BLANC" forcer="1" />
-                    </filtre>
                 </entree>
                 <entree identifiant="EI5 QSF-O" forcer="1" >
-                    <filtre rubrique="gpGen">
-                        <entree identifiant="EI5 QSF-O TP1" forcer="1" />
-                        <entree identifiant="EI5 QSF-O TP2" forcer="1" />
-                    </filtre>
-                    <filtre libelle="Anglais1 - " rubrique="gpEng">
-                        <entree libelle=" Groupe EI5 QSF-O" identifiant="Groupe EI5 QSF-O;TEST TOEIC BLANC" forcer="1" />
-                    </filtre>
                 </entree>
                 <entree identifiant="EI5 INNO CIMC" forcer="1" >
-                    <filtre rubrique="gpGen">
+                    <!--<filtre rubrique="gpGen">
                         <entree identifiant="EI5 INNO" forcer="1" />
-                    </filtre>
-                    <filtre libelle="Anglais1 - " rubrique="gpEng">
-                        <entree libelle=" Groupe EI5 INNO" identifiant="Groupe EI5 INNO;TEST TOEIC BLANC" forcer="1" />
+                    </filtre>-->
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 INNO Projet innovation" forcer="1" />
                     </filtre>
                 </entree>
                 <entree identifiant="EI5 INNO CPIM" forcer="1" >
-                    <filtre rubrique="gpGen">
+                    <!--<filtre rubrique="gpGen">
                         <entree identifiant="EI5 INNO" forcer="1" />
-                    </filtre>
-                    <filtre libelle="Anglais1 - " rubrique="gpEng">
-                        <entree libelle=" Groupe EI5 INNO" identifiant="Groupe EI5 INNO;TEST TOEIC BLANC" forcer="1" />
+                    </filtre>-->
+                    <filtre rubrique="gpGen">
+                        <entree identifiant="EI5 INNO Projet innovation" forcer="1" />
                     </filtre>
                 </entree>
             </filtre>
@@ -328,34 +329,37 @@
                 <entree libelle=" Groupe EI5 IHMRV" identifiant="Groupe EI5 IHMRV;TEST TOEIC BLANC" forcer="1" />
                 <entree libelle=" Groupe EI5 QSF-S" identifiant="Groupe EI5 QSF-S;TEST TOEIC BLANC" forcer="1" />
             </filtre>-->
-            <filtre libelle="Anglais2 - " rubrique="gpEng">
+            <!--<filtre libelle="Anglais2 - " rubrique="gpEng">
                 <entree identifiant="Groupe TOEIC 1" forcer="1" />
                 <entree identifiant="Groupe TOEIC 2" forcer="1" />
-            </filtre>
+            </filtre>-->
             <filtre libelle="LV2 Allemand ou Espagnol" rubrique="gpEsp">
                 <entree libelle="" identifiant="EI5 LV2 Allemand; EI5 LV2 Espagnol" />
             </filtre>
             <extra name="edt" value="5" />
         </entree>
+        <entree identifiant="MASTER1 INNOVATION">
+             <filtre libelle="MASTER1 INNOVATION" rubrique="gpGen">
+                <entree libelle="" identifiant="MASTER1 INNOVATION" forcer="1" />
+            </filtre>
+            <filtre libelle="Anglais - " rubrique="gpEng">
+                <entree libelle=" MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
+            </filtre>
+            <!--<filtre libelle="Espagnol - " rubrique="gpEsp">
+                <entree libelle="MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
+            </filtre>-->
+            <extra name="edt" value="8" />
+        </entree>
         <entree identifiant="M2 BIO-Industrie">
             <filtre libelle="M2 Inno BIO-Industrie" rubrique="gpGen">
                 <entree libelle="" identifiant="M2 Inno BIO-Industrie" forcer="1" />
             </filtre>
-            <filtre libelle="Anglais - " rubrique="gpEng">
+            <!--<filtre libelle="Anglais - " rubrique="gpEng">
                 <entree libelle=" M2 Inno BIO-Industrie" identifiant="M2 Inno BIO-Industrie" forcer="1" />
             </filtre>
             <filtre libelle="Espagnol - " rubrique="gpEsp">
                 <entree libelle="M2 Espagnol" identifiant="M2 Inno BIO-Industrie" forcer="1" />
-            </filtre>
-            <extra name="edt" value="8" />
-        </entree>
-        <entree identifiant="MASTER1 INNOVATION">
-            <filtre libelle="Anglais - " rubrique="gpEng">
-                <entree libelle=" MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
-            </filtre>
-            <filtre libelle="Espagnol - " rubrique="gpEsp">
-                <entree libelle="MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
-            </filtre>
+            </filtre>-->
             <extra name="edt" value="9" />
         </entree>
     </filtre>
