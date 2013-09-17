@@ -203,11 +203,6 @@
                         <entree identifiant="EI4/AGI/TPB" forcer="1"/>
                         <entree identifiant="EI4/AGI/TPC" forcer="1"/>
                     </filtre>
-                    <!--
-                    <filtre  rubrique="gpGen">
-                        <entree libelle="Master 1 Maths" identifiant="EI4/AGI/G1\'" forcer="1"/>
-                    </filtre>
-                    -->
                 </entree>
                 <entree identifiant="EI4 QSF" forcer="1">
                     <filtre rubrique="gpGen">
@@ -219,11 +214,6 @@
                         <entree identifiant="EI4/Q/TPB" forcer="1"/>
                         <entree identifiant="EI4/Q/TPC" forcer="1"/>
                     </filtre>
-                    <!--
-                    <filtre  rubrique="gpGen">
-                         <entree libelle="Master 1 Maths" identifiant="EI4/QSF/G1\'" forcer="1"/>
-                    </filtre>
-                    -->
                 </entree>
                 <entree libelle="INNO" identifiant="EI4/INNO/Spécifique" >
                     <filtre rubrique="gpGen">
@@ -237,11 +227,6 @@
                         <entree libelle="CPIM" identifiant="EI4/INNO/CPIM" forcer="1"/>
                     </filtre>
                     -->
-                    
-                    <!-- <filtre rubrique="gpGen">
-                        <entree identifiant="TP G1" />
-                        <entree identifiant="TP G2" />
-                    </filtre> -->
                 </entree>
             </filtre>
             <filtre libelle="Communication " rubrique="gpCom">
@@ -330,22 +315,25 @@
             <filtre libelle="Anglais - " rubrique="gpEng">
                 <entree libelle=" MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
             </filtre>
-            <!--<filtre libelle="Espagnol - " rubrique="gpEsp">
-                <entree libelle="MASTER1 INNOVATION" identifiant="MASTER1 INNOVATION" forcer="1" />
-            </filtre>-->
             <extra name="edt" value="8" />
         </entree>
         <entree identifiant="M2 BIO-Industrie">
             <filtre libelle="M2 Inno BIO-Industrie" rubrique="gpGen">
                 <entree libelle="" identifiant="M2 Inno BIO-Industrie" forcer="1" />
             </filtre>
-            <!--<filtre libelle="Anglais - " rubrique="gpEng">
-                <entree libelle=" M2 Inno BIO-Industrie" identifiant="M2 Inno BIO-Industrie" forcer="1" />
-            </filtre>
-            <filtre libelle="Espagnol - " rubrique="gpEsp">
-                <entree libelle="M2 Espagnol" identifiant="M2 Inno BIO-Industrie" forcer="1" />
-            </filtre>-->
             <extra name="edt" value="9" />
+        </entree>
+        <entree libelle="M2 SDS" identifiant="MASTER2 SDS">
+            <extra name="edt" value="7" />
+        </entree>
+        <entree libelle="M2 ISMP" forcer="1">
+            <filtre rubrique="gpGen">
+                <entree identifiant="MASTER ISMP IdF" />
+                <entree identifiant="MASTER ISMP QUASSI" forcer="1" />
+                <entree identifiant="MASTER ISMP QSF-O" forcer="1" />
+                <entree identifiant="MASTER ISMP QSF-S" forcer="1" />
+            </filtre>
+            <extra name="edt" value="10" />
         </entree>
     </filtre>
 </entree>
