@@ -14,6 +14,7 @@ class Fabrique {
 	const PLANNING_MASTER_SDS = 7;
         const PLANNING_MASTER1_INNO = 8;
         const PLANNING_MASTER2_BIOINDUSTRIE = 9;
+        const PLANNING_MASTER2_ISMP = 10;
     
     
     // Formats de sortie de l'emploi du temps filtré
@@ -44,6 +45,7 @@ class Fabrique {
 			case self::PLANNING_MASTER_SDS :	$booster = new BoosterMasterSDS(); break;
                         case self::PLANNING_MASTER2_BIOINDUSTRIE :	$booster = new BoosterMaster2InnoBIOIndustrie(); break;
                         case self::PLANNING_MASTER1_INNO :	$booster = new BoosterMaster1Inno(); break;
+                        case self::PLANNING_MASTER2_ISMP :	$booster = new BoosterMasterISMP(); break;
 			default : break;
 		}
         // On va chercher le contenu XML de l'emploi du temps disponible sur le web
