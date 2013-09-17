@@ -11,7 +11,7 @@ class ICal extends Formatter {
     public function format(SimpleXMLElement $source) {
         $ids = $this->listeIdentifiants($source);
         $ics = substr($this->sourceICS, strpos($this->sourceICS, "BEGIN:VCALENDAR"));
-        $lignes = explode("\n", $ics);
+        $lignes = explode("\r\n", $ics);
         $result = "";
         $i = 0;
         $nbLignes = count($lignes);
@@ -27,11 +27,11 @@ class ICal extends Formatter {
                         $ligne = str_replace("SUMMARY", "SUMMARY;CHARSET=UTF-8", $ligne);
                         $estTitre = strpos($ligne, "SUMMARY") !== false;
                         $result .= $estTitre ? $this->filtreTitre($ligne) : $ligne;
-                        $result .= "\n";
+                        $result .= PHP_EOL;
                         $j++;
                     }
                     $ligne = $lignes[$i + $j];
-                    $result .= $ligne;
+                    $result .= $ligne. PHP_EOL;;
                     $i += $j;
                 } else {
                     while (strpos($lignes[$i + $j], "END:VEVENT") === false) {
@@ -43,12 +43,12 @@ class ICal extends Formatter {
             } else {
                 if ($ligneCourante !== "")
                 {
-                    $result .= $ligneCourante . "\n";
+                    $result .= $ligneCourante . PHP_EOL;
                 }
                 $i++;
             }
         }
-        return $result;
+        return str_replace("\n", "\r\n", $result); 
     }
 
     private function filtreTitre($ligneSummary) {
@@ -57,7 +57,7 @@ class ICal extends Formatter {
         $titreFinal = str_replace($title, $new, $ligneSummary);
         $posFin = strpos($titreFinal, "\\");
         $posFin = $posFin !== false ? $posFin : strlen($titreFinal);
-        $titreFinal = substr($titreFinal, 0, $posFin) . "\r";
+        $titreFinal = substr($titreFinal, 0, $posFin);
         return $titreFinal;
     }
 
