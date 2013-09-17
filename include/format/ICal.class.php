@@ -16,17 +16,15 @@ class ICal extends Formatter {
         $i = 0;
         $nbLignes = count($lignes);
         while ($i < $nbLignes) {
-            $ligneCourante = $lignes[$i];
+            $ligneCourante = rtrim($lignes[$i]);
             if (strpos($ligneCourante, "BEGIN:VEVENT") !== false) {
                 $j = 0;
                 $str = $lignes[$i + 4];
                 $id = String::substr($str, '(', '-');
                 if (in_array($id, $ids)) {
-                    while (strpos($lignes[$i + $j], "END:VEVENT") === false)
-                    {
-                        
-                        $ligne = $lignes[$i + $j];
-                        $ligne = str_replace("SUMMARY", "SUMMARY", $ligne);
+                    while (strpos($lignes[$i + $j], "END:VEVENT") === false) {
+                        $ligne = rtrim($lignes[$i + $j]);
+                        $ligne = str_replace("SUMMARY", "SUMMARY;CHARSET=UTF-8", $ligne);
                         $estTitre = strpos($ligne, "SUMMARY") !== false;
                         $result .= $estTitre ? $this->filtreTitre($ligne) : $ligne;
                         $result .= "\n";
@@ -35,20 +33,18 @@ class ICal extends Formatter {
                     $ligne = $lignes[$i + $j];
                     $result .= $ligne;
                     $i += $j;
-                }
-                else
-                {
-                    while (strpos($lignes[$i + $j], "END:VEVENT") === false)
-                    {
+                } else {
+                    while (strpos($lignes[$i + $j], "END:VEVENT") === false) {
                         $j++;
                     }
                     $i += $j;
                 }
                 $i++;
-            }
-            else 
-            {
-                $result .= $ligneCourante . "\n";
+            } else {
+                if ($ligneCourante !== "")
+                {
+                    $result .= $ligneCourante . "\n";
+                }
                 $i++;
             }
         }
