@@ -68,49 +68,16 @@
             <extra name="edt" value="6" />
         </entree>
         <entree libelle="EI3" identifiant="EI3">
-
-            <!-- A n'activer que durant la période de mise à niveau -->
-            <filtre libelle="MAN/Math " rubrique="gpGen">
-                <entree libelle="G1" identifiant="Math 1" />
-                <entree libelle="G2" identifiant="Math 2" />
-            </filtre>	-->
-            <filtre libelle="MAN/Algo 1" rubrique="gpGen">
-                <entree identifiant="Algo 1" />
-            </filtre>
-            <filtre libelle="MAN/Dimension " rubrique="gpGen">
-                <entree libelle="G1" identifiant="Dimension 1" />
-                <entree libelle="G2" identifiant="Dimension 2" />
-            </filtre>
-            <filtre libelle="MAN/Rech info " rubrique="gpGen">
-                <entree libelle="G1" identifiant="Rech info 1" />
-                <entree libelle="G2" identifiant="Rech info 2" />
-            </filtre>
-            <filtre libelle="MAN/CAO " rubrique="gpGen">
-                <entree libelle="G1" identifiant="Cao 1" />
-                <entree libelle="G2" identifiant="Cao 2" />
-            </filtre>
-            <filtre libelle="MAN/LangC " rubrique="gpGen">
-                <entree libelle="G1" identifiant="LangC 1" />
-            </filtre>
-            <filtre libelle="MAN/Electrot " rubrique="gpGen">
-                <entree libelle="G1" identifiant="Electrot 1" />
-                <entree libelle="G2" identifiant="Electrot 2" />
-            </filtre>
-            <filtre libelle="MAN/Proba-stat " rubrique="gpGen">
-                <entree libelle="G1" identifiant="Proba-stat 1" />
-                <entree libelle="G2" identifiant="Proba-stat 2" />
-            </filtre>
-            <filtre libelle="MAN/Proba-stat " rubrique="gpGen">
+            <filtre libelle="MAN/Elec Num " rubrique="gpGen">
                 <entree libelle="G1" identifiant="Elec Num 1" />
             </filtre>
 
             <!-- 1er semestre -->
-            <!--            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
+            <filtre libelle="Semestre 1 Groupe " rubrique="gpGen">
                 <entree libelle="1" identifiant="G1" />
                 <entree libelle="2" identifiant="G2" />
                 <entree libelle="3" identifiant="G3" />
                 <entree libelle="4" identifiant="G4" />
-                <entree libelle="5" identifiant="G5" />
             </filtre>
             <filtre libelle="Semestre 1 TP" rubrique="gpGen">
                 <entree libelle="A" identifiant="TPA" />
@@ -118,9 +85,7 @@
                 <entree libelle="C" identifiant="TPC" />
                 <entree libelle="D" identifiant="TPD" />
                 <entree libelle="E" identifiant="TPE" />
-                <entree libelle="F" identifiant="TPF" />
-                <entree libelle="G" identifiant="TPG" />
-            </filtre>	-->
+            </filtre>
             
             <!-- 2eme semestre -->
             <!--
@@ -162,13 +127,15 @@
                 <entree libelle="4" identifiant="IMQ/TPIMQ4" />
                 <entree libelle="5" identifiant="IMQ/TPIMQ5" />
             </filtre>
+            -->
             <filtre libelle="Anglais " rubrique="gpEng">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
-                <entree identifiant="G5" />
             </filtre>
+            
+            <!--
             <filtre libelle="Communication " rubrique="gpGen">
                 <entree identifiant="G1" />
                 <entree identifiant="G2" />
@@ -179,7 +146,7 @@
             -->
                         
             <!-- LV2 -->
-            <!--            <filtre libelle="Espagnol G" rubrique="gpEsp">
+            <filtre libelle="Espagnol G" rubrique="gpEsp">
                 <entree libelle="1" identifiant="GE1" />
                 <entree libelle="2" identifiant="GE2" />
                 <entree libelle="3" identifiant="GE3" />
@@ -188,7 +155,6 @@
                 <entree libelle="1" identifiant="GA1" />
                 <entree libelle="2" identifiant="GA2" />
             </filtre>
-            -->
             <extra name="edt" value="3" />
         </entree>
         <entree libelle="EI4" identifiant="EI4">
