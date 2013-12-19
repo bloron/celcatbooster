@@ -13,9 +13,17 @@ class BoosterEI5 extends Booster {
     protected function concerneMonGroupeAnglais(SimpleXMLElement $cours) {
         $remarque = strtolower(trim($cours->notes));
         $profs = array();
-        foreach ($cours->resources->staff->item as $item) {
-            $profs[] = (string) $item;
+        if (is_array($cours->resources->staff->item))
+        {
+            foreach ($cours->resources->staff->item as $item) {
+                array_push($profs, (string)$item);
+            }
         }
+        else
+        {
+            array_push($profs, (string)$cours->resources->staff->item);
+        }
+        
         $matched = false;
         if ($this->issetGroup(self::$GROUPE_ANGLAIS)) {
             foreach ($this->groupes[self::$GROUPE_ANGLAIS] as $monGroupe) {
