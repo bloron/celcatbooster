@@ -128,13 +128,7 @@
                 <entree identifiant="G2" />
                 <entree identifiant="G3" />
                 <entree identifiant="G4" />
-            </filtre>
-            <filtre libelle="Communication " rubrique="gpGen">
-                <entree identifiant="G1" />
-                <entree identifiant="G2" />
-                <entree identifiant="G3" />
-                <entree identifiant="G4" />
-            </filtre>        
+            </filtre>       
             <!-- LV2 -->
             <filtre libelle="Espagnol G" rubrique="gpEsp">
                 <entree libelle="1" identifiant="GE1" />
