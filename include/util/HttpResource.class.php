@@ -17,7 +17,7 @@ class HttpResource {
 		$socket = fsockopen($serveur, 80);
 		if($socket !== false){
 			$poststring = 
-			
+
 	            "GET $chemin HTTP/1.1\r\n" . 
 	            "Host: $serveur\r\n" . 
                 "Cache-Control: no-cache\r\n" .
@@ -32,10 +32,10 @@ class HttpResource {
 	        $buffer = ''; 
 	        while(!feof($socket)) 
 	            $buffer .= fgets($socket); 
-	
+
 	        fclose($socket);
 			$contenuFichier .= substr($buffer, strpos($buffer, '<'));
-		}
+    }
 		return $contenuFichier;
 	}
 
@@ -44,8 +44,8 @@ class HttpResource {
      * dans un flux HTML.
      */
 	public static function debug($var){
-		echo "<pre>" . print_r($var, true) . "</pre>";
-	}
+        echo "<pre>" . print_r($var, true) . "</pre>";
+    }
 }
 
 ?>
