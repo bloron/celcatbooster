@@ -49,7 +49,7 @@ class Fabrique {
 			default : break;
 		}
         // On va chercher le contenu XML de l'emploi du temps disponible sur le web
-        $xmlData = self::getFile("/bb/" . $booster->getResource() . ".xml");
+        $xmlData = self::getFile("/web/publi/etu/" . $booster->getResource() . ".xml");
         $booster->setSourceXML($xmlData);
 		return $booster;
 	}
@@ -62,10 +62,9 @@ class Fabrique {
 		$formatter = null;
 		switch($type){
             case self::$ICAL :
-                $icsData = self::getFile("/bb/" . $booster->getResource() . ".ics");
+                $icsData = self::getFile("/web/publi/etu/" . $booster->getResource() . ".ics");
                 $formatter = new ICal($icsData); break;
-            case self::$XML :
-			default : 
+            default : 
                 $formatter = new XMLCal();
                 break;
 		}
