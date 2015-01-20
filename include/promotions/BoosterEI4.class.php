@@ -3,16 +3,21 @@ class BoosterEI4 extends Booster {
 	
 	public function __construct(){
 		parent::__construct("g146386",array(
-            "communication" => "filterComm",
-            "droit du travail" => "filterComm"));
+			"communication" => "filterComm",
+			"droit du travail" => "filterComm"));
 	}
 
 	protected function filterComm(SimpleXMLElement $cours){
-		if(($this->groupesCorrespondent($this->groupes['gpCom'], $cours->resources->group)) || ($this->groupesCorrespondent($this->groupes['gpGen'], $cours->resources->group)))
-                    return true;
-                else
-                    return false;
+		if (isset($this->groupes['gpCom']))
+		{
+			if(($this->groupesCorrespondent($this->groupes['gpCom'], $cours->resources->group)))
+				return true;
+			else
+				return false;
+		}
+
 	}
-        
-    
+
+
+
 }
