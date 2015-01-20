@@ -130,7 +130,7 @@ class Booster {
     protected function aucunFiltreGeneralDefini() {
         return count($this->groupes[self::$GROUPES_GENERAUX]) == 0;
     }
-    
+
     protected function pasDeSecondeLangue() {
         return (!($this->issetGroup(self::$GROUPE_ESPAGNOL) OR $this->issetGroup(self::$GROUPE_ESPAGNOL)));
     }
